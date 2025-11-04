@@ -37,6 +37,11 @@ export default defineConfig({
             const match = id.match(/\/components\/sections\/(\w+)\.tsx/);
             if (match) return `section-${match[1].toLowerCase()}`;
           }
+          if (id.includes('/pages/blog/')) {
+            const match = id.match(/\/pages\/blog\/(\w+)\.tsx/);
+            if (match) return `blog-${match[1].toLowerCase()}`;
+          }
+          if (id.includes('react-markdown')) return 'vendor-markdown';
         },
         inlineDynamicImports: false,
         chunkFileNames: 'assets/[name]-[hash].js',

@@ -14,7 +14,7 @@ import ServicesSection from './components/sections/ServicesSection';
 import SkillsSection from './components/sections/SkillsSection';
 import ContactSection from './components/sections/ContactSection';
 
-const sections = ['About Me', 'My Projects', 'Live Tools', 'My Services', 'My Skills', 'Contact Me'] as const;
+const sections = ['About Me', 'My Projects', 'Live Tools', 'My Services', 'My Skills', 'Blog', 'Contact Me'] as const;
 type Section = typeof sections[number];
 
 function App() {
@@ -60,6 +60,8 @@ function App() {
   const handleSectionChange = useCallback((section: Section) => {
     if (section === 'Social') {
       setShowSocialPopup(true);
+    } else if (section === 'Blog') {
+      window.location.href = '/blog';
     } else {
       setActiveSection(section);
       const slug = section.toLowerCase().replace(/\s+/g, '-');

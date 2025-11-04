@@ -89,10 +89,10 @@ const Card = () => {
         <div className={`text-white ${isMobile ? 'w-[336px]' : 'w-[310px]'} text-sm select-none`}>
           <div className="flex items-center gap-4 mb-2">
             <img
-              src="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media//anthony-daccurso-64x64.webp?quality=80&width=64"
+              src="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media//anthony-daccurso-64x64.webp?quality=75&width=64"
               srcSet="
-                https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media//anthony-daccurso-64x64.webp?quality=80&width=64 1x,
-                https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media//anthony-daccurso-128x128.webp?quality=80&width=128 2x
+                https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media//anthony-daccurso-64x64.webp?quality=75&width=64 1x,
+                https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media//anthony-daccurso-128x128.webp?quality=75&width=128 2x
               "
               alt="Anthony Daccurso"
               width={40}

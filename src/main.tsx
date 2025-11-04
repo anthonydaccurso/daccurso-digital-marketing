@@ -1,7 +1,10 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { HelmetProvider } from 'react-helmet-async';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App.tsx';
+import BlogIndex from './pages/blog/index.tsx';
+import BlogPost from './pages/blog/BlogPost.tsx';
 import './index.css';
 
 // Check for StackBlitz environment
@@ -28,7 +31,14 @@ if (import.meta.env.PROD && 'serviceWorker' in navigator && !isStackBlitz) {
 createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <HelmetProvider>
-      <App />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/blog" element={<BlogIndex />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="*" element={<App />} />
+        </Routes>
+      </BrowserRouter>
     </HelmetProvider>
   </React.StrictMode>
 );

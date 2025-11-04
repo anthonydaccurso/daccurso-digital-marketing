@@ -9,7 +9,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Montserrat'],
+        sans: ['Montserrat', 'system-ui', 'sans-serif'],
       },
     },
   },

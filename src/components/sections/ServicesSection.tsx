@@ -3,137 +3,6 @@ import { motion, useInView } from 'framer-motion';
 import { ShoppingCart } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 
-<Helmet>
-  <title>My Services | Daccurso Digital Marketing</title>
-  <meta
-    name="description"
-    content="Explore my professional digital services including web design, SEO optimization, WordPress development, hosting, and social media branding."
-  />
-  <link rel="canonical" href="https://anthonydaccurso.com/my-services/" />
-
-  {/* Open Graph */}
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://anthonydaccurso.com/my-services/" />
-  <meta property="og:title" content="My Services | Daccurso Digital Marketing" />
-  <meta
-    property="og:description"
-    content="Custom website design, SEO optimization, and social media branding services by Anthony Daccurso."
-  />
-  <meta
-    property="og:image"
-    content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-apple-touch-icon.png"
-  />
-  <meta property="og:site_name" content="Daccurso Digital Marketing" />
-
-  {/* Twitter */}
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="My Services | Daccurso Digital Marketing" />
-  <meta
-    name="twitter:description"
-    content="Explore professional web design, SEO, and hosting services to elevate your online presence."
-  />
-  <meta
-    name="twitter:image"
-    content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-apple-touch-icon.png"
-  />
-  <script type="application/ld+json">
-{`
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Daccurso Digital Marketing",
-  "url": "https://anthonydaccurso.com",
-  "logo": "https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-apple-touch-icon.png",
-  "description": "Professional web design, SEO, and digital marketing services tailored for small businesses, startups, and creators.",
-  "founder": {
-    "@type": "Person",
-    "name": "Anthony Daccurso",
-    "jobTitle": "Digital Marketing & Web Development Specialist"
-  },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+1-732-299-3529",
-    "contactType": "Customer Support",
-    "areaServed": "US"
-  },
-  "sameAs": [
-    "https://www.linkedin.com/in/anthony-daccurso/",
-    "https://github.com/anthonydaccurso",
-    "https://www.instagram.com/daccursodigitalmarketing",
-    "https://www.tiktok.com/@daccursodigitalmarketing"
-  ],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Digital Marketing Services",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Custom Website Development Package",
-          "description": "Full website development from scratch including responsive design, SEO optimization, and content strategy.",
-          "offers": { "@type": "Offer", "price": "1499.99", "priceCurrency": "USD" }
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Custom Website Redesign Package",
-          "description": "Transform your existing website with a modern redesign, improved performance, and enhanced SEO.",
-          "offers": { "@type": "Offer", "price": "999.99", "priceCurrency": "USD" }
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Hosting and Database Support",
-          "description": "Professional hosting setup, database management, and performance monitoring for optimal uptime and security.",
-          "offers": { "@type": "Offer", "price": "249.99", "priceCurrency": "USD" }
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "WordPress Development Package",
-          "description": "Complete WordPress website development with responsive design, SEO enhancements, and performance optimization.",
-          "offers": { "@type": "Offer", "price": "999.99", "priceCurrency": "USD" }
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "WordPress Redesign Package",
-          "description": "Modernize your WordPress website with UI/UX updates, performance improvements, and SEO restructuring.",
-          "offers": { "@type": "Offer", "price": "749.99", "priceCurrency": "USD" }
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Social Media Branding and Content",
-          "description": "Personalized social media branding, custom graphics, and content creation for consistent online presence.",
-          "offers": { "@type": "Offer", "price": "249.99", "priceCurrency": "USD" }
-        }
-      }
-    ]
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Freehold",
-    "addressRegion": "NJ",
-    "postalCode": "07728",
-    "addressCountry": "US"
-  }
-}
-`}
-</script>
-</Helmet>
-
 const services = [
   {
     id: 'custom-website-development-package',
@@ -289,6 +158,135 @@ function ServicesSection() {
       animate={{ opacity: 1, y: 0 }}
       className="bg-[#1a2f5c]/50 rounded-2xl p-6 sm:p-8 md:p-12 w-full mx-auto"
     >
+      <Helmet>
+        <title>My Services | Daccurso Digital Marketing</title>
+        <meta
+          name="description"
+          content="Explore my professional digital services including web design, SEO optimization, WordPress development, hosting, and social media branding."
+        />
+        <link rel="canonical" href="https://anthonydaccurso.com/my-services/" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://anthonydaccurso.com/my-services/" />
+        <meta property="og:title" content="My Services | Daccurso Digital Marketing" />
+        <meta
+          property="og:description"
+          content="Custom website design, SEO optimization, and social media branding services by Anthony Daccurso."
+        />
+        <meta
+          property="og:image"
+          content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-apple-touch-icon.png"
+        />
+        <meta property="og:site_name" content="Daccurso Digital Marketing" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="My Services | Daccurso Digital Marketing" />
+        <meta
+          name="twitter:description"
+          content="Explore professional web design, SEO, and hosting services to elevate your online presence."
+        />
+        <meta
+          name="twitter:image"
+          content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-apple-touch-icon.png"
+        />
+        <script type="application/ld+json">
+{`
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Daccurso Digital Marketing",
+  "url": "https://anthonydaccurso.com",
+  "logo": "https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-apple-touch-icon.png",
+  "description": "Professional web design, SEO, and digital marketing services tailored for small businesses, startups, and creators.",
+  "founder": {
+    "@type": "Person",
+    "name": "Anthony Daccurso",
+    "jobTitle": "Digital Marketing & Web Development Specialist"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+1-732-299-3529",
+    "contactType": "Customer Support",
+    "areaServed": "US"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/anthony-daccurso/",
+    "https://github.com/anthonydaccurso",
+    "https://www.instagram.com/daccursodigitalmarketing",
+    "https://www.tiktok.com/@daccursodigitalmarketing"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Digital Marketing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Custom Website Development Package",
+          "description": "Full website development from scratch including responsive design, SEO optimization, and content strategy.",
+          "offers": { "@type": "Offer", "price": "1499.99", "priceCurrency": "USD" }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Custom Website Redesign Package",
+          "description": "Transform your existing website with a modern redesign, improved performance, and enhanced SEO.",
+          "offers": { "@type": "Offer", "price": "999.99", "priceCurrency": "USD" }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Hosting and Database Support",
+          "description": "Professional hosting setup, database management, and performance monitoring for optimal uptime and security.",
+          "offers": { "@type": "Offer", "price": "249.99", "priceCurrency": "USD" }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "WordPress Development Package",
+          "description": "Complete WordPress website development with responsive design, SEO enhancements, and performance optimization.",
+          "offers": { "@type": "Offer", "price": "999.99", "priceCurrency": "USD" }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "WordPress Redesign Package",
+          "description": "Modernize your WordPress website with UI/UX updates, performance improvements, and SEO restructuring.",
+          "offers": { "@type": "Offer", "price": "749.99", "priceCurrency": "USD" }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Social Media Branding and Content",
+          "description": "Personalized social media branding, custom graphics, and content creation for consistent online presence.",
+          "offers": { "@type": "Offer", "price": "249.99", "priceCurrency": "USD" }
+        }
+      }
+    ]
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Freehold",
+    "addressRegion": "NJ",
+    "postalCode": "07728",
+    "addressCountry": "US"
+  }
+}
+`}
+</script>
+      </Helmet>
+
       <motion.h2
         initial={{ opacity: 0, x: -30 }}
         animate={{ opacity: 1, x: 0 }}

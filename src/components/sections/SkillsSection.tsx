@@ -2,62 +2,6 @@ import React, { memo, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 
-<Helmet>
-  <title>My Skills | SEO, Analytics & Web Development Expertise</title>
-  <meta
-    name="description"
-    content="Explore Anthony Daccurso’s technical and marketing expertise across SEO, analytics, design, and development — from React and Tailwind to Semrush and GA4."
-  />
-  <link rel="canonical" href="https://anthonydaccurso.com/my-skills/" />
-
-  {/* Open Graph */}
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://anthonydaccurso.com/my-skills/" />
-  <meta property="og:title" content="My Skills | SEO, Analytics & Web Development Expertise" />
-  <meta
-    property="og:description"
-    content="SEO, analytics, web design, and development skills by Anthony Daccurso — combining creativity and performance optimization."
-  />
-  <meta
-    property="og:image"
-    content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-apple-touch-icon.png"
-  />
-  <meta property="og:site_name" content="Daccurso Digital Marketing" />
-
-  {/* Twitter */}
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="My Skills | SEO, Analytics & Web Development Expertise" />
-  <meta
-    name="twitter:description"
-    content="Explore my toolkit: React, Tailwind, WordPress, Semrush, GA4, and more — powering efficient digital solutions."
-  />
-  <meta
-    name="twitter:image"
-    content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-apple-touch-icon.png"
-  />
-
-  {/* Structured Data */}
-  <script type="application/ld+json">
-  {`
-  {
-    "@context": "https://schema.org",
-    "@type": "DefinedTermSet",
-    "name": "Skills and Expertise",
-    "description": "SEO, analytics, and web development skills mastered by Anthony Daccurso.",
-    "hasDefinedTerm": [
-      { "@type": "DefinedTerm", "name": "Google Analytics 4" },
-      { "@type": "DefinedTerm", "name": "Semrush" },
-      { "@type": "DefinedTerm", "name": "React.js" },
-      { "@type": "DefinedTerm", "name": "Tailwind CSS" },
-      { "@type": "DefinedTerm", "name": "WordPress" },
-      { "@type": "DefinedTerm", "name": "SEO Strategy" },
-      { "@type": "DefinedTerm", "name": "Content Marketing" }
-    ]
-  }
-  `}
-  </script>
-</Helmet>
-
 const skillCategories = [
   {
     name: "SEO & Analytics",
@@ -125,6 +69,59 @@ function SkillsSection() {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="bg-[#1a2f5c]/50 rounded-2xl p-6 sm:p-8 md:p-12 w-full mx-auto"
     >
+      <Helmet>
+        <title>My Skills | SEO, Analytics & Web Development Expertise</title>
+        <meta
+          name="description"
+          content="Explore Anthony Daccurso's technical and marketing expertise across SEO, analytics, design, and development — from React and Tailwind to Semrush and GA4."
+        />
+        <link rel="canonical" href="https://anthonydaccurso.com/my-skills/" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://anthonydaccurso.com/my-skills/" />
+        <meta property="og:title" content="My Skills | SEO, Analytics & Web Development Expertise" />
+        <meta
+          property="og:description"
+          content="SEO, analytics, web design, and development skills by Anthony Daccurso — combining creativity and performance optimization."
+        />
+        <meta
+          property="og:image"
+          content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-apple-touch-icon.png"
+        />
+        <meta property="og:site_name" content="Daccurso Digital Marketing" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="My Skills | SEO, Analytics & Web Development Expertise" />
+        <meta
+          name="twitter:description"
+          content="Explore my toolkit: React, Tailwind, WordPress, Semrush, GA4, and more — powering efficient digital solutions."
+        />
+        <meta
+          name="twitter:image"
+          content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-apple-touch-icon.png"
+        />
+
+        <script type="application/ld+json">
+          {`
+          {
+            "@context": "https://schema.org",
+            "@type": "DefinedTermSet",
+            "name": "Skills and Expertise",
+            "description": "SEO, analytics, and web development skills mastered by Anthony Daccurso.",
+            "hasDefinedTerm": [
+              { "@type": "DefinedTerm", "name": "Google Analytics 4" },
+              { "@type": "DefinedTerm", "name": "Semrush" },
+              { "@type": "DefinedTerm", "name": "React.js" },
+              { "@type": "DefinedTerm", "name": "Tailwind CSS" },
+              { "@type": "DefinedTerm", "name": "WordPress" },
+              { "@type": "DefinedTerm", "name": "SEO Strategy" },
+              { "@type": "DefinedTerm", "name": "Content Marketing" }
+            ]
+          }
+          `}
+        </script>
+      </Helmet>
+
       <motion.h2
         ref={titleRef}
         initial={{ opacity: 0, y: -30 }}

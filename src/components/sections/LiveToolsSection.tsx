@@ -4,68 +4,8 @@ import { TrendingUp, Calculator, BarChart3, Target, Globe } from 'lucide-react';
 import CurrencyCalculator from '../CurrencyCalculator';
 import ETFHealthPredictor from '../ETFHealthPredictor';
 import ETFGainsPredictor from '../ETFGainsPredictor';
-import NewsAnalyzer from '../NewsAnalyzer'; 
+import NewsAnalyzer from '../NewsAnalyzer';
 import { Helmet } from 'react-helmet-async';
-
-<Helmet>
-  <title>Live Tools | Market & Finance Analytics Dashboard</title>
-  <meta
-    name="description"
-    content="Real-time tools for investment and financial analysis — including ETF predictions, currency arbitrage, and news sentiment tracking by Anthony Daccurso."
-  />
-  <link rel="canonical" href="https://anthonydaccurso.com/live-tools/" />
-
-  {/* Open Graph */}
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://anthonydaccurso.com/live-tools/" />
-  <meta property="og:title" content="Live Tools | Market & Finance Analytics Dashboard" />
-  <meta
-    property="og:description"
-    content="Interactive investment and market tools built with React and Supabase — ETF predictors, news analyzers, and arbitrage calculators."
-  />
-  <meta
-    property="og:image"
-    content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-apple-touch-icon.png"
-  />
-  <meta property="og:site_name" content="Daccurso Digital Marketing" />
-
-  {/* Twitter */}
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Live Tools | Market & Finance Analytics Dashboard" />
-  <meta
-    name="twitter:description"
-    content="Try AI-powered ETF predictors, currency arbitrage calculators, and sentiment analyzers — built by Anthony Daccurso."
-  />
-  <meta
-    name="twitter:image"
-    content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-apple-touch-icon.png"
-  />
-
-  {/* Structured Data */}
-  <script type="application/ld+json">
-  {`
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Live Tools",
-    "url": "https://anthonydaccurso.com/live-tools",
-    "applicationCategory": "Finance",
-    "operatingSystem": "All",
-    "creator": {
-      "@type": "Person",
-      "name": "Anthony Daccurso",
-      "url": "https://anthonydaccurso.com"
-    },
-    "featureList": [
-      "ETF Health Predictor",
-      "ETF Gains Predictor",
-      "Currency Arbitrage Calculator",
-      "News & Sentiment Analyzer"
-    ]
-  }
-  `}
-  </script>
-</Helmet>
 
 const tools = [
     {
@@ -110,6 +50,63 @@ function LiveToolsSection() {
       transition={{ duration: 0.8, ease: "easeOut" }}
       className="bg-[#1a2f5c]/50 rounded-2xl p-6 sm:p-8 md:p-12 w-full mx-auto"
     >
+      <Helmet>
+        <title>Live Tools | Market & Finance Analytics Dashboard</title>
+        <meta
+          name="description"
+          content="Real-time tools for investment and financial analysis — including ETF predictions, currency arbitrage, and news sentiment tracking by Anthony Daccurso."
+        />
+        <link rel="canonical" href="https://anthonydaccurso.com/live-tools/" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://anthonydaccurso.com/live-tools/" />
+        <meta property="og:title" content="Live Tools | Market & Finance Analytics Dashboard" />
+        <meta
+          property="og:description"
+          content="Interactive investment and market tools built with React and Supabase — ETF predictors, news analyzers, and arbitrage calculators."
+        />
+        <meta
+          property="og:image"
+          content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-apple-touch-icon.png"
+        />
+        <meta property="og:site_name" content="Daccurso Digital Marketing" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Live Tools | Market & Finance Analytics Dashboard" />
+        <meta
+          name="twitter:description"
+          content="Try AI-powered ETF predictors, currency arbitrage calculators, and sentiment analyzers — built by Anthony Daccurso."
+        />
+        <meta
+          name="twitter:image"
+          content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-apple-touch-icon.png"
+        />
+
+        <script type="application/ld+json">
+          {`
+          {
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "Live Tools",
+            "url": "https://anthonydaccurso.com/live-tools",
+            "applicationCategory": "Finance",
+            "operatingSystem": "All",
+            "creator": {
+              "@type": "Person",
+              "name": "Anthony Daccurso",
+              "url": "https://anthonydaccurso.com"
+            },
+            "featureList": [
+              "ETF Health Predictor",
+              "ETF Gains Predictor",
+              "Currency Arbitrage Calculator",
+              "News & Sentiment Analyzer"
+            ]
+          }
+          `}
+        </script>
+      </Helmet>
+
       <motion.h1
         initial={{ opacity: 0, x: -30 }}
         animate={{ opacity: 1, x: 0 }}

@@ -3,67 +3,6 @@ import { motion, useInView } from 'framer-motion';
 import { Linkedin, FileText, Folders, Award } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 
-<Helmet>
-  <title>Contact Me | Connect with Anthony Daccurso</title>
-  <meta
-    name="description"
-    content="Get in touch with Anthony Daccurso — Digital Marketing Specialist & Web Developer. Connect via LinkedIn, view my resume, or explore certifications and awards."
-  />
-  <link rel="canonical" href="https://anthonydaccurso.com/contact-me/" />
-
-  {/* Open Graph */}
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://anthonydaccurso.com/contact-me/" />
-  <meta property="og:title" content="Contact Me | Connect with Anthony Daccurso" />
-  <meta
-    property="og:description"
-    content="Contact Anthony Daccurso for digital marketing, SEO, or web development projects. Explore professional credentials and certifications."
-  />
-  <meta
-    property="og:image"
-    content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-apple-touch-icon.png"
-  />
-  <meta property="og:site_name" content="Daccurso Digital Marketing" />
-
-  {/* Twitter */}
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Contact Me | Connect with Anthony Daccurso" />
-  <meta
-    name="twitter:description"
-    content="Connect with me via LinkedIn, view my resume, and collaborate on web design or SEO projects."
-  />
-  <meta
-    name="twitter:image"
-    content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-apple-touch-icon.png"
-  />
-
-  {/* Structured Data */}
-  <script type="application/ld+json">
-  {`
-  {
-    "@context": "https://schema.org",
-    "@type": "ContactPage",
-    "url": "https://anthonydaccurso.com/contact-me",
-    "mainEntity": {
-      "@type": "Person",
-      "name": "Anthony Daccurso",
-      "email": "mailto:marketing@custompoolpros.com",
-      "url": "https://anthonydaccurso.com",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "Professional Inquiry",
-        "areaServed": "US"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/in/anthony-daccurso/",
-        "https://github.com/anthonydaccurso"
-      ]
-    }
-  }
-  `}
-  </script>
-</Helmet>
-
 const contactItems = [
   {
     href: "https://www.linkedin.com/in/anthony-daccurso/",
@@ -131,6 +70,64 @@ function ContactSection() {
       }}
       className="bg-[#1a2f5c]/50 rounded-3xl p-6 sm:p-8 md:p-12 w-full mx-auto"
     >
+      <Helmet>
+        <title>Contact Me | Connect with Anthony Daccurso</title>
+        <meta
+          name="description"
+          content="Get in touch with Anthony Daccurso — Digital Marketing Specialist & Web Developer. Connect via LinkedIn, view my resume, or explore certifications and awards."
+        />
+        <link rel="canonical" href="https://anthonydaccurso.com/contact-me/" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://anthonydaccurso.com/contact-me/" />
+        <meta property="og:title" content="Contact Me | Connect with Anthony Daccurso" />
+        <meta
+          property="og:description"
+          content="Contact Anthony Daccurso for digital marketing, SEO, or web development projects. Explore professional credentials and certifications."
+        />
+        <meta
+          property="og:image"
+          content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-apple-touch-icon.png"
+        />
+        <meta property="og:site_name" content="Daccurso Digital Marketing" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact Me | Connect with Anthony Daccurso" />
+        <meta
+          name="twitter:description"
+          content="Connect with me via LinkedIn, view my resume, and collaborate on web design or SEO projects."
+        />
+        <meta
+          name="twitter:image"
+          content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-apple-touch-icon.png"
+        />
+
+        <script type="application/ld+json">
+          {`
+          {
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            "url": "https://anthonydaccurso.com/contact-me",
+            "mainEntity": {
+              "@type": "Person",
+              "name": "Anthony Daccurso",
+              "email": "mailto:marketing@custompoolpros.com",
+              "url": "https://anthonydaccurso.com",
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "Professional Inquiry",
+                "areaServed": "US"
+              },
+              "sameAs": [
+                "https://www.linkedin.com/in/anthony-daccurso/",
+                "https://github.com/anthonydaccurso"
+              ]
+            }
+          }
+          `}
+        </script>
+      </Helmet>
+
       <motion.h2
         initial={{ opacity: 0, y: window.innerWidth <= 768 ? 0 : -30 }}
         animate={{ opacity: 1, y: 0 }}

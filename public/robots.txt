@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
-Allow: /about-me
 Allow: /my-projects
 Allow: /my-services
 Allow: /my-skills
@@ -14,7 +13,6 @@ Allow: /manifest.json
 Allow: /sitemap.xml
 
 # Prevent pages from appearing in search results while allowing crawling
-Noindex: /about-me
 Noindex: /my-projects
 Noindex: /my-services
 Noindex: /my-skills

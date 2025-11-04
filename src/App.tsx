@@ -47,8 +47,15 @@ function App() {
 
   useEffect(() => {
     const path = window.location.pathname.substring(1);
-    const sectionFromUrl = sections.find(section => section.toLowerCase().replace(/\s+/g, '-') === path);
-    if (sectionFromUrl) setActiveSection(sectionFromUrl);
+    if (path === '' || path === 'about-me') {
+      setActiveSection('About Me');
+      if (path === 'about-me') {
+        window.history.replaceState({}, '', '/');
+      }
+    } else {
+      const sectionFromUrl = sections.find(section => section.toLowerCase().replace(/\s+/g, '-') === path);
+      if (sectionFromUrl) setActiveSection(sectionFromUrl);
+    }
     if (window.matchMedia('(display-mode: standalone)').matches) setIsPWA(true);
   }, []);
 
@@ -63,9 +70,13 @@ function App() {
       setShowSocialPopup(true);
     } else {
       setActiveSection(section);
-      const slug = section.toLowerCase().replace(/\s+/g, '-');
-      const path = `/${slug}`;
-      window.history.pushState({}, '', path);
+      if (section === 'About Me') {
+        window.history.pushState({}, '', '/');
+      } else {
+        const slug = section.toLowerCase().replace(/\s+/g, '-');
+        const path = `/${slug}`;
+        window.history.pushState({}, '', path);
+      }
     }
   }, []);
 

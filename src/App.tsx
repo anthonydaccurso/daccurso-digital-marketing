@@ -15,7 +15,7 @@ import SkillsSection from './components/sections/SkillsSection';
 import BlogSection from './components/sections/BlogSection';
 import ContactSection from './components/sections/ContactSection';
 
-const sections = ['About Me', 'My Projects', 'Live Tools', 'My Services', 'My Skills', 'Blog', 'Contact Me'] as const;
+const sections = ['About Me', 'My Projects', 'Live Tools', 'My Services', 'My Skills', 'Blog Posts', 'Contact Me'] as const;
 type Section = typeof sections[number];
 
 function App() {
@@ -52,6 +52,8 @@ function App() {
       if (path === 'about-me') {
         window.history.replaceState({}, '', '/');
       }
+    } else if (path === 'blog') {
+      setActiveSection('Blog Posts');
     } else {
       const sectionFromUrl = sections.find(section => section.toLowerCase().replace(/\s+/g, '-') === path);
       if (sectionFromUrl) setActiveSection(sectionFromUrl);
@@ -72,6 +74,8 @@ function App() {
       setActiveSection(section);
       if (section === 'About Me') {
         window.history.pushState({}, '', '/');
+      } else if (section === 'Blog Posts') {
+        window.history.pushState({}, '', '/blog');
       } else {
         const slug = section.toLowerCase().replace(/\s+/g, '-');
         const path = `/${slug}`;
@@ -134,7 +138,7 @@ function App() {
       <div className="container mx-auto px-4 md:px-16 pt-[30px] md:pt-[60px] pb-[60px] md:pb-[80px] relative z-10">
         {/* Mobile Card */}
         {isMobile && (
-          <div className="absolute left-1/2 transform -translate-x-1/2 top-[417px] w-[352px] h-[120px] z-20">
+          <div className="absolute left-1/2 transform -translate-x-1/2 top-[480px] w-[352px] h-[120px] z-20">
             <Suspense fallback={
               <div className="w-full h-full flex items-center justify-center">
                 <div className="bg-[#0d2242] w-[330px] h-[120px] rounded-xl animate-pulse" />
@@ -191,7 +195,7 @@ function App() {
           {activeSection === 'Live Tools' && <LiveToolsSection />}
           {activeSection === 'My Services' && <ServicesSection />}
           {activeSection === 'My Skills' && <SkillsSection />}
-          {activeSection === 'Blog' && <BlogSection />}
+          {activeSection === 'Blog Posts' && <BlogSection />}
           {activeSection === 'Contact Me' && <ContactSection />}
         </Suspense>
       </div>

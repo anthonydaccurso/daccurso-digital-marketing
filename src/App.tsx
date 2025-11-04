@@ -15,7 +15,8 @@ import SkillsSection from './components/sections/SkillsSection';
 import BlogSection from './components/sections/BlogSection';
 import ContactSection from './components/sections/ContactSection';
 
-const sections = ['About Me', 'My Projects', 'Live Tools', 'My Services', 'My Skills', 'Blog Posts', 'Contact Me'] as const;
+const sections = ['About Me', 'My Projects', 'Live Tools', 'My Services', 'My Skills', 'Blog', 'Contact Me'] as const;
+const mobileSections = ['About Me', 'My Projects', 'Live Tools', 'My Services', 'My Skills', 'Contact Me', 'Blog'] as const;
 type Section = typeof sections[number];
 
 function App() {
@@ -53,7 +54,7 @@ function App() {
         window.history.replaceState({}, '', '/');
       }
     } else if (path === 'blog') {
-      setActiveSection('Blog Posts');
+      setActiveSection('Blog');
     } else {
       const sectionFromUrl = sections.find(section => section.toLowerCase().replace(/\s+/g, '-') === path);
       if (sectionFromUrl) setActiveSection(sectionFromUrl);
@@ -74,7 +75,7 @@ function App() {
       setActiveSection(section);
       if (section === 'About Me') {
         window.history.pushState({}, '', '/');
-      } else if (section === 'Blog Posts') {
+      } else if (section === 'Blog') {
         window.history.pushState({}, '', '/blog');
       } else {
         const slug = section.toLowerCase().replace(/\s+/g, '-');
@@ -169,7 +170,7 @@ function App() {
         </motion.p>
 
         <div className="flex flex-wrap gap-4 mt-9 mb-[220px] md:mb-12 relative z-10">
-          {sections.map((section) => (
+          {(isMobile ? mobileSections : sections).map((section) => (
             <motion.button
               key={section}
               whileHover={{ scale: 1.05 }}
@@ -195,7 +196,7 @@ function App() {
           {activeSection === 'Live Tools' && <LiveToolsSection />}
           {activeSection === 'My Services' && <ServicesSection />}
           {activeSection === 'My Skills' && <SkillsSection />}
-          {activeSection === 'Blog Posts' && <BlogSection />}
+          {activeSection === 'Blog' && <BlogSection />}
           {activeSection === 'Contact Me' && <ContactSection />}
         </Suspense>
       </div>

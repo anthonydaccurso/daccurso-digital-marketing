@@ -66,26 +66,10 @@ export default defineConfig({
       'react-dom',
       'react/jsx-runtime'
     ],
-    exclude: ['@supabase/supabase-js'],
-    esbuildOptions: {
-      target: 'esnext',
-      treeShaking: true,
-      minify: true,
-      legalComments: 'none',
-      define: {
-        'process.env.NODE_ENV': '"production"'
-      },
-      drop: ['console', 'debugger'],
-      pure: ['console.log', 'console.debug']
-    }
+    exclude: ['@supabase/supabase-js']
   },
   esbuild: {
-    drop: ['console', 'debugger'],
-    pure: ['console.log', 'console.debug'],
-    legalComments: 'none',
-    minifyIdentifiers: true,
-    minifySyntax: true,
-    minifyWhitespace: true
+    legalComments: 'none'
   },
   server: {
     fs: {

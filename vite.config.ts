@@ -40,7 +40,8 @@ export default defineConfig({
         },
         inlineDynamicImports: false,
         chunkFileNames: 'assets/[name]-[hash].js',
-        assetFileNames: 'assets/[name]-[hash][extname]'
+        assetFileNames: 'assets/[name]-[hash][extname]',
+        compact: true
       },
       treeshake: {
         moduleSideEffects: 'no-external',
@@ -50,7 +51,9 @@ export default defineConfig({
     },
     minify: 'esbuild',
     reportCompressedSize: false,
-    chunkSizeWarningLimit: 1500
+    chunkSizeWarningLimit: 1500,
+    assetsInlineLimit: 4096,
+    cssMinify: 'esbuild'
   },
   optimizeDeps: {
     include: [
@@ -63,8 +66,21 @@ export default defineConfig({
       target: 'esnext',
       treeShaking: true,
       minify: true,
-      legalComments: 'none'
+      legalComments: 'none',
+      define: {
+        'process.env.NODE_ENV': '"production"'
+      },
+      drop: ['console', 'debugger'],
+      pure: ['console.log', 'console.debug']
     }
+  },
+  esbuild: {
+    drop: ['console', 'debugger'],
+    pure: ['console.log', 'console.debug'],
+    legalComments: 'none',
+    minifyIdentifiers: true,
+    minifySyntax: true,
+    minifyWhitespace: true
   },
   server: {
     fs: {

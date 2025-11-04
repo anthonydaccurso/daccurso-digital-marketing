@@ -12,6 +12,7 @@ import ProjectsSection from './components/sections/ProjectsSection';
 import LiveToolsSection from './components/sections/LiveToolsSection';
 import ServicesSection from './components/sections/ServicesSection';
 import SkillsSection from './components/sections/SkillsSection';
+import BlogSection from './components/sections/BlogSection';
 import ContactSection from './components/sections/ContactSection';
 
 const sections = ['About Me', 'My Projects', 'Live Tools', 'My Services', 'My Skills', 'Blog', 'Contact Me'] as const;
@@ -60,8 +61,6 @@ function App() {
   const handleSectionChange = useCallback((section: Section) => {
     if (section === 'Social') {
       setShowSocialPopup(true);
-    } else if (section === 'Blog') {
-      window.location.href = '/blog';
     } else {
       setActiveSection(section);
       const slug = section.toLowerCase().replace(/\s+/g, '-');
@@ -181,6 +180,7 @@ function App() {
           {activeSection === 'Live Tools' && <LiveToolsSection />}
           {activeSection === 'My Services' && <ServicesSection />}
           {activeSection === 'My Skills' && <SkillsSection />}
+          {activeSection === 'Blog' && <BlogSection />}
           {activeSection === 'Contact Me' && <ContactSection />}
         </Suspense>
       </div>

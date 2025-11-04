@@ -228,3 +228,7 @@ Performance optimization isn't a one-time project—it's an ongoing commitment. 
 - Monitor impact of deployments on performance metrics
 
 **Pro Tip**: Start with the biggest wins—image optimization and JavaScript reduction typically provide the most significant improvements. Use performance profiling tools to identify your specific bottlenecks rather than optimizing blindly. Remember that every millisecond matters: users perceive sub-second improvements, and search engines reward faster sites with better rankings.
+
+### Learn More
+
+To dive deeper into web performance optimization, explore [MDN Web Docs' guide to Web Performance](https://developer.mozilla.org/en-US/docs/Web/Performance) for comprehensive technical details. For real-world case studies on how performance improvements impact business metrics, check out [Google's Web Performance Case Studies](https://web.dev/tags/case-study/).

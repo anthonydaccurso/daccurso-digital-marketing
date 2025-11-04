@@ -355,3 +355,7 @@ Take advantage of newer CSS capabilities:
 ```
 
 **Pro Tip**: Responsive design is about creating flexible, adaptable experiences that work beautifully across all devices. Start with a mobile-first approach, use modern CSS features like Grid and Flexbox, optimize performance rigorously, and test on actual devices regularly. Focus on content hierarchy, ensure touch targets are adequately sized, and never sacrifice accessibility for aesthetics. The best responsive designs feel natural on every device, adapting seamlessly without drawing attention to the adaptation itself.
+
+### Additional Resources
+
+For comprehensive documentation on responsive design techniques, check out [MDN's Responsive Design Guide](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design). To stay current with modern CSS features and browser support, visit [Can I Use](https://caniuse.com/) before implementing new techniques.

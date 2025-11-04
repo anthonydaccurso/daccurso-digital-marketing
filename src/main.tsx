@@ -3,7 +3,6 @@ import { createRoot } from 'react-dom/client';
 import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App.tsx';
-import BlogIndex from './pages/blog/BlogIndex.tsx';
 import BlogPost from './pages/blog/BlogPost.tsx';
 import './index.css';
 
@@ -34,7 +33,6 @@ createRoot(document.getElementById('root')!).render(
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<App />} />
-          <Route path="/blog" element={<BlogIndex />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="*" element={<App />} />
         </Routes>

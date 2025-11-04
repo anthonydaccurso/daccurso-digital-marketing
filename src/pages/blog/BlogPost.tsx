@@ -16,7 +16,7 @@ export default function BlogPost() {
         <div className="container mx-auto px-4 md:px-16 pt-[30px] md:pt-[60px] pb-[60px] md:pb-[80px] relative z-10 flex items-center justify-center">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-white via-blue-400 to-blue-700 bg-clip-text text-transparent">Post not found</h1>
-            <a href="/blog" className="text-blue-400 hover:text-blue-300 transition-colors text-lg">← Back to blog</a>
+            <a href="/" className="text-blue-400 hover:text-blue-300 transition-colors text-lg">← Back to Home</a>
           </div>
         </div>
       </div>
@@ -61,8 +61,8 @@ export default function BlogPost() {
           animate={{ opacity: 1, y: 0 }}
           className="mb-8"
         >
-          <a href="/blog" className="text-blue-400 hover:text-blue-300 transition-colors text-lg">
-            ← Back to blog
+          <a href="/" className="text-blue-400 hover:text-blue-300 transition-colors text-lg">
+            ← Back to Home
           </a>
         </motion.div>
 

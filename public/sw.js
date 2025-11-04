@@ -1,15 +1,39 @@
-// Disable caching in service worker
+// Smart caching strategy
+const CACHE_NAME = 'ddm-cache-v1';
+
 self.addEventListener('fetch', (event) => {
+  const { request } = event;
+  const url = new URL(request.url);
+
+  // Skip caching for API calls
+  if (url.pathname.includes('/functions/v1/') ||
+      url.pathname.includes('/.netlify/functions/') ||
+      url.hostname.includes('openrouter.ai')) {
+    event.respondWith(fetch(request));
+    return;
+  }
+
+  // Cache-first for fonts and static assets
+  if (request.destination === 'font' ||
+      request.destination === 'image' ||
+      url.hostname === 'fonts.gstatic.com') {
+    event.respondWith(
+      caches.match(request).then(cached => {
+        return cached || fetch(request).then(response => {
+          return caches.open(CACHE_NAME).then(cache => {
+            cache.put(request, response.clone());
+            return response;
+          });
+        });
+      })
+    );
+    return;
+  }
+
+  // Network-first for everything else
   event.respondWith(
-    fetch(event.request, {
-      cache: 'no-store',
-      headers: {
-        'Cache-Control': 'no-cache',
-        'Pragma': 'no-cache'
-      }
-    }).catch(error => {
-      console.error('Fetch error:', error);
-      return new Response('Network error', { status: 503 });
+    fetch(request).catch(() => {
+      return caches.match(request);
     })
   );
 });

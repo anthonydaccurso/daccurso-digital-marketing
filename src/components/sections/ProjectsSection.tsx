@@ -4,96 +4,6 @@ import CaseStudyModal from '../CaseStudyModal';
 import { ArrowUpRight, BookOpen } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 
-<Helmet>
-  <title>My Projects | Web Design & Marketing Portfolio</title>
-  <meta
-    name="description"
-    content="Explore my portfolio of web design, SEO, and digital marketing projects — from Custom Pool Pros to Daccurso Career Studio, Silverback Mobile, and more."
-  />
-  <link rel="canonical" href="https://anthonydaccurso.com/my-projects/" />
-
-  {/* Open Graph */}
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://anthonydaccurso.com/my-projects/" />
-  <meta property="og:title" content="My Projects | Web Design & Marketing Portfolio" />
-  <meta
-    property="og:description"
-    content="Portfolio of projects designed and developed by Anthony Daccurso — including websites, SEO strategies, and branding campaigns."
-  />
-  <meta
-    property="og:image"
-    content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/dcs-ddm-project-box.webp"
-  />
-  <meta property="og:site_name" content="Daccurso Digital Marketing" />
-
-  {/* Twitter */}
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="My Projects | Web Design & Marketing Portfolio" />
-  <meta
-    name="twitter:description"
-    content="Explore my web design, SEO, and marketing projects crafted for businesses, creators, and startups."
-  />
-  <meta
-    name="twitter:image"
-    content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/dcs-ddm-project-box.webp"
-  />
-
-  {/* Structured Data */}
-  <script type="application/ld+json">
-  {`
-  {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "name": "Portfolio Projects",
-    "url": "https://anthonydaccurso.com/my-projects",
-    "description": "Portfolio of web design, SEO, and marketing case studies by Anthony Daccurso.",
-    "itemListElement": [
-      {
-        "@type": "CreativeWork",
-        "position": 1,
-        "name": "Daccurso Career Studio",
-        "url": "https://daccursocareerstudio.com",
-        "image": "https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/dcs-ddm-project-box.webp",
-        "description": "Full-stack website for resume and career coaching services."
-      },
-      {
-        "@type": "CreativeWork",
-        "position": 2,
-        "name": "Custom Pool Pros",
-        "url": "https://custompoolpros.com",
-        "image": "https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/custom-pool-pros.webp",
-        "description": "Digital redesign and SEO optimization for a pool construction company."
-      },
-      {
-        "@type": "CreativeWork",
-        "position": 3,
-        "name": "Silverback Mobile",
-        "url": "https://silverbackmobile.com",
-        "image": "https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/silverback-card.webp",
-        "description": "Redesign and optimization for a mobile financial services platform."
-      },
-      {
-        "@type": "CreativeWork",
-        "position": 4,
-        "name": "Personal Touch Engravings",
-        "url": "https://personaltouchengravingsandphotos.com",
-        "image": "https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/engraving-map.webp",
-        "description": "E-commerce portfolio design and SEO for a custom engraving business."
-      },
-      {
-        "@type": "CreativeWork",
-        "position": 5,
-        "name": "Flextech",
-        "url": "https://flextech.fit",
-        "image": "https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/dumbbell-rack.webp",
-        "description": "Fitness guidance and SEO-driven website with blog and database integration."
-      }
-    ]
-  }
-  `}
-  </script>
-</Helmet>
-
 const projects = [
   {
     title: "Daccurso Career Studio",
@@ -298,6 +208,93 @@ const ProjectCard = memo(({ project, index }) => {
 
 const ProjectsSection = () => (
   <div className="w-full">
+    <Helmet>
+      <title>My Projects | Web Design & Marketing Portfolio</title>
+      <meta
+        name="description"
+        content="Explore my portfolio of web design, SEO, and digital marketing projects — from Custom Pool Pros to Daccurso Career Studio, Silverback Mobile, and more."
+      />
+      <link rel="canonical" href="https://anthonydaccurso.com/my-projects/" />
+
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://anthonydaccurso.com/my-projects/" />
+      <meta property="og:title" content="My Projects | Web Design & Marketing Portfolio" />
+      <meta
+        property="og:description"
+        content="Portfolio of projects designed and developed by Anthony Daccurso — including websites, SEO strategies, and branding campaigns."
+      />
+      <meta
+        property="og:image"
+        content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/dcs-ddm-project-box.webp"
+      />
+      <meta property="og:site_name" content="Daccurso Digital Marketing" />
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="My Projects | Web Design & Marketing Portfolio" />
+      <meta
+        name="twitter:description"
+        content="Explore my web design, SEO, and marketing projects crafted for businesses, creators, and startups."
+      />
+      <meta
+        name="twitter:image"
+        content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/dcs-ddm-project-box.webp"
+      />
+
+      <script type="application/ld+json">
+        {`
+        {
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": "Portfolio Projects",
+          "url": "https://anthonydaccurso.com/my-projects",
+          "description": "Portfolio of web design, SEO, and marketing case studies by Anthony Daccurso.",
+          "itemListElement": [
+            {
+              "@type": "CreativeWork",
+              "position": 1,
+              "name": "Daccurso Career Studio",
+              "url": "https://daccursocareerstudio.com",
+              "image": "https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/dcs-ddm-project-box.webp",
+              "description": "Full-stack website for resume and career coaching services."
+            },
+            {
+              "@type": "CreativeWork",
+              "position": 2,
+              "name": "Custom Pool Pros",
+              "url": "https://custompoolpros.com",
+              "image": "https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/custom-pool-pros.webp",
+              "description": "Digital redesign and SEO optimization for a pool construction company."
+            },
+            {
+              "@type": "CreativeWork",
+              "position": 3,
+              "name": "Silverback Mobile",
+              "url": "https://silverbackmobile.com",
+              "image": "https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/silverback-card.webp",
+              "description": "Redesign and optimization for a mobile financial services platform."
+            },
+            {
+              "@type": "CreativeWork",
+              "position": 4,
+              "name": "Personal Touch Engravings",
+              "url": "https://personaltouchengravingsandphotos.com",
+              "image": "https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/engraving-map.webp",
+              "description": "E-commerce portfolio design and SEO for a custom engraving business."
+            },
+            {
+              "@type": "CreativeWork",
+              "position": 5,
+              "name": "Flextech",
+              "url": "https://flextech.fit",
+              "image": "https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/dumbbell-rack.webp",
+              "description": "Fitness guidance and SEO-driven website with blog and database integration."
+            }
+          ]
+        }
+        `}
+      </script>
+    </Helmet>
+
     <div className="bg-[#1a2f5c]/50 rounded-2xl p-6 sm:p-8 md:p-12 w-full mx-auto">
       <motion.h2
         initial={{ opacity: 0, x: -30 }}

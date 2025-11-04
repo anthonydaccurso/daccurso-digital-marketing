@@ -29,15 +29,32 @@ export default function BlogPost() {
         <title>{post.title} | Daccurso Digital Marketing</title>
         <meta name="description" content={post.excerpt} />
         <link rel="canonical" href={`https://anthonydaccurso.com/blog/${post.slug}`} />
+
+        {/* Open Graph */}
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={post.excerpt} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={`https://anthonydaccurso.com/blog/${post.slug}`} />
+        <meta property="article:published_time" content={post.date} />
+        <meta property="article:author" content="Anthony Daccurso" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={post.title} />
+        <meta name="twitter:description" content={post.excerpt} />
+
+        {/* JSON-LD Structured Data */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "BlogPosting",
             headline: post.title,
             datePublished: post.date,
+            dateModified: post.date,
             author: {
               "@type": "Person",
-              name: "Anthony Daccurso"
+              name: "Anthony Daccurso",
+              url: "https://anthonydaccurso.com"
             },
             publisher: {
               "@type": "Organization",
@@ -48,6 +65,10 @@ export default function BlogPost() {
               }
             },
             description: post.excerpt,
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": `https://anthonydaccurso.com/blog/${post.slug}`
+            },
             url: `https://anthonydaccurso.com/blog/${post.slug}`
           })}
         </script>

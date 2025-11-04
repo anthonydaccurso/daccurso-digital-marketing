@@ -1,5 +1,6 @@
+import React, { useRef, useState } from 'react';
 import { toPng } from 'html-to-image';
-import { useRef, useState } from 'react';
+import CardCanvas from '../CardCanvas';
 
 export default function SignaturePage() {
   const ref = useRef<HTMLDivElement>(null);
@@ -10,7 +11,7 @@ export default function SignaturePage() {
     const dataUrl = await toPng(ref.current, {
       cacheBust: true,
       backgroundColor: 'transparent',
-      pixelRatio: 2, // For retina-quality
+      pixelRatio: 2,
     });
     setImageUrl(dataUrl);
   };
@@ -20,7 +21,6 @@ export default function SignaturePage() {
       <h1 className="text-xl font-semibold">Email Signature Preview</h1>
 
       <div ref={ref}>
-        {/* Your actual card */}
         <div className="scale-100">
           <CardCanvas />
         </div>

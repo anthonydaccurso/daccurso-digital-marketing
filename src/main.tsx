@@ -26,7 +26,9 @@ if (import.meta.env.PROD && 'serviceWorker' in navigator && !isStackBlitz) {
 }
 
 createRoot(document.getElementById('root')!).render(
-  <HelmetProvider>
-    <App />
-  </HelmetProvider>
+  <React.StrictMode>
+    <HelmetProvider>
+      <App />
+    </HelmetProvider>
+  </React.StrictMode>
 );

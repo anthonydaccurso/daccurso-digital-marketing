@@ -3,12 +3,6 @@
   publish = "dist"
   functions = "netlify/functions"
 
-[[plugins]]
-  package = "@netlify/plugin-lighthouse"
-
-[build.environment]
-  NODE_VERSION = "18"
-
 [[headers]]
   for = "/*"
     [headers.values]

@@ -2,41 +2,39 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 
-<Helmet>
-  <title>Anthony Daccurso | Digital Marketing & Web Development</title>
-  <meta
-    name="description"
-    content="I'm Anthony Daccurso, a Digital Marketing & SEO Specialist passionate about web design, performance optimization, and helping businesses grow their digital presence."
-  />
-  <link rel="canonical" href="https://anthonydaccurso.com/" />
-
-  {/* Open Graph */}
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://anthonydaccurso.com/" />
-  <meta property="og:title" content="Anthony Daccurso | Digital Marketing & Web Development" />
-  <meta
-    property="og:description"
-    content="Portfolio of Anthony Daccurso — Digital Marketing & Web Development Specialist helping brands improve SEO, performance, and design impact."
-  />
-  <meta
-    property="og:image"
-    content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp"
-  />
-  <meta property="og:site_name" content="Anthony Daccurso Portfolio" />
-
-  {/* Twitter */}
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Anthony Daccurso | Digital Marketing & Web Development" />
-  <meta
-    name="twitter:description"
-    content="Explore my work in web design, SEO, and marketing strategy — building digital experiences that perform."
-  />
-  <meta
-    name="twitter:image"
-    content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp"
-  />
-
-  <script type="application/ld+json">
+function AboutMeSection() {
+  return (
+    <div className="w-full">
+      <Helmet>
+        <title>Anthony Daccurso | Digital Marketing & Web Development</title>
+        <meta
+          name="description"
+          content="I'm Anthony Daccurso, a Digital Marketing & SEO Specialist passionate about web design, performance optimization, and helping businesses grow their digital presence."
+        />
+        <link rel="canonical" href="https://anthonydaccurso.com/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://anthonydaccurso.com/" />
+        <meta property="og:title" content="Anthony Daccurso | Digital Marketing & Web Development" />
+        <meta
+          property="og:description"
+          content="Portfolio of Anthony Daccurso — Digital Marketing & Web Development Specialist helping brands improve SEO, performance, and design impact."
+        />
+        <meta
+          property="og:image"
+          content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp"
+        />
+        <meta property="og:site_name" content="Anthony Daccurso Portfolio" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Anthony Daccurso | Digital Marketing & Web Development" />
+        <meta
+          name="twitter:description"
+          content="Explore my work in web design, SEO, and marketing strategy — building digital experiences that perform."
+        />
+        <meta
+          name="twitter:image"
+          content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp"
+        />
+        <script type="application/ld+json">
 {`
 {
   "@context": "https://schema.org",
@@ -78,12 +76,8 @@ import { Helmet } from 'react-helmet-async';
   }
 }
 `}
-</script>
-</Helmet>
-
-function AboutMeSection() {
-  return (
-    <div className="w-full">
+        </script>
+      </Helmet>
       <div className="bg-[#1a2f5c]/50 rounded-2xl p-6 sm:p-8 md:p-12 w-full mx-auto">
         <motion.h2 
           initial={{ opacity: 0, x: -30 }}

@@ -4,42 +4,43 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import posts from '../../posts/postsData';
 
-<Helmet>
-  <title>Blog | Insights on Web Design, SEO & Marketing</title>
-  <meta
-    name="description"
-    content="Articles and tutorials by Anthony Daccurso on web design, SEO, digital marketing, and tech. Learn strategies and insights for modern digital growth."
-  />
-  <link rel="canonical" href="https://anthonydaccurso.com/blog/" />
-
-  {/* Open Graph */}
-  <meta property="og:type" content="blog" />
-  <meta property="og:url" content="https://anthonydaccurso.com/blog/" />
-  <meta property="og:title" content="Blog | Insights on Web Design, SEO & Marketing" />
-  <meta
-    property="og:description"
-    content="Read guides, tutorials, and insights from Anthony Daccurso on SEO, marketing, and web development trends."
-  />
-  <meta
-    property="og:image"
-    content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-apple-touch-icon.png"
-  />
-  <meta property="og:site_name" content="Daccurso Digital Marketing" />
-
-  {/* Twitter */}
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Blog | Insights on Web Design, SEO & Marketing" />
-  <meta
-    name="twitter:description"
-    content="Web design and marketing tutorials by Anthony Daccurso — practical strategies for SEO and digital performance."
-  />
-  <meta
-    name="twitter:image"
-    content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-apple-touch-icon.png"
-  />
-
-  {/* Structured Data */}
-  <script type="application/ld+json">
+function BlogSection() {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="bg-[#1a2f5c]/50 rounded-2xl p-6 sm:p-8 md:p-12 w-full mx-auto"
+    >
+      <Helmet>
+        <title>Blog | Insights on Web Design, SEO & Marketing</title>
+        <meta
+          name="description"
+          content="Articles and tutorials by Anthony Daccurso on web design, SEO, digital marketing, and tech. Learn strategies and insights for modern digital growth."
+        />
+        <link rel="canonical" href="https://anthonydaccurso.com/blog/" />
+        <meta property="og:type" content="blog" />
+        <meta property="og:url" content="https://anthonydaccurso.com/blog/" />
+        <meta property="og:title" content="Blog | Insights on Web Design, SEO & Marketing" />
+        <meta
+          property="og:description"
+          content="Read guides, tutorials, and insights from Anthony Daccurso on SEO, marketing, and web development trends."
+        />
+        <meta
+          property="og:image"
+          content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-apple-touch-icon.png"
+        />
+        <meta property="og:site_name" content="Daccurso Digital Marketing" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Blog | Insights on Web Design, SEO & Marketing" />
+        <meta
+          name="twitter:description"
+          content="Web design and marketing tutorials by Anthony Daccurso — practical strategies for SEO and digital performance."
+        />
+        <meta
+          name="twitter:image"
+          content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-apple-touch-icon.png"
+        />
+        <script type="application/ld+json">
   {`
   {
     "@context": "https://schema.org",
@@ -63,17 +64,8 @@ import posts from '../../posts/postsData';
     "inLanguage": "en-US"
   }
   `}
-  </script>
-</Helmet>
-
-function BlogSection() {
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="bg-[#1a2f5c]/50 rounded-2xl p-6 sm:p-8 md:p-12 w-full mx-auto"
-    >
+        </script>
+      </Helmet>
       <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white via-blue-200 to-blue-400 bg-clip-text text-transparent mb-8">
         Blog
       </h2>

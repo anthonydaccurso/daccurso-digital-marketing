@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { imagetools } from 'vite-imagetools';
 import compression from 'vite-plugin-compression';
+import bundlePrefetch from 'vite-plugin-bundle-prefetch';
 
 export default defineConfig({
   plugins: [
@@ -31,7 +32,8 @@ export default defineConfig({
     compression({
       algorithm: 'gzip',
       ext: '.gz'
-    })
+    }),
+    bundlePrefetch()
   ],
   build: {
     outDir: 'dist',

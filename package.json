@@ -44,6 +44,7 @@
     "typescript-eslint": "8.19.1",
     "vite": "5.4.21",
     "vite-imagetools": "7.0.4",
+    "vite-plugin-bundle-prefetch": "^0.0.4",
     "vite-plugin-compression": "^0.5.1"
   },
   "sideEffects": false

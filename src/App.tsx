@@ -8,6 +8,7 @@ import CardCanvas from './components/CardCanvas';
 import AskAntChat from './components/AskAntChat';
 import { askAnt } from './pages/api/ask-ant.ts';
 import AboutMeSection from './components/sections/AboutMeSection';
+import MyProcessSection from './components/sections/MyProcessSection';
 import ProjectsSection from './components/sections/ProjectsSection';
 import LiveToolsSection from './components/sections/LiveToolsSection';
 import ServicesSection from './components/sections/ServicesSection';

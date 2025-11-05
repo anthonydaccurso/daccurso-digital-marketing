@@ -19,19 +19,25 @@ const fadeUp = (delay = 0) => ({
   viewport: { once: true },
 });
 
-const Connector = ({ orientation = "horizontal" }) => (
+const Connector = ({
+  orientation = "horizontal",
+  className = "",
+}: {
+  orientation?: "horizontal" | "vertical";
+  className?: string;
+}) => (
   <div
-    className={
+    className={`absolute bg-blue-300/40 ${
       orientation === "horizontal"
-        ? "absolute top-1/2 -translate-y-1/2 right-0 w-8 h-px bg-blue-300/40"
-        : "absolute left-1/2 -translate-x-1/2 bottom-0 h-4 w-px bg-blue-300/40"
-    }
+        ? "top-1/2 right-[-1px] h-px w-6 -translate-y-1/2"
+        : "bottom-[-1px] left-1/2 w-px h-6 -translate-x-1/2"
+    } ${className}`}
   />
 );
 
 const MyProcessSection: React.FC = () => {
   return (
-    <motion.div
+    <motion.section
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       className="bg-[#1a2f5c]/50 rounded-2xl p-6 sm:p-8 md:p-12 w-full mx-auto text-white relative overflow-hidden"
@@ -46,7 +52,7 @@ const MyProcessSection: React.FC = () => {
         My Process
       </motion.h2>
 
-      <p className="text-center text-gray-300 max-w-3xl mx-auto mb-8">
+      <p className="text-center text-gray-300 max-w-3xl mx-auto mb-10">
         Every collaboration begins with discovery — understanding your goals,
         market, and brand identity. From there, projects branch into two
         specialized paths:{" "}
@@ -69,7 +75,7 @@ const MyProcessSection: React.FC = () => {
           research, UX trends, and competitor analysis before any design work
           begins.
         </p>
-        <div className="absolute left-1/2 -bottom-4 -translate-x-1/2 h-4 w-px bg-blue-300/40" />
+        <Connector orientation="vertical" />
       </motion.div>
 
       {/* Research / Strategy / Planning */}
@@ -100,17 +106,22 @@ const MyProcessSection: React.FC = () => {
             <h4 className="text-lg font-semibold mb-2">{item.title}</h4>
             <p className="text-gray-300 text-sm">{item.text}</p>
             {i < 2 && <Connector orientation="horizontal" />}
+            {i === 2 && (
+              <>
+                {/* Central vertical connector */}
+                <Connector orientation="vertical" />
+                {/* Y-split branches */}
+                <div className="absolute bottom-[-24px] left-1/2 -translate-x-1/2 w-px h-8 bg-blue-300/40" />
+                <div className="absolute bottom-[-16px] left-1/2 -translate-x-[96px] rotate-[-35deg] w-[100px] h-px bg-blue-300/40 origin-right" />
+                <div className="absolute bottom-[-16px] left-1/2 translate-x-[96px] rotate-[35deg] w-[100px] h-px bg-blue-300/40 origin-left" />
+              </>
+            )}
           </motion.div>
         ))}
       </div>
 
-      {/* Vertical connector to split paths */}
-      <div className="flex justify-center mb-6">
-        <div className="w-px h-4 bg-blue-300/40" />
-      </div>
-
       {/* Split Paths */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 max-w-6xl mx-auto">
         {/* WordPress Path */}
         <div className="flex flex-col items-center gap-6 relative">
           <h3 className="text-3xl font-semibold text-white mb-2">
@@ -193,7 +204,7 @@ const MyProcessSection: React.FC = () => {
         and scalability — supported by the right stack and ongoing optimization.
       </p>
 
-      {/* Stacks */}
+      {/* Build Stacks */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
         {[
           {
@@ -232,7 +243,7 @@ const MyProcessSection: React.FC = () => {
         ))}
       </div>
 
-      {/* Optimization Flow */}
+      {/* Optimization Row */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-4">
         {[
           {
@@ -268,7 +279,7 @@ const MyProcessSection: React.FC = () => {
         “Every pixel and line of code serves a purpose — built with precision,
         measured by performance.”
       </p>
-    </motion.div>
+    </motion.section>
   );
 };
 

@@ -79,14 +79,16 @@ function AboutMeSection() {
         </script>
       </Helmet>
       <div className="bg-[#1a2f5c]/50 rounded-2xl p-6 sm:p-8 md:p-12 w-full mx-auto">
-        <motion.h2 
+        {/* Mobile H1 */}
+        <motion.h1 
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
           className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white via-blue-200 to-blue-400 bg-clip-text text-transparent mb-6 md:hidden"
         >
           About Me
-        </motion.h2>
+        </motion.h1>
+
         <div className="flex flex-col md:flex-row gap-5 md:gap-12 items-center">
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
@@ -114,15 +116,17 @@ function AboutMeSection() {
               className="w-full h-full object-cover brightness-40"
             />
           </motion.div>
+
           <motion.div 
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.28 }}
             className="w-full md:w-2/3 space-y-6"
           >
-            <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white via-blue-200 to-blue-400 bg-clip-text text-transparent mb-6 hidden md:block">
+            {/* Desktop H1 */}
+            <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white via-blue-200 to-blue-400 bg-clip-text text-transparent mb-6 hidden md:block">
               About Me
-            </h2>
+            </h1>
             <p className="text-lg md:text-xl leading-relaxed text-gray-300">
               I'm Anthony Daccurso, a Digital Marketing & SEO Specialist at Custom Pool Pros, and a graduate from TCNJ with a B.S. in Marketing and a minor in Information Systems & Technology. I specialize in digital marketing and web development, where I have taken on many relevant and important tasks at Custom Pool Pros. 
             </p>

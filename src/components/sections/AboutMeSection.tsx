@@ -81,7 +81,6 @@ function AboutMeSection() {
       </Helmet>
 
       <section className="bg-[#1a2f5c]/50 rounded-2xl p-6 sm:p-8 md:p-12 w-full mx-auto">
-        {/* ✅ Unified H1 visible on all screens */}
         <motion.h1 
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}

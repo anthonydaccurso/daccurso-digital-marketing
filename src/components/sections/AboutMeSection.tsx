@@ -79,22 +79,13 @@ function AboutMeSection() {
 `}
         </script>
       </Helmet>
-      <div className="bg-[#1a2f5c]/50 rounded-2xl p-6 sm:p-8 md:p-12 w-full mx-auto">
-        {/* Unified single H1 (keeps all positioning exactly the same) */}
-        <motion.h1
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-3xl md:text-4xl font-bold text-white mb-6"
-        >
-          About Me
-        </motion.h1>
 
+      <div className="bg-[#1a2f5c]/50 rounded-2xl p-6 sm:p-8 md:p-12 w-full mx-auto">
         <div className="flex flex-col md:flex-row gap-5 md:gap-12 items-center">
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             className="w-full md:w-1/3 aspect-square rounded-xl overflow-hidden shadow-2xl"
           >
             <img
@@ -118,6 +109,16 @@ function AboutMeSection() {
             transition={{ delay: 0.28 }}
             className="w-full md:w-2/3 space-y-6"
           >
+            {/* ✅ H1 moved inside text container for perfect alignment */}
+            <motion.h1 
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-3xl md:text-4xl font-bold text-white mb-6"
+            >
+              About Me
+            </motion.h1>
+
             <p className="text-lg md:text-xl leading-relaxed text-gray-300">
               I'm Anthony Daccurso, a Digital Marketing & SEO Specialist at Custom Pool Pros, and a graduate from TCNJ with a B.S. in Marketing and a minor in Information Systems & Technology. I specialize in digital marketing and web development, where I have taken on many relevant and important tasks at Custom Pool Pros. 
             </p>

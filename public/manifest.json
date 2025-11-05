@@ -1,14 +1,21 @@
 {
-  "name": "Daccurso Digital Marketing | Digital Marketing Services",
-  "short_name": "DDM",
-  "description": "Showcasing my projects and services in web development, digital marketing, and creating engaging, SEO-driven blog posts using keyword research.",
+  "name": "Daccurso Career Studio | Resume & Career Coaching",
+  "short_name": "DCS",
+  "description": "Professional resume writing, interview coaching, and career guidance for students and young professionals. Stand out in your job search with expert advice from a young professional.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#0d2242",
-  "theme_color": "#0d2242",
   "orientation": "portrait",
-  "categories": ["business", "web development", "digital marketing", "web design", "content creation"],
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "categories": [
+    "business",
+    "career",
+    "education",
+    "resume writing",
+    "coaching",
+    "interview preparation"
+  ],
   "icons": [
     {
       "src": "favicon.svg",
@@ -17,49 +24,69 @@
       "purpose": "any maskable"
     },
     {
-      "src": "https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-apple-touch-icon.png",
+      "src": "https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/dcs-apple-touch-icon.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-web-app-manifest-512x512.png",
+      "src": "https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/dcs-web-app-manifest-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-web-app-manifest-192x192.png",
+      "src": "https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/dcs-web-app-manifest-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-favicon-96x96.png",
+      "src": "https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/dcs-favicon-96x96.png",
       "sizes": "96x96",
       "type": "image/png"
     }
   ],
   "shortcuts": [
     {
-      "name": "My Projects",
-      "url": "/my-projects",
-      "description": "View my projects"
+      "name": "Dashboard",
+      "url": "/dashboard",
+      "description": "Return to your personalized Daccurso Career Studio dashboard"
     },
     {
-      "name": "My Services",
-      "url": "/my-services",
-      "description": "Browse my services"
+      "name": "Resume Services",
+      "url": "/resume-services",
+      "description": "Explore professional resume writing and editing services"
     },
     {
-      "name": "My Skills",
-      "url": "/my-skills",
-      "description": "See my skills"
+      "name": "Interview Guidance",
+      "url": "/interview-guidance",
+      "description": "Access mock interviews and personalized coaching sessions"
+    },
+    {
+      "name": "Career Advice",
+      "url": "/career-advice",
+      "description": "Read career development tips, job search insights, and guidance"
+    },
+    {
+      "name": "Pricing",
+      "url": "/pricing",
+      "description": "View package options and service pricing details"
+    },
+    {
+      "name": "Blog",
+      "url": "/blog",
+      "description": "Browse career insights, tutorials, and professional articles"
+    },
+    {
+      "name": "About Me",
+      "url": "/about-me",
+      "description": "Learn more about Anthony Daccurso and his professional journey"
     },
     {
       "name": "Contact Me",
-      "url": "/contact-me",
-      "description": "Get in touch"
+      "url": "/contact",
+      "description": "Get in touch with Anthony Daccurso for career services"
     }
   ],
   "related_applications": [],

@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 import {
   Lightbulb,
   Search,
@@ -10,7 +10,7 @@ import {
   Rocket,
   Database,
   Gauge,
-} from 'lucide-react';
+} from "lucide-react";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 40 },
@@ -49,7 +49,7 @@ const MyProcessSection: React.FC = () => {
       {/* Discover */}
       <motion.div
         {...fadeUp()}
-        className="relative bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md text-center mb-12"
+        className="relative bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md text-center mb-10"
       >
         <Lightbulb className="w-8 h-8 text-blue-300 mx-auto mb-3" />
         <h3 className="text-2xl font-semibold mb-2">Discover</h3>
@@ -59,11 +59,11 @@ const MyProcessSection: React.FC = () => {
           research, UX trends, and competitor analysis before any design work
           begins.
         </p>
-        <div className="absolute left-1/2 -bottom-8 -translate-x-1/2 h-8 w-px bg-blue-300/40" />
+        <div className="absolute left-1/2 -bottom-6 -translate-x-1/2 h-6 w-px bg-blue-300/40" />
       </motion.div>
 
       {/* Research / Strategy / Planning */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 relative mb-16">
+      <div className="relative flex flex-col sm:flex-row justify-between gap-6 mb-10">
         {[
           {
             icon: <Search className="w-6 h-6 text-blue-300 mb-2" />,
@@ -84,31 +84,32 @@ const MyProcessSection: React.FC = () => {
           <motion.div
             key={i}
             {...fadeUp(i * 0.1)}
-            className="relative bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md text-center"
+            className="relative flex-1 bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md text-center"
           >
             {item.icon}
             <h4 className="text-lg font-semibold mb-2">{item.title}</h4>
             <p className="text-gray-300 text-sm">{item.text}</p>
-            {/* connector line */}
+
+            {/* seamless connectors */}
             {i < 2 && (
-              <div className="absolute right-[-0.75rem] top-1/2 transform -translate-y-1/2 h-px w-6 bg-blue-300/40 hidden sm:block" />
+              <div className="absolute top-1/2 right-0 transform -translate-y-1/2 w-[calc(100%+1px)] sm:w-8 h-px bg-blue-300/40 sm:translate-x-1/2" />
             )}
           </motion.div>
         ))}
       </div>
 
-      {/* Split connector line */}
-      <div className="flex justify-center mb-8">
-        <div className="w-px h-8 bg-blue-300/40" />
+      {/* Vertical connector to split */}
+      <div className="flex justify-center mb-6">
+        <div className="w-px h-6 bg-blue-300/40" />
       </div>
 
       {/* Split Paths */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 max-w-6xl mx-auto">
         {/* WordPress Path */}
         <div className="flex flex-col items-center gap-8 relative">
-          <div className="text-sm font-semibold text-white mb-1">
+          <h3 className="text-2xl font-semibold text-white mb-2">
             WordPress Path
-          </div>
+          </h3>
           {[
             {
               icon: <Layout className="w-6 h-6 text-blue-300 mb-2" />,
@@ -135,7 +136,7 @@ const MyProcessSection: React.FC = () => {
               <h4 className="text-lg font-semibold mb-2">{step.title}</h4>
               <p className="text-gray-300 text-sm">{step.text}</p>
               {i < 2 && (
-                <div className="absolute left-1/2 -bottom-8 -translate-x-1/2 h-8 w-px bg-blue-300/40" />
+                <div className="absolute left-1/2 -bottom-6 -translate-x-1/2 h-6 w-px bg-blue-300/40" />
               )}
             </motion.div>
           ))}
@@ -143,9 +144,9 @@ const MyProcessSection: React.FC = () => {
 
         {/* Custom Path */}
         <div className="flex flex-col items-center gap-8 relative">
-          <div className="text-sm font-semibold text-white mb-1">
+          <h3 className="text-2xl font-semibold text-white mb-2">
             Custom Path
-          </div>
+          </h3>
           {[
             {
               icon: <Layout className="w-6 h-6 text-blue-300 mb-2" />,
@@ -172,7 +173,7 @@ const MyProcessSection: React.FC = () => {
               <h4 className="text-lg font-semibold mb-2">{step.title}</h4>
               <p className="text-gray-300 text-sm">{step.text}</p>
               {i < 2 && (
-                <div className="absolute left-1/2 -bottom-8 -translate-x-1/2 h-8 w-px bg-blue-300/40" />
+                <div className="absolute left-1/2 -bottom-6 -translate-x-1/2 h-6 w-px bg-blue-300/40" />
               )}
             </motion.div>
           ))}
@@ -192,7 +193,6 @@ const MyProcessSection: React.FC = () => {
         and scalability — supported by the right stack and ongoing optimization.
       </p>
 
-      {/* Build Stacks */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
         {[
           {
@@ -217,7 +217,7 @@ const MyProcessSection: React.FC = () => {
           <motion.div
             key={i}
             {...fadeUp(i * 0.1)}
-            className="relative bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md"
+            className="bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md"
           >
             <h3 className="text-xl font-semibold text-blue-300 mb-3">
               {stack.title}
@@ -231,7 +231,6 @@ const MyProcessSection: React.FC = () => {
         ))}
       </div>
 
-      {/* Supporting Boxes */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
         {[
           {
@@ -259,7 +258,7 @@ const MyProcessSection: React.FC = () => {
             <h4 className="font-semibold text-blue-300 mb-1">{item.title}</h4>
             <p className="text-gray-300 text-sm">{item.text}</p>
             {i < 2 && (
-              <div className="absolute right-[-0.75rem] top-1/2 transform -translate-y-1/2 h-px w-6 bg-blue-300/40 hidden sm:block" />
+              <div className="absolute top-1/2 right-0 transform -translate-y-1/2 w-8 h-px bg-blue-300/40 hidden sm:block" />
             )}
           </motion.div>
         ))}

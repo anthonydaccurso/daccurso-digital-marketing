@@ -19,20 +19,21 @@ const fadeUp = (delay = 0) => ({
   viewport: { once: true },
 });
 
-const Connector = ({
-  orientation = "horizontal",
-  className = "",
-}: {
-  orientation?: "horizontal" | "vertical";
-  className?: string;
-}) => (
-  <div
-    className={`absolute bg-blue-300/40 ${
-      orientation === "horizontal"
-        ? "top-1/2 right-[-1px] h-px w-6 -translate-y-1/2"
-        : "bottom-[-1px] left-1/2 w-px h-6 -translate-x-1/2"
-    } ${className}`}
-  />
+// NEW precise connector components
+const HLine = () => (
+  <div className="h-px w-full bg-blue-300/40 self-center"></div>
+);
+
+const VLine = () => (
+  <div className="w-px h-6 bg-blue-300/40 justify-self-center"></div>
+);
+
+const YSplit = () => (
+  <div className="relative w-full h-10 flex justify-center items-start">
+    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-4 bg-blue-300/40" />
+    <div className="absolute bottom-0 left-1/2 -translate-x-[2px] rotate-[-35deg] origin-top-left w-[80px] h-px bg-blue-300/40" />
+    <div className="absolute bottom-0 left-1/2 translate-x-[2px] rotate-[35deg] origin-top-right w-[80px] h-px bg-blue-300/40" />
+  </div>
 );
 
 const MyProcessSection: React.FC = () => {
@@ -65,7 +66,7 @@ const MyProcessSection: React.FC = () => {
       {/* Discover */}
       <motion.div
         {...fadeUp()}
-        className="relative bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md text-center mb-8"
+        className="relative bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md text-center mb-6"
       >
         <Lightbulb className="w-8 h-8 text-blue-300 mx-auto mb-3" />
         <h3 className="text-3xl font-semibold mb-2">Discover</h3>
@@ -75,11 +76,15 @@ const MyProcessSection: React.FC = () => {
           research, UX trends, and competitor analysis before any design work
           begins.
         </p>
-        <Connector orientation="vertical" />
       </motion.div>
 
+      {/* Connector below Discover */}
+      <div className="flex justify-center mb-6">
+        <VLine />
+      </div>
+
       {/* Research / Strategy / Planning */}
-      <div className="relative flex flex-col sm:flex-row justify-between gap-6 mb-8">
+      <div className="grid grid-cols-3 items-stretch gap-6 mb-4">
         {[
           {
             icon: <Search className="w-6 h-6 text-blue-300 mb-2" />,
@@ -100,24 +105,27 @@ const MyProcessSection: React.FC = () => {
           <motion.div
             key={i}
             {...fadeUp(i * 0.1)}
-            className="relative flex-1 bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md text-center"
+            className="bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md text-center flex flex-col justify-center"
           >
             {item.icon}
             <h4 className="text-lg font-semibold mb-2">{item.title}</h4>
             <p className="text-gray-300 text-sm">{item.text}</p>
-            {i < 2 && <Connector orientation="horizontal" />}
-            {i === 2 && (
-              <>
-                {/* Central vertical connector */}
-                <Connector orientation="vertical" />
-                {/* Y-split branches */}
-                <div className="absolute bottom-[-24px] left-1/2 -translate-x-1/2 w-px h-8 bg-blue-300/40" />
-                <div className="absolute bottom-[-16px] left-1/2 -translate-x-[96px] rotate-[-35deg] w-[100px] h-px bg-blue-300/40 origin-right" />
-                <div className="absolute bottom-[-16px] left-1/2 translate-x-[96px] rotate-[35deg] w-[100px] h-px bg-blue-300/40 origin-left" />
-              </>
-            )}
           </motion.div>
         ))}
+      </div>
+
+      {/* Horizontal connectors between R/S/P */}
+      <div className="grid grid-cols-5 items-center mb-8">
+        <div></div>
+        <HLine />
+        <div></div>
+        <HLine />
+        <div></div>
+      </div>
+
+      {/* Connector below Planning */}
+      <div className="flex justify-center items-center mb-10">
+        <YSplit />
       </div>
 
       {/* Split Paths */}
@@ -147,12 +155,16 @@ const MyProcessSection: React.FC = () => {
             <motion.div
               key={i}
               {...fadeUp(i * 0.1)}
-              className="relative bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md text-center w-full"
+              className="bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md text-center w-full"
             >
               {step.icon}
               <h4 className="text-lg font-semibold mb-2">{step.title}</h4>
               <p className="text-gray-300 text-sm">{step.text}</p>
-              {i < 2 && <Connector orientation="vertical" />}
+              {i < 2 && (
+                <div className="flex justify-center my-2">
+                  <VLine />
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
@@ -180,12 +192,16 @@ const MyProcessSection: React.FC = () => {
             <motion.div
               key={i}
               {...fadeUp(i * 0.1)}
-              className="relative bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md text-center w-full"
+              className="bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md text-center w-full"
             >
               {step.icon}
               <h4 className="text-lg font-semibold mb-2">{step.title}</h4>
               <p className="text-gray-300 text-sm">{step.text}</p>
-              {i < 2 && <Connector orientation="vertical" />}
+              {i < 2 && (
+                <div className="flex justify-center my-2">
+                  <VLine />
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
@@ -244,7 +260,7 @@ const MyProcessSection: React.FC = () => {
       </div>
 
       {/* Optimization Row */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-4">
+      <div className="grid grid-cols-3 items-stretch gap-6 mb-4">
         {[
           {
             icon: <Database className="w-6 h-6 text-blue-300 mb-2" />,
@@ -265,14 +281,22 @@ const MyProcessSection: React.FC = () => {
           <motion.div
             key={i}
             {...fadeUp(i * 0.1)}
-            className="relative bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md text-center"
+            className="bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md text-center flex flex-col justify-center"
           >
             {item.icon}
             <h4 className="font-semibold text-blue-300 mb-1">{item.title}</h4>
             <p className="text-gray-300 text-sm">{item.text}</p>
-            {i < 2 && <Connector orientation="horizontal" />}
           </motion.div>
         ))}
+      </div>
+
+      {/* Horizontal connectors for final row */}
+      <div className="grid grid-cols-5 items-center">
+        <div></div>
+        <HLine />
+        <div></div>
+        <HLine />
+        <div></div>
       </div>
 
       <p className="text-center text-gray-300 mt-10 italic">

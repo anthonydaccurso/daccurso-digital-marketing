@@ -12,6 +12,7 @@ import {
   Gauge,
 } from "lucide-react";
 
+/** shared fade-up used across your site */
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 40 },
   whileInView: { opacity: 1, y: 0 },
@@ -19,20 +20,18 @@ const fadeUp = (delay = 0) => ({
   viewport: { once: true },
 });
 
-// NEW precise connector components
-const HLine = () => (
-  <div className="h-px w-full bg-blue-300/40 self-center"></div>
+/** perfectly centered, grid-safe connectors (no overlap, no float) */
+const HLine = () => <div className="h-px w-full bg-blue-300/40" />;
+const VLine = ({ h = 16 }: { h?: number }) => (
+  <div style={{ height: h }} className="w-px bg-blue-300/40" />
 );
-
-const VLine = () => (
-  <div className="w-px h-6 bg-blue-300/40 justify-self-center"></div>
-);
-
 const YSplit = () => (
-  <div className="relative w-full h-10 flex justify-center items-start">
-    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-4 bg-blue-300/40" />
-    <div className="absolute bottom-0 left-1/2 -translate-x-[2px] rotate-[-35deg] origin-top-left w-[80px] h-px bg-blue-300/40" />
-    <div className="absolute bottom-0 left-1/2 translate-x-[2px] rotate-[35deg] origin-top-right w-[80px] h-px bg-blue-300/40" />
+  <div className="relative w-full h-10">
+    {/* stem */}
+    <div className="absolute left-1/2 top-0 -translate-x-1/2 w-px h-4 bg-blue-300/40" />
+    {/* branches */}
+    <div className="absolute left-1/2 bottom-0 -translate-x-[2px] origin-top-left rotate-[-33deg] h-px w-[92px] bg-blue-300/40" />
+    <div className="absolute left-1/2 bottom-0 translate-x-[2px] origin-top-right rotate-[33deg] h-px w-[92px] bg-blue-300/40" />
   </div>
 );
 
@@ -41,9 +40,11 @@ const MyProcessSection: React.FC = () => {
     <motion.section
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="bg-[#1a2f5c]/50 rounded-2xl p-6 sm:p-8 md:p-12 w-full mx-auto text-white relative overflow-hidden"
+      className="bg-[#1a2f5c]/50 rounded-2xl p-6 sm:p-8 md:p-12 w-full mx-auto text-white"
     >
+      {/* ------------------------------------------------------------------ */}
       {/* Header */}
+      {/* ------------------------------------------------------------------ */}
       <motion.h2
         initial={{ opacity: 0, x: -30 }}
         animate={{ opacity: 1, x: 0 }}
@@ -53,38 +54,39 @@ const MyProcessSection: React.FC = () => {
         My Process
       </motion.h2>
 
-      <p className="text-center text-gray-300 max-w-3xl mx-auto mb-10">
+      <p className="text-center text-gray-300 max-w-3xl mx-auto mb-8">
         Every collaboration begins with discovery — understanding your goals,
         market, and brand identity. From there, projects branch into two
-        specialized paths:{" "}
-        <span className="text-blue-300 font-semibold">WordPress</span> or{" "}
-        <span className="text-blue-300 font-semibold">Custom Development</span>.
-        Each follows a refined design → develop → deploy cycle focused on
-        clarity, performance, and longevity.
+        specialized paths: <span className="text-blue-300 font-semibold">WordPress</span> or{" "}
+        <span className="text-blue-300 font-semibold">Custom Development</span>. Each follows a
+        refined design → develop → deploy cycle focused on clarity, performance, and longevity.
       </p>
 
+      {/* ------------------------------------------------------------------ */}
       {/* Discover */}
+      {/* ------------------------------------------------------------------ */}
       <motion.div
         {...fadeUp()}
-        className="relative bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md text-center mb-6"
+        className="bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md text-center"
       >
         <Lightbulb className="w-8 h-8 text-blue-300 mx-auto mb-3" />
         <h3 className="text-3xl font-semibold mb-2">Discover</h3>
         <p className="text-gray-300 max-w-2xl mx-auto">
-          Discovery is about precision — identifying your audience, refining
-          goals, and defining a clear creative direction. I dive into market
-          research, UX trends, and competitor analysis before any design work
-          begins.
+          Discovery is about precision — identifying your audience, refining goals, and defining a
+          clear creative direction. I dive into market research, UX trends, and competitor analysis
+          before any design work begins.
         </p>
       </motion.div>
 
-      {/* Connector below Discover */}
-      <div className="flex justify-center mb-6">
-        <VLine />
+      {/* vertical connector below Discover */}
+      <div className="flex justify-center my-6">
+        <VLine h={20} />
       </div>
 
+      {/* ------------------------------------------------------------------ */}
       {/* Research / Strategy / Planning */}
-      <div className="grid grid-cols-3 items-stretch gap-6 mb-4">
+      {/* ------------------------------------------------------------------ */}
+      <div className="grid grid-cols-3 gap-6 items-stretch">
         {[
           {
             icon: <Search className="w-6 h-6 text-blue-300 mb-2" />,
@@ -101,113 +103,141 @@ const MyProcessSection: React.FC = () => {
             title: "Planning",
             text: "Define deliverables, milestones, and technical stack for a seamless workflow before execution.",
           },
-        ].map((item, i) => (
+        ].map((b, i) => (
           <motion.div
-            key={i}
-            {...fadeUp(i * 0.1)}
-            className="bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md text-center flex flex-col justify-center"
+            key={b.title}
+            {...fadeUp(i * 0.08)}
+            className="bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md text-center"
           >
-            {item.icon}
-            <h4 className="text-lg font-semibold mb-2">{item.title}</h4>
-            <p className="text-gray-300 text-sm">{item.text}</p>
+            {b.icon}
+            <h4 className="text-lg font-semibold mb-2">{b.title}</h4>
+            <p className="text-gray-300 text-sm">{b.text}</p>
           </motion.div>
         ))}
       </div>
 
-      {/* Horizontal connectors between R/S/P */}
-      <div className="grid grid-cols-5 items-center mb-8">
-        <div></div>
+      {/* horizontal connectors strictly BETWEEN the 3 boxes */}
+      <div className="grid grid-cols-5 items-center my-6">
+        <div />
         <HLine />
-        <div></div>
+        <div />
         <HLine />
-        <div></div>
+        <div />
       </div>
 
-      {/* Connector below Planning */}
-      <div className="flex justify-center items-center mb-10">
+      {/* Y split from Planning to two columns */}
+      <div className="flex justify-center mb-8">
         <YSplit />
       </div>
 
+      {/* ------------------------------------------------------------------ */}
       {/* Split Paths */}
+      {/* ------------------------------------------------------------------ */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 max-w-6xl mx-auto">
-        {/* WordPress Path */}
-        <div className="flex flex-col items-center gap-6 relative">
-          <h3 className="text-3xl font-semibold text-white mb-2">
-            WordPress Path
-          </h3>
-          {[
-            {
-              icon: <Layout className="w-6 h-6 text-blue-300 mb-2" />,
-              title: "Design",
-              text: "Design directly within WordPress or Figma using Elementor and custom CSS for responsive layouts. Each section is structured for performance and SEO readability.",
-            },
-            {
-              icon: <Code className="w-6 h-6 text-blue-300 mb-2" />,
-              title: "Develop",
-              text: "Implement dynamic templates, schema markup, and lightweight PHP functions. Every feature focuses on maintainability and loading speed.",
-            },
-            {
-              icon: <Rocket className="w-6 h-6 text-blue-300 mb-2" />,
-              title: "Deploy & Refine",
-              text: "Launch through WP Engine or Namecheap with Cloudflare CDN. Tune caching, optimize media, and validate structured data post-launch.",
-            },
-          ].map((step, i) => (
-            <motion.div
-              key={i}
-              {...fadeUp(i * 0.1)}
-              className="bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md text-center w-full"
-            >
-              {step.icon}
-              <h4 className="text-lg font-semibold mb-2">{step.title}</h4>
-              <p className="text-gray-300 text-sm">{step.text}</p>
-              {i < 2 && (
-                <div className="flex justify-center my-2">
-                  <VLine />
-                </div>
-              )}
-            </motion.div>
-          ))}
+        {/* WordPress */}
+        <div className="flex flex-col items-center gap-6">
+          <h3 className="text-3xl font-semibold text-white">WordPress Path</h3>
+
+          {/* WP: Design */}
+          <motion.div
+            {...fadeUp(0)}
+            className="bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md text-center w-full"
+          >
+            <Layout className="w-6 h-6 text-blue-300 mb-2" />
+            <h4 className="text-lg font-semibold mb-2">Design</h4>
+            <p className="text-gray-300 text-sm">
+              Design directly within WordPress or Figma using Elementor and custom CSS for responsive
+              layouts. Each section is structured for performance and SEO readability.
+            </p>
+          </motion.div>
+
+          {/* vertical connector */}
+          <VLine />
+
+          {/* WP: Develop */}
+          <motion.div
+            {...fadeUp(0.06)}
+            className="bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md text-center w-full"
+          >
+            <Code className="w-6 h-6 text-blue-300 mb-2" />
+            <h4 className="text-lg font-semibold mb-2">Develop</h4>
+            <p className="text-gray-300 text-sm">
+              Implement dynamic templates, schema markup, and lightweight PHP functions. Every
+              feature focuses on maintainability and loading speed.
+            </p>
+          </motion.div>
+
+          {/* vertical connector */}
+          <VLine />
+
+          {/* WP: Deploy */}
+          <motion.div
+            {...fadeUp(0.12)}
+            className="bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md text-center w-full"
+          >
+            <Rocket className="w-6 h-6 text-blue-300 mb-2" />
+            <h4 className="text-lg font-semibold mb-2">Deploy & Refine</h4>
+            <p className="text-gray-300 text-sm">
+              Launch through WP Engine or Namecheap with Cloudflare CDN. Tune caching, optimize
+              media, and validate structured data post-launch.
+            </p>
+          </motion.div>
         </div>
 
-        {/* Custom Path */}
-        <div className="flex flex-col items-center gap-6 relative">
-          <h3 className="text-3xl font-semibold text-white mb-2">Custom Path</h3>
-          {[
-            {
-              icon: <Layout className="w-6 h-6 text-blue-300 mb-2" />,
-              title: "Design",
-              text: "Create detailed wireframes and interactive prototypes in Figma before translating them to Tailwind + Framer Motion components.",
-            },
-            {
-              icon: <Code className="w-6 h-6 text-blue-300 mb-2" />,
-              title: "Develop",
-              text: "Build modular React + TypeScript applications with Supabase backends. Focus on scalability, clean architecture, and accessibility.",
-            },
-            {
-              icon: <Rocket className="w-6 h-6 text-blue-300 mb-2" />,
-              title: "Deploy & Refine",
-              text: "Deploy on Netlify or Vercel using edge functions and CI/CD. Analyze metrics, refine UX, and evolve features continuously.",
-            },
-          ].map((step, i) => (
-            <motion.div
-              key={i}
-              {...fadeUp(i * 0.1)}
-              className="bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md text-center w-full"
-            >
-              {step.icon}
-              <h4 className="text-lg font-semibold mb-2">{step.title}</h4>
-              <p className="text-gray-300 text-sm">{step.text}</p>
-              {i < 2 && (
-                <div className="flex justify-center my-2">
-                  <VLine />
-                </div>
-              )}
-            </motion.div>
-          ))}
+        {/* Custom */}
+        <div className="flex flex-col items-center gap-6">
+          <h3 className="text-3xl font-semibold text-white">Custom Path</h3>
+
+          {/* Custom: Design */}
+          <motion.div
+            {...fadeUp(0)}
+            className="bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md text-center w-full"
+          >
+            <Layout className="w-6 h-6 text-blue-300 mb-2" />
+            <h4 className="text-lg font-semibold mb-2">Design</h4>
+            <p className="text-gray-300 text-sm">
+              Create detailed wireframes and interactive prototypes in Figma before translating them
+              to Tailwind + Framer Motion components.
+            </p>
+          </motion.div>
+
+          {/* vertical connector */}
+          <VLine />
+
+          {/* Custom: Develop */}
+          <motion.div
+            {...fadeUp(0.06)}
+            className="bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md text-center w-full"
+          >
+            <Code className="w-6 h-6 text-blue-300 mb-2" />
+            <h4 className="text-lg font-semibold mb-2">Develop</h4>
+            <p className="text-gray-300 text-sm">
+              Build modular React + TypeScript applications with Supabase backends. Focus on
+              scalability, clean architecture, and accessibility.
+            </p>
+          </motion.div>
+
+          {/* vertical connector */}
+          <VLine />
+
+          {/* Custom: Deploy */}
+          <motion.div
+            {...fadeUp(0.12)}
+            className="bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md text-center w-full"
+          >
+            <Rocket className="w-6 h-6 text-blue-300 mb-2" />
+            <h4 className="text-lg font-semibold mb-2">Deploy & Refine</h4>
+            <p className="text-gray-300 text-sm">
+              Deploy on Netlify or Vercel using edge functions and CI/CD. Analyze metrics, refine UX,
+              and evolve features continuously.
+            </p>
+          </motion.div>
         </div>
       </div>
 
+      {/* ------------------------------------------------------------------ */}
       {/* Behind the Build */}
+      {/* ------------------------------------------------------------------ */}
       <motion.h2
         {...fadeUp()}
         className="text-3xl md:text-4xl font-bold text-white mb-8 text-center"
@@ -216,11 +246,11 @@ const MyProcessSection: React.FC = () => {
       </motion.h2>
 
       <p className="text-center text-gray-300 max-w-3xl mx-auto mb-8">
-        Each build is powered by a consistent philosophy — structure, speed,
-        and scalability — supported by the right stack and ongoing optimization.
+        Each build is powered by a consistent philosophy — structure, speed, and scalability —
+        supported by the right stack and ongoing optimization.
       </p>
 
-      {/* Build Stacks */}
+      {/* stacks */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
         {[
           {
@@ -241,26 +271,24 @@ const MyProcessSection: React.FC = () => {
               "GitHub Actions, Lighthouse, GA4",
             ],
           },
-        ].map((stack, i) => (
+        ].map((s, i) => (
           <motion.div
-            key={i}
-            {...fadeUp(i * 0.1)}
+            key={s.title}
+            {...fadeUp(i * 0.08)}
             className="bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md"
           >
-            <h3 className="text-xl font-semibold text-blue-300 mb-3">
-              {stack.title}
-            </h3>
+            <h3 className="text-xl font-semibold text-blue-300 mb-3">{s.title}</h3>
             <ul className="space-y-2 text-gray-300 text-sm">
-              {stack.list.map((item, idx) => (
-                <li key={idx}>• {item}</li>
+              {s.list.map((li) => (
+                <li key={li}>• {li}</li>
               ))}
             </ul>
           </motion.div>
         ))}
       </div>
 
-      {/* Optimization Row */}
-      <div className="grid grid-cols-3 items-stretch gap-6 mb-4">
+      {/* optimization row */}
+      <div className="grid grid-cols-3 gap-6 items-stretch">
         {[
           {
             icon: <Database className="w-6 h-6 text-blue-300 mb-2" />,
@@ -277,31 +305,31 @@ const MyProcessSection: React.FC = () => {
             title: "Maintenance Flow",
             text: "Ongoing updates, plugin management, and version tracking ensure long-term stability and security.",
           },
-        ].map((item, i) => (
+        ].map((b, i) => (
           <motion.div
-            key={i}
-            {...fadeUp(i * 0.1)}
-            className="bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md text-center flex flex-col justify-center"
+            key={b.title}
+            {...fadeUp(i * 0.08)}
+            className="bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md text-center"
           >
-            {item.icon}
-            <h4 className="font-semibold text-blue-300 mb-1">{item.title}</h4>
-            <p className="text-gray-300 text-sm">{item.text}</p>
+            {b.icon}
+            <h4 className="font-semibold text-blue-300 mb-1">{b.title}</h4>
+            <p className="text-gray-300 text-sm">{b.text}</p>
           </motion.div>
         ))}
       </div>
 
-      {/* Horizontal connectors for final row */}
-      <div className="grid grid-cols-5 items-center">
-        <div></div>
+      {/* horizontal connectors strictly between the 3 bottom boxes */}
+      <div className="grid grid-cols-5 items-center my-6">
+        <div />
         <HLine />
-        <div></div>
+        <div />
         <HLine />
-        <div></div>
+        <div />
       </div>
 
-      <p className="text-center text-gray-300 mt-10 italic">
-        “Every pixel and line of code serves a purpose — built with precision,
-        measured by performance.”
+      <p className="text-center text-gray-300 mt-8 italic">
+        “Every pixel and line of code serves a purpose — built with precision, measured by
+        performance.”
       </p>
     </motion.section>
   );

@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async';
 
 function AboutMeSection() {
   return (
-    <main className="w-full"> {/* changed from div to main for semantic structure */}
+    <main className="w-full">
       <Helmet>
         <title>Anthony Daccurso | Digital Marketing & Web Development</title>
         <meta
@@ -81,36 +81,37 @@ function AboutMeSection() {
       </Helmet>
 
       <section className="bg-[#1a2f5c]/50 rounded-2xl p-6 sm:p-8 md:p-12 w-full mx-auto">
-        <motion.h1 
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-3xl md:text-4xl font-bold text-white mb-6 text-left"
-        >
-          About Me
-        </motion.h1>
-
-        <div className="flex flex-col md:flex-row gap-5 md:gap-12 items-center">
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
-            className="w-full md:w-1/3 aspect-square rounded-xl overflow-hidden shadow-2xl"
-          >
-            <img
-              src="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media//anthony-daccurso-fcp.webp?quality=75&width=400"
-              srcSet="
-                https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media//anthony-daccurso-fcp.webp?quality=75&width=400 1x,
-                https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media//anthony-daccurso-fcp.webp?quality=75&width=800 2x
-              "
-              alt="Anthony Daccurso"
-              loading="eager"
-              fetchpriority="high"
-              width="400"
-              height="400"
-              className="w-full h-full object-cover brightness-40"
-            />
-          </motion.div>
+        <div className="flex flex-col md:flex-row gap-5 md:gap-12 items-start">
+          <div className="w-full md:w-1/3">
+            <motion.h1 
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-3xl md:text-4xl font-bold text-white mb-6 text-left md:ml-0"
+            >
+              About Me
+            </motion.h1>
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, ease: 'easeOut' }}
+              className="aspect-square rounded-xl overflow-hidden shadow-2xl"
+            >
+              <img
+                src="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media//anthony-daccurso-fcp.webp?quality=75&width=400"
+                srcSet="
+                  https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media//anthony-daccurso-fcp.webp?quality=75&width=400 1x,
+                  https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media//anthony-daccurso-fcp.webp?quality=75&width=800 2x
+                "
+                alt="Anthony Daccurso"
+                loading="eager"
+                fetchpriority="high"
+                width="400"
+                height="400"
+                className="w-full h-full object-cover brightness-40"
+              />
+            </motion.div>
+          </div>
 
           <motion.div 
             initial={{ opacity: 0, x: 20 }}

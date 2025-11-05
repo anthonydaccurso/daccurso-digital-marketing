@@ -16,8 +16,8 @@ import SkillsSection from './components/sections/SkillsSection';
 import BlogSection from './components/sections/BlogSection';
 import ContactSection from './components/sections/ContactSection';
 
-const sections = ['About Me', 'My Projects', 'Live Tools', 'My Services', 'My Skills', 'Blog', 'Contact Me'] as const;
-const mobileSections = ['About Me', 'My Projects', 'Live Tools', 'My Services', 'My Skills', 'Contact Me', 'Blog'] as const;
+const sections = ['About Me', 'My Process', 'My Projects', 'Live Tools', 'My Services', 'My Skills', 'Blog', 'Contact Me'] as const;
+const mobileSections = ['About Me', 'My Process', 'My Projects', 'Live Tools', 'My Services', 'My Skills', 'Contact Me', 'Blog'] as const;
 type Section = typeof sections[number];
 
 function App() {

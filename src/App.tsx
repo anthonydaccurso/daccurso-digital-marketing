@@ -194,6 +194,7 @@ function App() {
           <div className="w-full h-32 bg-[#0d2242] rounded-xl animate-pulse" />
         }>
           {activeSection === 'About Me' && <AboutMeSection />}
+          {activeSection === 'My Process' && <MyProcessSection />}
           {activeSection === 'My Projects' && <ProjectsSection />}
           {activeSection === 'Live Tools' && <LiveToolsSection />}
           {activeSection === 'My Services' && <ServicesSection />}

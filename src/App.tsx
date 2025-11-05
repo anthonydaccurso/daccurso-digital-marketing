@@ -109,6 +109,8 @@ function App() {
     if (activeSection === 'My Services') return `${baseUrl}/my-services`;
     if (activeSection === 'My Skills') return `${baseUrl}/my-skills`;
     if (activeSection === 'Contact Me') return `${baseUrl}/contact-me`;
+    if (activeSection === 'Blog') return `${baseUrl}/blog`;
+    if (activeSection === 'My Process') return `${baseUrl}/my-process`;
     return baseUrl;
   };
 

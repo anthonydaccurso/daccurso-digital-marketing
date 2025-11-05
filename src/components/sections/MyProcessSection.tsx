@@ -12,12 +12,12 @@ import {
   Gauge,
 } from 'lucide-react';
 
-const fadeUp = {
+const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 40 },
   whileInView: { opacity: 1, y: 0 },
-  transition: { duration: 0.7 },
+  transition: { duration: 0.7, delay },
   viewport: { once: true },
-};
+});
 
 const MyProcessSection: React.FC = () => {
   return (
@@ -26,17 +26,17 @@ const MyProcessSection: React.FC = () => {
       animate={{ opacity: 1, y: 0 }}
       className="bg-[#1a2f5c]/50 rounded-2xl p-6 sm:p-8 md:p-12 w-full mx-auto text-white relative overflow-hidden"
     >
-      {/* Heading */}
+      {/* Header */}
       <motion.h2
         initial={{ opacity: 0, x: -30 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white via-blue-200 to-blue-400 bg-clip-text text-transparent mb-8 text-center"
+        className="text-3xl md:text-4xl font-bold text-white mb-8 text-center"
       >
         My Process
       </motion.h2>
 
-      <p className="text-center text-gray-300 max-w-3xl mx-auto mb-12">
+      <p className="text-center text-gray-300 max-w-3xl mx-auto mb-10">
         Every collaboration begins with discovery — understanding your goals,
         market, and brand identity. From there, projects branch into two
         specialized paths:{" "}
@@ -48,8 +48,8 @@ const MyProcessSection: React.FC = () => {
 
       {/* Discover */}
       <motion.div
-        {...fadeUp}
-        className="relative bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md text-center mb-16"
+        {...fadeUp()}
+        className="relative bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md text-center mb-12"
       >
         <Lightbulb className="w-8 h-8 text-blue-300 mx-auto mb-3" />
         <h3 className="text-2xl font-semibold mb-2">Discover</h3>
@@ -59,13 +59,11 @@ const MyProcessSection: React.FC = () => {
           research, UX trends, and competitor analysis before any design work
           begins.
         </p>
-
-        {/* vertical line */}
-        <div className="absolute left-1/2 -bottom-10 -translate-x-1/2 h-10 w-px bg-blue-300/40" />
+        <div className="absolute left-1/2 -bottom-8 -translate-x-1/2 h-8 w-px bg-blue-300/40" />
       </motion.div>
 
       {/* Research / Strategy / Planning */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 relative mb-24">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 relative mb-16">
         {[
           {
             icon: <Search className="w-6 h-6 text-blue-300 mb-2" />,
@@ -85,34 +83,32 @@ const MyProcessSection: React.FC = () => {
         ].map((item, i) => (
           <motion.div
             key={i}
-            {...fadeUp}
+            {...fadeUp(i * 0.1)}
             className="relative bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md text-center"
           >
             {item.icon}
             <h4 className="text-lg font-semibold mb-2">{item.title}</h4>
             <p className="text-gray-300 text-sm">{item.text}</p>
-
-            {/* horizontal connectors */}
+            {/* connector line */}
             {i < 2 && (
-              <div className="absolute right-0 top-1/2 transform translate-x-1/2 h-px w-8 bg-blue-300/40 hidden sm:block" />
+              <div className="absolute right-[-0.75rem] top-1/2 transform -translate-y-1/2 h-px w-6 bg-blue-300/40 hidden sm:block" />
             )}
           </motion.div>
         ))}
       </div>
 
-      {/* Connecting line to split */}
-      <div className="relative w-full flex justify-center mb-10">
-        <div className="w-px h-12 bg-blue-300/40" />
+      {/* Split connector line */}
+      <div className="flex justify-center mb-8">
+        <div className="w-px h-8 bg-blue-300/40" />
       </div>
 
-      {/* WordPress & Custom Split */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-24 relative max-w-6xl mx-auto">
-        {/* WordPress */}
-        <div className="relative flex flex-col items-center gap-10">
-          <div className="absolute -top-5 bg-blue-700 text-xs uppercase tracking-wide px-3 py-1 rounded-full">
+      {/* Split Paths */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 max-w-6xl mx-auto">
+        {/* WordPress Path */}
+        <div className="flex flex-col items-center gap-8 relative">
+          <div className="text-sm font-semibold text-white mb-1">
             WordPress Path
           </div>
-
           {[
             {
               icon: <Layout className="w-6 h-6 text-blue-300 mb-2" />,
@@ -132,25 +128,24 @@ const MyProcessSection: React.FC = () => {
           ].map((step, i) => (
             <motion.div
               key={i}
-              {...fadeUp}
+              {...fadeUp(i * 0.1)}
               className="relative bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md text-center w-full"
             >
               {step.icon}
               <h4 className="text-lg font-semibold mb-2">{step.title}</h4>
               <p className="text-gray-300 text-sm">{step.text}</p>
               {i < 2 && (
-                <div className="absolute left-1/2 -bottom-10 -translate-x-1/2 h-10 w-px bg-blue-300/40" />
+                <div className="absolute left-1/2 -bottom-8 -translate-x-1/2 h-8 w-px bg-blue-300/40" />
               )}
             </motion.div>
           ))}
         </div>
 
-        {/* Custom */}
-        <div className="relative flex flex-col items-center gap-10">
-          <div className="absolute -top-5 bg-blue-700 text-xs uppercase tracking-wide px-3 py-1 rounded-full">
+        {/* Custom Path */}
+        <div className="flex flex-col items-center gap-8 relative">
+          <div className="text-sm font-semibold text-white mb-1">
             Custom Path
           </div>
-
           {[
             {
               icon: <Layout className="w-6 h-6 text-blue-300 mb-2" />,
@@ -170,14 +165,14 @@ const MyProcessSection: React.FC = () => {
           ].map((step, i) => (
             <motion.div
               key={i}
-              {...fadeUp}
+              {...fadeUp(i * 0.1)}
               className="relative bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md text-center w-full"
             >
               {step.icon}
               <h4 className="text-lg font-semibold mb-2">{step.title}</h4>
               <p className="text-gray-300 text-sm">{step.text}</p>
               {i < 2 && (
-                <div className="absolute left-1/2 -bottom-10 -translate-x-1/2 h-10 w-px bg-blue-300/40" />
+                <div className="absolute left-1/2 -bottom-8 -translate-x-1/2 h-8 w-px bg-blue-300/40" />
               )}
             </motion.div>
           ))}
@@ -186,18 +181,19 @@ const MyProcessSection: React.FC = () => {
 
       {/* Behind the Build */}
       <motion.h2
-        {...fadeUp}
-        className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white via-blue-200 to-blue-400 bg-clip-text text-transparent mb-8 text-center"
+        {...fadeUp()}
+        className="text-3xl md:text-4xl font-bold text-white mb-8 text-center"
       >
         Behind the Build
       </motion.h2>
 
-      <p className="text-center text-gray-300 max-w-3xl mx-auto mb-12">
+      <p className="text-center text-gray-300 max-w-3xl mx-auto mb-10">
         Each build is powered by a consistent philosophy — structure, speed,
         and scalability — supported by the right stack and ongoing optimization.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16">
+      {/* Build Stacks */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
         {[
           {
             title: "WordPress Build Stack",
@@ -220,7 +216,7 @@ const MyProcessSection: React.FC = () => {
         ].map((stack, i) => (
           <motion.div
             key={i}
-            {...fadeUp}
+            {...fadeUp(i * 0.1)}
             className="relative bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md"
           >
             <h3 className="text-xl font-semibold text-blue-300 mb-3">
@@ -236,7 +232,7 @@ const MyProcessSection: React.FC = () => {
       </div>
 
       {/* Supporting Boxes */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
         {[
           {
             icon: <Database className="w-6 h-6 text-blue-300 mb-2" />,
@@ -256,14 +252,14 @@ const MyProcessSection: React.FC = () => {
         ].map((item, i) => (
           <motion.div
             key={i}
-            {...fadeUp}
+            {...fadeUp(i * 0.1)}
             className="relative bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md text-center"
           >
             {item.icon}
             <h4 className="font-semibold text-blue-300 mb-1">{item.title}</h4>
             <p className="text-gray-300 text-sm">{item.text}</p>
             {i < 2 && (
-              <div className="absolute right-0 top-1/2 transform translate-x-1/2 h-px w-8 bg-blue-300/40 hidden sm:block" />
+              <div className="absolute right-[-0.75rem] top-1/2 transform -translate-y-1/2 h-px w-6 bg-blue-300/40 hidden sm:block" />
             )}
           </motion.div>
         ))}

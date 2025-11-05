@@ -109,7 +109,6 @@ function AboutMeSection() {
             transition={{ delay: 0.28 }}
             className="w-full md:w-2/3 space-y-6"
           >
-            {/* ✅ H1 moved inside text container for perfect alignment */}
             <motion.h1 
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}

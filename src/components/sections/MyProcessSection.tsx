@@ -257,7 +257,7 @@ const MyProcessSection: React.FC = () => {
       </div>
 
       {/* Added responsive margin control: less on mobile, more on desktop */}
-      <p className="text-center text-gray-300 mt-6 md:mt-10 italic">
+      <p className="text-center text-gray-300 mt-2 md:mt-10 italic">
         'A designer knows he has achieved perfection not when there is nothing left to add, but when there is nothing left to take away' - Antonie De-Saint
       </p>
     </motion.section>

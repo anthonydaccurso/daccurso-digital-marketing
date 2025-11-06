@@ -195,7 +195,7 @@ const MyProcessSection: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4 max-w-5xl mx-auto">
         {[
           {
-            icon: <Code className="w-6 h-6 text-blue-300 mb-2" />,
+            icon: <Code className="w-8 h-8 text-white absolute top-5 left-6" />,
             title: "WordPress Build Stack",
             list: [
               "Elementor Pro, Hello Theme, WP Bakery",
@@ -205,7 +205,7 @@ const MyProcessSection: React.FC = () => {
             ],
           },
           {
-            icon: <Rocket className="w-6 h-6 text-blue-300 mb-2" />,
+            icon: <Rocket className="w-8 h-8 text-white absolute top-5 left-6" />,
             title: "Custom Build Stack",
             list: [
               "React, TypeScript, Tailwind CSS",
@@ -218,13 +218,13 @@ const MyProcessSection: React.FC = () => {
           <motion.div
             key={i}
             {...fadeUp(i * 0.1)}
-            className="bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md text-center flex flex-col items-center"
+            className="relative bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md flex flex-col justify-center"
           >
             {stack.icon}
-            <h3 className="text-xl font-semibold text-blue-300 mb-3">
+            <h3 className="text-xl font-semibold text-blue-300 mb-3 mt-10 pl-1">
               {stack.title}
             </h3>
-            <ul className="space-y-2 text-gray-300 text-sm text-left">
+            <ul className="space-y-1 text-gray-300 text-sm leading-relaxed pl-1">
               {stack.list.map((item, idx) => (
                 <li key={idx}>• {item}</li>
               ))}
@@ -260,7 +260,7 @@ const MyProcessSection: React.FC = () => {
             className="bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md text-center flex flex-col justify-center"
           >
             {item.icon}
-            <h4 className="font-semibold text-blue-300 mb-1">{item.title}</h4>
+            <h4 className="font-semibold text-white mb-1">{item.title}</h4>
             <p className="text-gray-300 text-sm">{item.text}</p>
           </motion.div>
         ))}

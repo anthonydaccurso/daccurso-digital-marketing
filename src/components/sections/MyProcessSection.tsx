@@ -47,7 +47,7 @@ const MyProcessSection: React.FC = () => {
         <meta property="og:url" content="https://anthonydaccurso.com/my-process" />
         <meta
           property="og:title"
-          content="My Process | Development and Design Decisions"
+          content="My Process | Daccurso Digital Marketing"
         />
         <meta
           property="og:description"
@@ -61,7 +61,7 @@ const MyProcessSection: React.FC = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="My Process | Development and Design Decisions"
+          content="My Process | Daccurso Digital Marketing"
         />
         <meta
           name="twitter:description"

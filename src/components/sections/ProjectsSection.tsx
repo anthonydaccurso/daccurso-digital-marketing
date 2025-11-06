@@ -8,7 +8,7 @@ const projects = [
   {
     title: "Daccurso Career Studio",
     image: "https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/dcs-ddm-project-box.webp",
-    description: "A full stack website providing resume, interviewing, and career services to young professionals with emerging talent.",
+    description: "A full stack website providing resume, interviewing, and career services to young professionals.",
     skills: ["React.js", "Tailwind CSS", "Vite", "Database Management"],
     link: "https://daccursocareerstudio.com/",
     linkedin: "https://www.linkedin.com/company/109550616/admin/dashboard/",

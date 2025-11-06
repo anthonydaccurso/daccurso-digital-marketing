@@ -109,13 +109,10 @@ function SkillsSection() {
             "name": "Skills and Expertise",
             "description": "SEO, analytics, and web development skills mastered by Anthony Daccurso.",
             "hasDefinedTerm": [
-              { "@type": "DefinedTerm", "name": "Google Analytics 4" },
-              { "@type": "DefinedTerm", "name": "Semrush" },
-              { "@type": "DefinedTerm", "name": "React.js" },
-              { "@type": "DefinedTerm", "name": "Tailwind CSS" },
-              { "@type": "DefinedTerm", "name": "WordPress" },
-              { "@type": "DefinedTerm", "name": "SEO Strategy" },
-              { "@type": "DefinedTerm", "name": "Content Marketing" }
+              { "@type": "DefinedTerm", "name": "SEO & Analytics", "termCode": ["Google Analytics 4", "Google Search Console", "Semrush", "Ahrefs", "Google Admin"] },
+              { "@type": "DefinedTerm", "name": "Marketing Tools", "termCode": ["HubSpot", "Brandwatch", "Power BI", "CapCut", "Google Suite", "Microsoft Office", "Social Media"] },
+              { "@type": "DefinedTerm", "name": "Design Tools", "termCode": ["Canva", "Figma", "WordPress", "Google Web Designer", "Adobe Creative Suite", "Visio", "Responsive Design"] },
+              { "@type": "DefinedTerm", "name": "Development", "termCode": ["HTML", "CSS", "JavaScript", "React", "React.js", "Node", "n8n", "Vite", "Firecrawl", "Tailwind CSS", "WordPress", "cPanel"] }
             ]
           }
           `}

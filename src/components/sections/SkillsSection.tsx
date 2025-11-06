@@ -70,7 +70,7 @@ function SkillsSection() {
       className="bg-[#1a2f5c]/50 rounded-2xl p-6 sm:p-8 md:p-12 w-full mx-auto"
     >
       <Helmet>
-        <title>My Skills | SEO, Analytics & Web Development Expertise</title>
+        <title>My Skills | Daccurso Digital Marketing</title>
         <meta
           name="description"
           content="Explore Anthony Daccurso's technical and marketing expertise across SEO, analytics, design, and development — from React and Tailwind to Semrush and GA4."

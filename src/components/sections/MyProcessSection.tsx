@@ -234,7 +234,7 @@ const MyProcessSection: React.FC = () => {
       <ArrowDown />
 
       {/* FINAL ROW */}
-      <div className="grid grid-cols-3 items-stretch gap-6 mb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 items-stretch mb-6">
         {[
           {
             icon: <Database className="w-6 h-6 text-blue-300 mb-2" />,

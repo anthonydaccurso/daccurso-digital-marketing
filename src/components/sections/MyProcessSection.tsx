@@ -45,7 +45,7 @@ const MyProcessSection: React.FC = () => {
       </motion.h2>
 
       <motion.p
-        {...fadeUp(0.1)} // small delay for a staggered, smoother feel
+        {...fadeUp(0.1)}
         className="text-center text-gray-300 max-w-3xl mx-auto mb-8"
       >
         Every collaboration begins with discovery — understanding your goals,
@@ -56,7 +56,6 @@ const MyProcessSection: React.FC = () => {
         follows a refined design → develop → deploy cycle focused on clarity,
         performance, and longevity.
       </motion.p>
-
 
       {/* DISCOVER */}
       <motion.div
@@ -193,9 +192,10 @@ const MyProcessSection: React.FC = () => {
       </p>
 
       {/* STACK SECTION */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4 max-w-5xl mx-auto">
         {[
           {
+            icon: <Code className="w-6 h-6 text-blue-300 mb-2" />,
             title: "WordPress Build Stack",
             list: [
               "Elementor Pro, Hello Theme, WP Bakery",
@@ -205,6 +205,7 @@ const MyProcessSection: React.FC = () => {
             ],
           },
           {
+            icon: <Rocket className="w-6 h-6 text-blue-300 mb-2" />,
             title: "Custom Build Stack",
             list: [
               "React, TypeScript, Tailwind CSS",
@@ -217,12 +218,13 @@ const MyProcessSection: React.FC = () => {
           <motion.div
             key={i}
             {...fadeUp(i * 0.1)}
-            className="bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md"
+            className="bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md text-center flex flex-col items-center"
           >
+            {stack.icon}
             <h3 className="text-xl font-semibold text-blue-300 mb-3">
               {stack.title}
             </h3>
-            <ul className="space-y-2 text-gray-300 text-sm">
+            <ul className="space-y-2 text-gray-300 text-sm text-left">
               {stack.list.map((item, idx) => (
                 <li key={idx}>• {item}</li>
               ))}

@@ -173,7 +173,7 @@ const MyProcessSection: React.FC = () => {
 
       <motion.h2
         {...fadeUp()}
-        className="text-3xl font-semibold text-white mb-3 text-center mt-0"
+        className="text-3xl font-semibold text-white mb-2 text-center mt-0"
       >
         Behind the Build
       </motion.h2>

@@ -60,7 +60,7 @@ function LiveToolsSection() {
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://anthonydaccurso.com/live-tools/" />
-        <meta property="og:title" content="Live Tools | Market & Finance Analytics Dashboard" />
+        <meta property="og:title" content="Live Tools | Daccurso Digital Marketing" />
         <meta
           property="og:description"
           content="Interactive investment and market tools built with React and Supabase — ETF predictors, news analyzers, and arbitrage calculators."
@@ -72,7 +72,7 @@ function LiveToolsSection() {
         <meta property="og:site_name" content="Daccurso Digital Marketing" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Live Tools | Market & Finance Analytics Dashboard" />
+        <meta name="twitter:title" content="Live Tools | Daccurso Digital Marketing" />
         <meta
           name="twitter:description"
           content="Try AI-powered ETF predictors, currency arbitrage calculators, and sentiment analyzers — built by Anthony Daccurso."

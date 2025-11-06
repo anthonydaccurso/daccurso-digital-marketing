@@ -71,7 +71,7 @@ function ContactSection() {
       className="bg-[#1a2f5c]/50 rounded-3xl p-6 sm:p-8 md:p-12 w-full mx-auto"
     >
       <Helmet>
-        <title>Contact Me | Connect with Anthony Daccurso</title>
+        <title>Contact Me | Daccurso Digital Marketing</title>
         <meta
           name="description"
           content="Get in touch with Anthony Daccurso — Digital Marketing Specialist & Web Developer. Connect via LinkedIn, view my resume, or explore certifications and awards."

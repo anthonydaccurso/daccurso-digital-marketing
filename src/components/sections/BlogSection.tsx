@@ -12,7 +12,7 @@ function BlogSection() {
       className="bg-[#1a2f5c]/50 rounded-2xl p-6 sm:p-8 md:p-12 w-full mx-auto"
     >
       <Helmet>
-        <title>Blog | Insights on Web Design, SEO & Marketing</title>
+        <title>Blog | Daccurso Digital Marketing</title>
         <meta
           name="description"
           content="Articles and tutorials by Anthony Daccurso on web design, SEO, digital marketing, and tech. Learn strategies and insights for modern digital growth."

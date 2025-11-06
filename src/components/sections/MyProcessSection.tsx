@@ -19,7 +19,6 @@ const fadeUp = (delay = 0) => ({
   viewport: { once: true },
 });
 
-// Arrow components
 const ArrowDown = ({ long = false }: { long?: boolean }) => (
   <div
     className={`text-blue-300 text-2xl text-center ${
@@ -74,7 +73,7 @@ const MyProcessSection: React.FC = () => {
         </p>
       </motion.div>
 
-      {/* LONG STEM DOWN FROM DISCOVER */}
+      {/* LONG STEM FROM DISCOVER */}
       <ArrowDown long />
 
       {/* RESEARCH / STRATEGY / PLANNING */}
@@ -108,13 +107,13 @@ const MyProcessSection: React.FC = () => {
         ))}
       </div>
 
-      {/* CLEAN Y SHAPE (NO RIGHT ARROWS) */}
+      {/* Y SHAPE DOWN ONLY */}
       <ArrowDown />
       <ArrowSplit />
 
       {/* WORDPRESS + CUSTOM PATH */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 max-w-6xl mx-auto">
-        {/* WORDPRESS */}
+        {/* WORDPRESS PATH */}
         <div className="flex flex-col items-center gap-6">
           <h3 className="text-3xl font-semibold text-white">WordPress Path</h3>
 
@@ -145,9 +144,8 @@ const MyProcessSection: React.FC = () => {
               <p className="text-gray-300 text-sm">{step.text}</p>
             </motion.div>
           ))}
-          {/* Arrows BETWEEN boxes, not inside */}
-          <div className="flex flex-col items-center -mt-2 mb-2 gap-1">
-            <ArrowDown />
+          {/* ONE ARROW AFTER FINAL BOX */}
+          <div className="flex flex-col items-center mt-2 mb-2">
             <ArrowDown />
           </div>
         </div>
@@ -183,12 +181,14 @@ const MyProcessSection: React.FC = () => {
               <p className="text-gray-300 text-sm">{step.text}</p>
             </motion.div>
           ))}
-          <div className="flex flex-col items-center -mt-2 mb-2 gap-1">
-            <ArrowDown />
+          <div className="flex flex-col items-center mt-2 mb-2">
             <ArrowDown />
           </div>
         </div>
       </div>
+
+      {/* MERGE PATHS INTO BEHIND THE BUILD */}
+      <ArrowSplit />
 
       {/* BEHIND THE BUILD */}
       <motion.h2
@@ -203,8 +203,7 @@ const MyProcessSection: React.FC = () => {
         scalability — supported by the right stack and ongoing optimization.
       </p>
 
-      {/* STACKS */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
         {[
           {
             title: "WordPress Build Stack",
@@ -242,7 +241,7 @@ const MyProcessSection: React.FC = () => {
         ))}
       </div>
 
-      {/* NEW Y SHAPE BETWEEN STACKS AND OPTIMIZATION */}
+      {/* MERGE STACKS INTO OPTIMIZATION */}
       <ArrowDown />
       <ArrowSplit />
 
@@ -277,8 +276,7 @@ const MyProcessSection: React.FC = () => {
         ))}
       </div>
 
-      <ArrowDown />
-
+      {/* NO ARROW AFTER OPTIMIZATION */}
       <p className="text-center text-gray-300 mt-8 italic">
         “Every pixel and line of code serves a purpose — built with precision,
         measured by performance.”

@@ -261,8 +261,7 @@ const MyProcessSection: React.FC = () => {
       </div>
 
       <p className="text-center text-gray-300 mt-6 italic">
-        “Every pixel and line of code serves a purpose — built with precision,
-        measured by performance.”
+        “A designer knows he has achieved perfection not when there is nothing left to add, but when there is nothing left to take away - Antonie De-Saint”
       </p>
     </motion.section>
   );

@@ -19,10 +19,11 @@ const fadeUp = (delay = 0) => ({
   viewport: { once: true },
 });
 
+// Standardized arrow sizes
 const ArrowDown = ({ long = false }: { long?: boolean }) => (
   <div
-    className={`text-blue-300 text-2xl text-center ${
-      long ? "my-6" : "mt-2 mb-3"
+    className={`text-blue-300 text-3xl text-center ${
+      long ? "my-6" : "mt-3 mb-4"
     }`}
   >
     ↓
@@ -30,7 +31,7 @@ const ArrowDown = ({ long = false }: { long?: boolean }) => (
 );
 
 const ArrowSplit = () => (
-  <div className="text-blue-300 text-2xl text-center my-3">↙ &nbsp; &nbsp; ↘</div>
+  <div className="text-blue-300 text-3xl text-center my-3">↙ &nbsp; &nbsp; ↘</div>
 );
 
 const MyProcessSection: React.FC = () => {
@@ -73,7 +74,7 @@ const MyProcessSection: React.FC = () => {
         </p>
       </motion.div>
 
-      {/* LONG STEM FROM DISCOVER */}
+      {/* LONG STEM */}
       <ArrowDown long />
 
       {/* RESEARCH / STRATEGY / PLANNING */}
@@ -107,12 +108,12 @@ const MyProcessSection: React.FC = () => {
         ))}
       </div>
 
-      {/* Y SHAPE DOWN ONLY */}
+      {/* Y SHAPE */}
       <ArrowDown />
       <ArrowSplit />
 
       {/* WORDPRESS + CUSTOM PATH */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6 max-w-6xl mx-auto">
         {/* WORDPRESS PATH */}
         <div className="flex flex-col items-center gap-6">
           <h3 className="text-3xl font-semibold text-white">WordPress Path</h3>
@@ -144,10 +145,8 @@ const MyProcessSection: React.FC = () => {
               <p className="text-gray-300 text-sm">{step.text}</p>
             </motion.div>
           ))}
-          {/* ONE ARROW AFTER FINAL BOX */}
-          <div className="flex flex-col items-center mt-2 mb-2">
-            <ArrowDown />
-          </div>
+          {/* ONE LONG ARROW BELOW */}
+          <ArrowDown long />
         </div>
 
         {/* CUSTOM PATH */}
@@ -181,19 +180,14 @@ const MyProcessSection: React.FC = () => {
               <p className="text-gray-300 text-sm">{step.text}</p>
             </motion.div>
           ))}
-          <div className="flex flex-col items-center mt-2 mb-2">
-            <ArrowDown />
-          </div>
+          <ArrowDown long />
         </div>
       </div>
 
-      {/* MERGE PATHS INTO BEHIND THE BUILD */}
-      <ArrowSplit />
-
-      {/* BEHIND THE BUILD */}
+      {/* GAP CLOSED & Y REMOVED ABOVE BEHIND THE BUILD */}
       <motion.h2
         {...fadeUp()}
-        className="text-3xl md:text-4xl font-bold text-white mb-8 text-center"
+        className="text-3xl md:text-4xl font-bold text-white mb-8 text-center mt-2"
       >
         Behind the Build
       </motion.h2>
@@ -241,11 +235,11 @@ const MyProcessSection: React.FC = () => {
         ))}
       </div>
 
-      {/* MERGE STACKS INTO OPTIMIZATION */}
+      {/* FINAL CONNECTOR */}
       <ArrowDown />
       <ArrowSplit />
 
-      {/* AUTOMATION / OPTIMIZATION / MAINTENANCE */}
+      {/* FINAL ROW */}
       <div className="grid grid-cols-3 items-stretch gap-6 mb-6">
         {[
           {
@@ -276,7 +270,6 @@ const MyProcessSection: React.FC = () => {
         ))}
       </div>
 
-      {/* NO ARROW AFTER OPTIMIZATION */}
       <p className="text-center text-gray-300 mt-8 italic">
         “Every pixel and line of code serves a purpose — built with precision,
         measured by performance.”

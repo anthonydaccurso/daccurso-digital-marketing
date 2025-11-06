@@ -19,14 +19,19 @@ const fadeUp = (delay = 0) => ({
   viewport: { once: true },
 });
 
-const ArrowDown = () => (
-  <div className="text-blue-300 text-xl text-center mt-4">↓</div>
+// Arrow components
+const ArrowDown = ({ long = false }: { long?: boolean }) => (
+  <div
+    className={`text-blue-300 text-2xl text-center ${
+      long ? "my-6" : "mt-2 mb-3"
+    }`}
+  >
+    ↓
+  </div>
 );
-const ArrowRight = () => (
-  <div className="text-blue-300 text-xl text-center">→</div>
-);
+
 const ArrowSplit = () => (
-  <div className="text-blue-300 text-2xl text-center my-2">↙ &nbsp; &nbsp; ↘</div>
+  <div className="text-blue-300 text-2xl text-center my-3">↙ &nbsp; &nbsp; ↘</div>
 );
 
 const MyProcessSection: React.FC = () => {
@@ -69,10 +74,11 @@ const MyProcessSection: React.FC = () => {
         </p>
       </motion.div>
 
-      <ArrowDown />
+      {/* LONG STEM DOWN FROM DISCOVER */}
+      <ArrowDown long />
 
       {/* RESEARCH / STRATEGY / PLANNING */}
-      <div className="grid grid-cols-3 gap-6 items-stretch mb-4">
+      <div className="grid grid-cols-3 gap-6 items-stretch mb-6">
         {[
           {
             icon: <Search className="w-6 h-6 text-blue-300 mb-2" />,
@@ -102,18 +108,13 @@ const MyProcessSection: React.FC = () => {
         ))}
       </div>
 
-      {/* HORIZONTAL ARROWS BETWEEN 3 BOXES */}
-      <div className="flex justify-center gap-20 mb-8 text-2xl text-blue-300">
-        <span>→</span>
-        <span>→</span>
-      </div>
-
+      {/* CLEAN Y SHAPE (NO RIGHT ARROWS) */}
       <ArrowDown />
       <ArrowSplit />
 
       {/* WORDPRESS + CUSTOM PATH */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 max-w-6xl mx-auto">
-        {/* WordPress Path */}
+        {/* WORDPRESS */}
         <div className="flex flex-col items-center gap-6">
           <h3 className="text-3xl font-semibold text-white">WordPress Path</h3>
 
@@ -142,12 +143,16 @@ const MyProcessSection: React.FC = () => {
               {step.icon}
               <h4 className="text-lg font-semibold mb-2">{step.title}</h4>
               <p className="text-gray-300 text-sm">{step.text}</p>
-              {i < 2 && <ArrowDown />}
             </motion.div>
           ))}
+          {/* Arrows BETWEEN boxes, not inside */}
+          <div className="flex flex-col items-center -mt-2 mb-2 gap-1">
+            <ArrowDown />
+            <ArrowDown />
+          </div>
         </div>
 
-        {/* Custom Path */}
+        {/* CUSTOM PATH */}
         <div className="flex flex-col items-center gap-6">
           <h3 className="text-3xl font-semibold text-white">Custom Path</h3>
 
@@ -176,9 +181,12 @@ const MyProcessSection: React.FC = () => {
               {step.icon}
               <h4 className="text-lg font-semibold mb-2">{step.title}</h4>
               <p className="text-gray-300 text-sm">{step.text}</p>
-              {i < 2 && <ArrowDown />}
             </motion.div>
           ))}
+          <div className="flex flex-col items-center -mt-2 mb-2 gap-1">
+            <ArrowDown />
+            <ArrowDown />
+          </div>
         </div>
       </div>
 
@@ -195,7 +203,8 @@ const MyProcessSection: React.FC = () => {
         scalability — supported by the right stack and ongoing optimization.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+      {/* STACKS */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
         {[
           {
             title: "WordPress Build Stack",
@@ -233,10 +242,12 @@ const MyProcessSection: React.FC = () => {
         ))}
       </div>
 
+      {/* NEW Y SHAPE BETWEEN STACKS AND OPTIMIZATION */}
       <ArrowDown />
+      <ArrowSplit />
 
-      {/* OPTIMIZATION ROW */}
-      <div className="grid grid-cols-3 items-stretch gap-6 mb-4">
+      {/* AUTOMATION / OPTIMIZATION / MAINTENANCE */}
+      <div className="grid grid-cols-3 items-stretch gap-6 mb-6">
         {[
           {
             icon: <Database className="w-6 h-6 text-blue-300 mb-2" />,
@@ -266,10 +277,7 @@ const MyProcessSection: React.FC = () => {
         ))}
       </div>
 
-      <div className="flex justify-center gap-20 mt-2 text-2xl text-blue-300">
-        <span>→</span>
-        <span>→</span>
-      </div>
+      <ArrowDown />
 
       <p className="text-center text-gray-300 mt-8 italic">
         “Every pixel and line of code serves a purpose — built with precision,

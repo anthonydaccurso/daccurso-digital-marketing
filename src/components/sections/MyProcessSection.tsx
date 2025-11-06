@@ -33,10 +33,10 @@ const ArrowDown = ({ long = false }: { long?: boolean }) => (
 
 const ArrowSplit = () => (
   <div className="relative flex justify-center my-2">
-    <div className="absolute text-blue-300 text-[1.6rem]" style={{ transform: "rotate(-35deg) translateX(-1.4rem)" }}>
+    <div className="absolute text-blue-300 text-[1.6rem]" style={{ transform: "rotate(-50deg) translateX(-1.4rem)" }}>
       ↙
     </div>
-    <div className="absolute text-blue-300 text-[1.6rem]" style={{ transform: "rotate(35deg) translateX(1.4rem)" }}>
+    <div className="absolute text-blue-300 text-[1.6rem]" style={{ transform: "rotate(50deg) translateX(1.4rem)" }}>
       ↘
     </div>
   </div>

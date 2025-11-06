@@ -31,16 +31,16 @@ const ArrowDown = ({ long = false }: { long?: boolean }) => (
   </div>
 );
 
-const ArrowSplit = () => (
-  <div className="relative flex justify-center my-3">
-    <div className="absolute text-blue-300 text-[1.6rem]" style={{ transform: "rotate(-20deg) translateX(-1.2rem)" }}>
-      ↙
-    </div>
-    <div className="absolute text-blue-300 text-[1.6rem]" style={{ transform: "rotate(20deg) translateX(1.2rem)" }}>
-      ↘
-    </div>
-  </div>
-);
+//const ArrowSplit = () => (
+  //<div className="relative flex justify-center my-3">
+    //<div className="absolute text-blue-300 text-[1.6rem]" style={{ transform: "rotate(-20deg) translateX(-1.2rem)" }}>
+      //↙
+    //</div>
+    //<div className="absolute text-blue-300 text-[1.6rem]" style={{ transform: "rotate(20deg) translateX(1.2rem)" }}>
+      //↘
+    //</div>
+  //</div>
+//);
 
 const MyProcessSection: React.FC = () => {
   return (

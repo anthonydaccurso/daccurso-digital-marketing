@@ -19,26 +19,13 @@ const fadeUp = (delay = 0) => ({
   viewport: { once: true },
 });
 
-// Long-stem consistent arrow style
+// Consistent arrow style
 const ArrowDown = ({ long = false }: { long?: boolean }) => (
   <div
-    className={`text-blue-300 text-3xl text-center ${
-      long ? "my-3" : "my-2"
-    }`}
+    className={`text-blue-300 text-3xl text-center ${long ? "my-3" : "my-2"}`}
     style={{ lineHeight: "1.2em", letterSpacing: "0.05em" }}
   >
     <span style={{ display: "inline-block", transform: "scaleY(1.6)" }}>↓</span>
-  </div>
-);
-
-const ArrowSplit = () => (
-  <div className="relative flex justify-center my-3">
-    <div className="absolute text-blue-300 text-[1.6rem]" style={{ transform: "rotate(-20deg) translateX(-1.2rem)" }}>
-      ↙
-    </div>
-    <div className="absolute text-blue-300 text-[1.6rem]" style={{ transform: "rotate(20deg) translateX(1.2rem)" }}>
-      ↘
-    </div>
   </div>
 );
 
@@ -62,9 +49,9 @@ const MyProcessSection: React.FC = () => {
         market, and brand identity. From there, projects branch into two
         specialized paths:{" "}
         <span className="text-blue-300 font-semibold">WordPress</span> or{" "}
-        <span className="text-blue-300 font-semibold">Custom Development</span>. Each follows a
-        refined design → develop → deploy cycle focused on clarity, performance,
-        and longevity.
+        <span className="text-blue-300 font-semibold">Custom Development</span>.
+        Each follows a refined design → develop → deploy cycle focused on
+        clarity, performance, and longevity.
       </p>
 
       {/* DISCOVER */}
@@ -82,7 +69,6 @@ const MyProcessSection: React.FC = () => {
         </p>
       </motion.div>
 
-      {/* LONG STEM FROM DISCOVER */}
       <ArrowDown long />
 
       {/* RESEARCH / STRATEGY / PLANNING */}
@@ -116,15 +102,13 @@ const MyProcessSection: React.FC = () => {
         ))}
       </div>
 
-      {/* Y SPLIT */}
       <ArrowDown />
-      <ArrowSplit />
 
       {/* WORDPRESS + CUSTOM PATH */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4 max-w-6xl mx-auto">
         {/* WORDPRESS PATH */}
         <div className="flex flex-col items-center gap-6">
-          <h3 className="text-3xl font-semibold text-white">WordPress Path</h3>
+          <h3 className="text-3xl font-semibold text-white mt-2">WordPress Path</h3>
 
           {[
             {
@@ -158,7 +142,7 @@ const MyProcessSection: React.FC = () => {
 
         {/* CUSTOM PATH */}
         <div className="flex flex-col items-center gap-6">
-          <h3 className="text-3xl font-semibold text-white">Custom Path</h3>
+          <h3 className="text-3xl font-semibold text-white mt-2">Custom Path</h3>
 
           {[
             {
@@ -191,10 +175,10 @@ const MyProcessSection: React.FC = () => {
         </div>
       </div>
 
-      {/* Closed vertical gap — tight flow */}
+      {/* Tightened spacing above Behind the Build */}
       <motion.h2
         {...fadeUp()}
-        className="text-3xl font-semibold text-white mb-8 text-center mt-4"
+        className="text-3xl font-semibold text-white mb-8 text-center mt-2"
       >
         Behind the Build
       </motion.h2>
@@ -243,9 +227,7 @@ const MyProcessSection: React.FC = () => {
         ))}
       </div>
 
-      {/* FINAL Y SPLIT */}
       <ArrowDown />
-      <ArrowSplit />
 
       {/* FINAL ROW */}
       <div className="grid grid-cols-3 items-stretch gap-6 mb-6">

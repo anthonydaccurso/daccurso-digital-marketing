@@ -80,7 +80,7 @@ function ContactSection() {
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://anthonydaccurso.com/contact-me/" />
-        <meta property="og:title" content="Contact Me | Connect with Anthony Daccurso" />
+        <meta property="og:title" content="Contact Me | Daccurso Digital Marketing" />
         <meta
           property="og:description"
           content="Contact Anthony Daccurso for digital marketing, SEO, or web development projects. Explore professional credentials and certifications."
@@ -92,7 +92,7 @@ function ContactSection() {
         <meta property="og:site_name" content="Daccurso Digital Marketing" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Contact Me | Connect with Anthony Daccurso" />
+        <meta name="twitter:title" content="Contact Me | Daccurso Digital Marketing" />
         <meta
           name="twitter:description"
           content="Connect with me via LinkedIn, view my resume, and collaborate on web design or SEO projects."

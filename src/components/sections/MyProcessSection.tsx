@@ -236,7 +236,7 @@ const MyProcessSection: React.FC = () => {
           {
             icon: <Gauge className="w-6 h-6 text-blue-300 mb-2 mx-auto" />,
             title: "Optimization Loop",
-            text: "Regular audits with Lighthouse, PageSpeed, and Search Console keep all builds performing above 95%.",
+            text: "Regular audits with PageSpeed and Search Console keep all builds performing above 90%.",
           },
           {
             icon: <Settings className="w-6 h-6 text-blue-300 mb-2 mx-auto" />,

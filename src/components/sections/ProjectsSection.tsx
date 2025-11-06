@@ -209,7 +209,7 @@ const ProjectCard = memo(({ project, index }) => {
 const ProjectsSection = () => (
   <div className="w-full">
     <Helmet>
-      <title>My Projects | Web Design & Marketing Portfolio</title>
+      <title>My Projects | Daccurso Digital Marketing</title>
       <meta
         name="description"
         content="Explore my portfolio of web design, SEO, and digital marketing projects — from Custom Pool Pros to Daccurso Career Studio, Silverback Mobile, and more."

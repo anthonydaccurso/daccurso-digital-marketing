@@ -182,7 +182,7 @@ const MyProcessSection: React.FC = () => {
       {/* Tightened spacing above Behind the Build */}
       <motion.h2
         {...fadeUp()}
-        className="text-3xl font-semibold text-white mb-8 text-center mt-1"
+        className="text-3xl font-semibold text-white mb-8 text-center mt-0"
       >
         Behind the Build
       </motion.h2>

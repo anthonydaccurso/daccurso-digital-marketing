@@ -19,19 +19,27 @@ const fadeUp = (delay = 0) => ({
   viewport: { once: true },
 });
 
-// Standardized arrow sizes
+// Long-stem consistent arrow style
 const ArrowDown = ({ long = false }: { long?: boolean }) => (
   <div
     className={`text-blue-300 text-3xl text-center ${
-      long ? "my-6" : "mt-3 mb-4"
+      long ? "my-3" : "my-2"
     }`}
+    style={{ lineHeight: "1.2em", letterSpacing: "0.05em" }}
   >
-    ↓
+    <span style={{ display: "inline-block", transform: "scaleY(1.6)" }}>↓</span>
   </div>
 );
 
 const ArrowSplit = () => (
-  <div className="text-blue-300 text-3xl text-center my-3">↙ &nbsp; &nbsp; ↘</div>
+  <div
+    className="text-blue-300 text-3xl text-center my-3"
+    style={{ lineHeight: "1.2em", letterSpacing: "0.2em" }}
+  >
+    <span style={{ display: "inline-block", transform: "scaleY(1.6)" }}>↙</span>
+    &nbsp;&nbsp;
+    <span style={{ display: "inline-block", transform: "scaleY(1.6)" }}>↘</span>
+  </div>
 );
 
 const MyProcessSection: React.FC = () => {
@@ -74,7 +82,7 @@ const MyProcessSection: React.FC = () => {
         </p>
       </motion.div>
 
-      {/* LONG STEM */}
+      {/* LONG STEM FROM DISCOVER */}
       <ArrowDown long />
 
       {/* RESEARCH / STRATEGY / PLANNING */}
@@ -108,12 +116,12 @@ const MyProcessSection: React.FC = () => {
         ))}
       </div>
 
-      {/* Y SHAPE */}
+      {/* Y SPLIT */}
       <ArrowDown />
       <ArrowSplit />
 
       {/* WORDPRESS + CUSTOM PATH */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4 max-w-6xl mx-auto">
         {/* WORDPRESS PATH */}
         <div className="flex flex-col items-center gap-6">
           <h3 className="text-3xl font-semibold text-white">WordPress Path</h3>
@@ -145,7 +153,6 @@ const MyProcessSection: React.FC = () => {
               <p className="text-gray-300 text-sm">{step.text}</p>
             </motion.div>
           ))}
-          {/* ONE LONG ARROW BELOW */}
           <ArrowDown long />
         </div>
 
@@ -184,20 +191,21 @@ const MyProcessSection: React.FC = () => {
         </div>
       </div>
 
-      {/* GAP CLOSED & Y REMOVED ABOVE BEHIND THE BUILD */}
+      {/* Closed vertical gap — tight flow */}
       <motion.h2
         {...fadeUp()}
-        className="text-3xl md:text-4xl font-bold text-white mb-8 text-center mt-2"
+        className="text-3xl md:text-4xl font-bold text-white mb-6 text-center mt-1"
       >
         Behind the Build
       </motion.h2>
 
-      <p className="text-center text-gray-300 max-w-3xl mx-auto mb-8">
+      <p className="text-center text-gray-300 max-w-3xl mx-auto mb-6">
         Each build is powered by a consistent philosophy — structure, speed, and
         scalability — supported by the right stack and ongoing optimization.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
+      {/* STACK SECTION */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
         {[
           {
             title: "WordPress Build Stack",
@@ -235,7 +243,7 @@ const MyProcessSection: React.FC = () => {
         ))}
       </div>
 
-      {/* FINAL CONNECTOR */}
+      {/* FINAL Y SPLIT */}
       <ArrowDown />
       <ArrowSplit />
 
@@ -270,7 +278,7 @@ const MyProcessSection: React.FC = () => {
         ))}
       </div>
 
-      <p className="text-center text-gray-300 mt-8 italic">
+      <p className="text-center text-gray-300 mt-6 italic">
         “Every pixel and line of code serves a purpose — built with precision,
         measured by performance.”
       </p>

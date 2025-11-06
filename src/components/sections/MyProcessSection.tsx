@@ -19,7 +19,6 @@ const fadeUp = (delay = 0) => ({
   viewport: { once: true },
 });
 
-// Consistent arrow style
 const ArrowDown = ({ long = false }: { long?: boolean }) => (
   <div
     className={`text-blue-300 text-3xl text-center ${long ? "my-3" : "my-2"}`}
@@ -36,7 +35,6 @@ const MyProcessSection: React.FC = () => {
       animate={{ opacity: 1, y: 0 }}
       className="bg-[#1a2f5c]/50 rounded-2xl p-6 sm:p-8 md:p-12 w-full mx-auto text-white"
     >
-      {/* HEADER */}
       <motion.h2
         {...fadeUp()}
         className="text-3xl md:text-4xl font-bold text-white mb-6 text-center"
@@ -57,7 +55,6 @@ const MyProcessSection: React.FC = () => {
         performance, and longevity.
       </motion.p>
 
-      {/* DISCOVER */}
       <motion.div
         {...fadeUp()}
         className="bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md text-center"
@@ -74,7 +71,6 @@ const MyProcessSection: React.FC = () => {
 
       <ArrowDown long />
 
-      {/* RESEARCH / STRATEGY / PLANNING */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 items-stretch mb-6">
         {[
           {
@@ -107,9 +103,7 @@ const MyProcessSection: React.FC = () => {
 
       <ArrowDown />
 
-      {/* WORDPRESS + CUSTOM PATH */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4 max-w-6xl mx-auto">
-        {/* WORDPRESS PATH */}
         <div className="flex flex-col items-center gap-6">
           <h3 className="text-3xl font-semibold text-white mt-2">WordPress Path</h3>
 
@@ -143,7 +137,6 @@ const MyProcessSection: React.FC = () => {
           <ArrowDown long />
         </div>
 
-        {/* CUSTOM PATH */}
         <div className="flex flex-col items-center gap-6">
           <h3 className="text-3xl font-semibold text-white mt-2">Custom Path</h3>
 
@@ -178,7 +171,6 @@ const MyProcessSection: React.FC = () => {
         </div>
       </div>
 
-      {/* Tightened spacing above Behind the Build */}
       <motion.h2
         {...fadeUp()}
         className="text-3xl font-semibold text-white mb-8 text-center mt-0"
@@ -191,7 +183,6 @@ const MyProcessSection: React.FC = () => {
         scalability — supported by the right stack and ongoing optimization.
       </p>
 
-      {/* STACK SECTION */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4 max-w-5xl mx-auto">
         {[
           {
@@ -224,7 +215,7 @@ const MyProcessSection: React.FC = () => {
             <h3 className="text-lg font-semibold text-white mb-3">
               {stack.title}
             </h3>
-            <ul className="space-y-2 text-gray-300 text-sm text-center max-w-sm">
+            <ul className="text-gray-300 text-sm text-center max-w-sm leading-relaxed space-y-1.5">
               {stack.list.map((item, idx) => (
                 <li key={idx}>• {item}</li>
               ))}
@@ -235,8 +226,7 @@ const MyProcessSection: React.FC = () => {
 
       <ArrowDown />
 
-      {/* FINAL ROW */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 items-stretch mb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 items-stretch mb-10">
         {[
           {
             icon: <Database className="w-6 h-6 text-blue-300 mb-2 mx-auto" />,
@@ -266,7 +256,7 @@ const MyProcessSection: React.FC = () => {
         ))}
       </div>
 
-      <p className="text-center text-gray-300 mt-6 italic">
+      <p className="text-center text-gray-300 mt-10 italic">
         'A designer knows he has achieved perfection not when there is nothing left to add, but when there is nothing left to take away' - Antonie De-Saint
       </p>
     </motion.section>

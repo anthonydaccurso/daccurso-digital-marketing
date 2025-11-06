@@ -153,7 +153,7 @@ function App() {
       {/* Card Container - Desktop Only */}
       {!isMobile && (
         <div className="absolute top-0 right-0 w-full h-full pointer-events-none z-20">
-          <div className="sticky top-[90px] right-[calc((100vw-960px)/2-218px)] w-[400px] h-[120px] ml-auto mr-[calc((100vw-960px)/2-224px)] pointer-events-auto">
+          <div className="sticky top-[120px] right-[calc((100vw-960px)/2-218px)] w-[400px] h-[120px] ml-auto mr-[calc((100vw-960px)/2-224px)] pointer-events-auto">
             <Suspense
               fallback={
                 <div className="w-full h-full flex items-center justify-center">

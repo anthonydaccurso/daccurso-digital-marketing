@@ -25,7 +25,7 @@ function AboutMeSection() {
         />
         <meta property="og:site_name" content="Anthony Daccurso Portfolio" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Anthony Daccurso | Digital Marketing & Web Development" />
+        <meta name="twitter:title" content="Anthony Daccurso | Daccurso Digital Marketing" />
         <meta
           name="twitter:description"
           content="Explore my work in web design, SEO, and marketing strategy — building digital experiences that perform."

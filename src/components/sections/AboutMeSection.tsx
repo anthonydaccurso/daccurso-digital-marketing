@@ -14,7 +14,7 @@ function AboutMeSection() {
         <link rel="canonical" href="https://anthonydaccurso.com/" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://anthonydaccurso.com/" />
-        <meta property="og:title" content="Anthony Daccurso | Digital Marketing & Web Development" />
+        <meta property="og:title" content="Anthony Daccurso | Daccurso Digital Marketing" />
         <meta
           property="og:description"
           content="Portfolio of Anthony Daccurso — Digital Marketing & Web Development Specialist helping brands improve SEO, performance, and design impact."

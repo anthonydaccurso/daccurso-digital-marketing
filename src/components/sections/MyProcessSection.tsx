@@ -78,17 +78,17 @@ const MyProcessSection: React.FC = () => {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 items-stretch mb-6">
         {[
           {
-            icon: <Search className="w-6 h-6 text-blue-300 mb-2" />,
+            icon: <Search className="w-6 h-6 text-blue-300 mb-2 mx-auto" />,
             title: "Research",
             text: "Analyze competitors, trends, and audiences to uncover opportunities and define benchmarks.",
           },
           {
-            icon: <ClipboardList className="w-6 h-6 text-blue-300 mb-2" />,
+            icon: <ClipboardList className="w-6 h-6 text-blue-300 mb-2 mx-auto" />,
             title: "Strategy",
             text: "Map out brand tone, structure, and user pathways aligned with business objectives.",
           },
           {
-            icon: <Settings className="w-6 h-6 text-blue-300 mb-2" />,
+            icon: <Settings className="w-6 h-6 text-blue-300 mb-2 mx-auto" />,
             title: "Planning",
             text: "Define deliverables, milestones, and technical stack for a seamless workflow before execution.",
           },
@@ -115,17 +115,17 @@ const MyProcessSection: React.FC = () => {
 
           {[
             {
-              icon: <Layout className="w-6 h-6 text-blue-300 mb-2" />,
+              icon: <Layout className="w-6 h-6 text-blue-300 mb-2 mx-auto" />,
               title: "Design",
               text: "Design directly within WordPress using Elementor and custom CSS for responsive layouts. Sections are structured for performance and SEO.",
             },
             {
-              icon: <Code className="w-6 h-6 text-blue-300 mb-2" />,
+              icon: <Code className="w-6 h-6 text-blue-300 mb-2 mx-auto" />,
               title: "Develop",
               text: "Implement dynamic templates, schema markup, and lightweight PHP functions. Every feature focuses on maintainability and loading speed.",
             },
             {
-              icon: <Rocket className="w-6 h-6 text-blue-300 mb-2" />,
+              icon: <Rocket className="w-6 h-6 text-blue-300 mb-2 mx-auto" />,
               title: "Deploy & Refine",
               text: "Launch through WP Engine or Namecheap with Cloudflare CDN. Tune caching, optimize media, and validate structured data post-launch.",
             },
@@ -149,17 +149,17 @@ const MyProcessSection: React.FC = () => {
 
           {[
             {
-              icon: <Layout className="w-6 h-6 text-blue-300 mb-2" />,
+              icon: <Layout className="w-6 h-6 text-blue-300 mb-2 mx-auto" />,
               title: "Design",
               text: "Create detailed wireframes and interactive prototypes in Figma before translating them to Tailwind + Framer Motion components.",
             },
             {
-              icon: <Code className="w-6 h-6 text-blue-300 mb-2" />,
+              icon: <Code className="w-6 h-6 text-blue-300 mb-2 mx-auto" />,
               title: "Develop",
               text: "Build modular React + TypeScript applications with Supabase backends. Focus on scalability, clean architecture, and accessibility.",
             },
             {
-              icon: <Rocket className="w-6 h-6 text-blue-300 mb-2" />,
+              icon: <Rocket className="w-6 h-6 text-blue-300 mb-2 mx-auto" />,
               title: "Deploy & Refine",
               text: "Deploy on Netlify or Vercel using edge functions and CI/CD. Analyze metrics, refine UX, and evolve features continuously for client support.",
             },
@@ -195,7 +195,7 @@ const MyProcessSection: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4 max-w-5xl mx-auto">
         {[
           {
-            icon: <Code className="w-6 h-6 text-blue-300 mb-3" />,
+            icon: <Code className="w-6 h-6 text-blue-300 mb-3 mx-auto" />,
             title: "WordPress Build Stack",
             list: [
               "Elementor Pro, Hello Theme, WP Bakery",
@@ -205,7 +205,7 @@ const MyProcessSection: React.FC = () => {
             ],
           },
           {
-            icon: <Rocket className="w-6 h-6 text-blue-300 mb-3" />,
+            icon: <Rocket className="w-6 h-6 text-blue-300 mb-3 mx-auto" />,
             title: "Custom Build Stack",
             list: [
               "React, TypeScript, Tailwind CSS",
@@ -239,17 +239,17 @@ const MyProcessSection: React.FC = () => {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 items-stretch mb-6">
         {[
           {
-            icon: <Database className="w-6 h-6 text-blue-300 mb-2" />,
+            icon: <Database className="w-6 h-6 text-blue-300 mb-2 mx-auto" />,
             title: "Automation & Data",
             text: "Workflow automations link Supabase, Notion, and analytics for faster insights and content updates.",
           },
           {
-            icon: <Gauge className="w-6 h-6 text-blue-300 mb-2" />,
+            icon: <Gauge className="w-6 h-6 text-blue-300 mb-2 mx-auto" />,
             title: "Optimization Loop",
             text: "Regular audits with Lighthouse, PageSpeed, and Search Console keep all builds performing above 95%.",
           },
           {
-            icon: <Settings className="w-6 h-6 text-blue-300 mb-2" />,
+            icon: <Settings className="w-6 h-6 text-blue-300 mb-2 mx-auto" />,
             title: "Maintenance Flow",
             text: "Ongoing updates, plugin management, and version tracking ensure long-term stability and security.",
           },
@@ -257,10 +257,10 @@ const MyProcessSection: React.FC = () => {
           <motion.div
             key={i}
             {...fadeUp(i * 0.1)}
-            className="bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md text-center flex flex-col justify-center"
+            className="bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md text-center flex flex-col items-center justify-center"
           >
             {item.icon}
-            <h4 className="font-semibold text-white mb-1">{item.title}</h4>
+            <h4 className="text-lg font-semibold text-white mb-1">{item.title}</h4>
             <p className="text-gray-300 text-sm">{item.text}</p>
           </motion.div>
         ))}

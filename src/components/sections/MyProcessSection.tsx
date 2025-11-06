@@ -46,7 +46,7 @@ const MyProcessSection: React.FC = () => {
         {...fadeUp(0.1)}
         className="text-center text-gray-300 max-w-3xl mx-auto mb-8"
       >
-        Every collaboration begins with discovery — understanding your goals,
+        Every collaboration begins with discovery: understanding your goals,
         market, and brand identity. From there, projects branch into two
         specialized paths:{" "}
         <span className="text-blue-300 font-semibold">WordPress</span> or{" "}

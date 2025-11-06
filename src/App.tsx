@@ -209,13 +209,13 @@ function App() {
           className={`${
             isMobile
               ? 'flex flex-wrap gap-4 mt-9 mb-[220px] md:mb-12 relative z-10'
-              : 'flex flex-wrap gap-4 mt-9 mb-[220px] md:mb-12 relative z-10'
+              : 'mt-9 mb-[220px] md:mb-12 relative z-10'
           }`}
         >
           {!isMobile ? (
-            <>
-              {/* First Row */}
-              <div className="flex gap-4 mb-4">
+            <div className="flex flex-col gap-3">
+              {/* Row 1 */}
+              <div className="flex gap-4">
                 {['About Me', 'My Process', 'My Projects', 'My Services'].map((section) => (
                   <motion.button
                     key={section}
@@ -233,7 +233,7 @@ function App() {
                 ))}
               </div>
 
-              {/* Second Row */}
+              {/* Row 2 */}
               <div className="flex gap-4">
                 {['Live Tools', 'My Skills', 'Contact Me', 'Blog'].map((section) => (
                   <motion.button
@@ -251,7 +251,7 @@ function App() {
                   </motion.button>
                 ))}
               </div>
-            </>
+            </div>
           ) : (
             mobileSections.map((section) => (
               <motion.button

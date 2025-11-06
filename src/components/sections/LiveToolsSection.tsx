@@ -51,7 +51,7 @@ function LiveToolsSection() {
       className="bg-[#1a2f5c]/50 rounded-2xl p-6 sm:p-8 md:p-12 w-full mx-auto"
     >
       <Helmet>
-        <title>Live Tools | Market & Finance Analytics Dashboard</title>
+        <title>Live Tools | Daccurso Digital Marketing</title>
         <meta
           name="description"
           content="Real-time tools for investment and financial analysis — including ETF predictions, currency arbitrage, and news sentiment tracking by Anthony Daccurso."

@@ -194,7 +194,7 @@ const MyProcessSection: React.FC = () => {
       {/* Closed vertical gap — tight flow */}
       <motion.h2
         {...fadeUp()}
-        className="text-3xl md:text-4xl font-bold text-white mb-6 text-center mt-1"
+        className="text-3xl font-semibold text-white mb-8 text-center mt-4"
       >
         Behind the Build
       </motion.h2>

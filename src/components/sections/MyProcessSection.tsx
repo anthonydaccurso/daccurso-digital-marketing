@@ -107,7 +107,7 @@ const MyProcessSection: React.FC = () => {
       {/* WORDPRESS + CUSTOM PATH */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4 max-w-6xl mx-auto">
         {/* WORDPRESS PATH */}
-        <div className="flex flex-col items-center gap-2">
+        <div className="flex flex-col items-center gap-6">
           <h3 className="text-3xl font-semibold text-white mt-2">WordPress Path</h3>
 
           {[

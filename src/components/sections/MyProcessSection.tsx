@@ -158,7 +158,7 @@ const MyProcessSection: React.FC = () => {
             {
               icon: <Rocket className="w-6 h-6 text-blue-300 mb-2" />,
               title: "Deploy & Refine",
-              text: "Deploy on Netlify or Vercel using edge functions and CI/CD. Analyze metrics, refine UX, and evolve features continuously.",
+              text: "Deploy on Netlify or Vercel using edge functions and CI/CD. Analyze metrics, refine UX, and evolve features continuously for strong support.",
             },
           ].map((step, i) => (
             <motion.div

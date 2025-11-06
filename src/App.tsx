@@ -16,28 +16,8 @@ import SkillsSection from './components/sections/SkillsSection';
 import BlogSection from './components/sections/BlogSection';
 import ContactSection from './components/sections/ContactSection';
 
-const sections = [
-  'About Me',
-  'My Process',
-  'My Projects',
-  'My Services',
-  'Live Tools',
-  'My Skills',
-  'Contact Me',
-  'Blog',
-] as const;
-
-const mobileSections = [
-  'About Me',
-  'My Process',
-  'My Projects',
-  'Live Tools',
-  'My Services',
-  'My Skills',
-  'Contact Me',
-  'Blog',
-] as const;
-
+const sections = ['About Me', 'My Process', 'My Projects', 'Live Tools', 'My Services', 'My Skills', 'Blog', 'Contact Me'] as const;
+const mobileSections = ['About Me', 'My Process', 'My Projects', 'Live Tools', 'My Services', 'My Skills', 'Contact Me', 'Blog'] as const;
 type Section = typeof sections[number];
 
 function App() {
@@ -77,9 +57,7 @@ function App() {
     } else if (path === 'blog') {
       setActiveSection('Blog');
     } else {
-      const sectionFromUrl = sections.find(
-        (section) => section.toLowerCase().replace(/\s+/g, '-') === path
-      );
+      const sectionFromUrl = sections.find(section => section.toLowerCase().replace(/\s+/g, '-') === path);
       if (sectionFromUrl) setActiveSection(sectionFromUrl);
     }
     if (window.matchMedia('(display-mode: standalone)').matches) setIsPWA(true);
@@ -138,11 +116,7 @@ function App() {
   };
 
   return (
-    <div
-      className={`min-h-screen bg-[#0d2242] text-white relative ${
-        isPWA ? 'pt-[0px] pb-[0px]' : ''
-      }`}
-    >
+    <div className={`min-h-screen bg-[#0d2242] text-white relative ${isPWA ? 'pt-[0px] pb-[0px]' : ''}`}>
       <Helmet>
         <link rel="canonical" href={getCanonicalUrl()} />
         <meta property="og:url" content={getCanonicalUrl()} />
@@ -154,13 +128,11 @@ function App() {
       {!isMobile && (
         <div className="absolute top-0 right-0 w-full h-full pointer-events-none z-20">
           <div className="sticky top-[90px] right-[calc((100vw-960px)/2-218px)] w-[400px] h-[120px] ml-auto mr-[calc((100vw-960px)/2-224px)] pointer-events-auto">
-            <Suspense
-              fallback={
-                <div className="w-full h-full flex items-center justify-center">
-                  <div className="bg-[#0d2242] w-[290px] h-[120px] rounded-xl animate-pulse" />
-                </div>
-              }
-            >
+            <Suspense fallback={
+              <div className="w-full h-full flex items-center justify-center">
+                <div className="bg-[#0d2242] w-[290px] h-[120px] rounded-xl animate-pulse" />
+              </div>
+            }>
               {showCard && <CardCanvas />}
             </Suspense>
           </div>
@@ -171,19 +143,17 @@ function App() {
         {/* Mobile Card */}
         {isMobile && (
           <div className="absolute left-1/2 transform -translate-x-1/2 top-[482px] w-[352px] h-[120px] z-20">
-            <Suspense
-              fallback={
-                <div className="w-full h-full flex items-center justify-center">
-                  <div className="bg-[#0d2242] w-[330px] h-[120px] rounded-xl animate-pulse" />
-                </div>
-              }
-            >
+            <Suspense fallback={
+              <div className="w-full h-full flex items-center justify-center">
+                <div className="bg-[#0d2242] w-[330px] h-[120px] rounded-xl animate-pulse" />
+              </div>
+            }>
               {showCard && <CardCanvas />}
             </Suspense>
           </div>
         )}
 
-        <motion.h1
+        <motion.h1 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-4xl md:text-6xl font-bold mb-[18px] md:mb-[18px] text-left inline-block bg-gradient-to-r from-white via-blue-400 to-blue-700 bg-clip-text text-transparent cursor-pointer pb-1 pt-[0px] z-[50] relative"
@@ -199,19 +169,10 @@ function App() {
           className="text-gray-300 italic"
         >
           <span className="block md:hidden text-[16px]">Digital Marketing & Web Development</span>
-          <span className="hidden md:block text-[19px]">
-            Digital Marketing & Web Development
-          </span>
+          <span className="hidden md:block text-[19px]">Digital Marketing & Web Development</span>
         </motion.p>
 
-        {/* NAVIGATION BUTTONS */}
-        <div
-          className={`${
-            isMobile
-              ? 'flex flex-wrap gap-4 mt-9 mb-[220px] md:mb-12 relative z-10'
-              : 'grid grid-cols-4 gap-x-4 gap-y-6 mt-9 mb-[220px] md:mb-12 relative z-10 place-items-center'
-          }`}
-        >
+        <div className="flex flex-wrap gap-4 mt-9 mb-[220px] md:mb-12 relative z-10">
           {(isMobile ? mobileSections : sections).map((section) => (
             <motion.button
               key={section}
@@ -230,9 +191,9 @@ function App() {
           ))}
         </div>
 
-        <Suspense
-          fallback={<div className="w-full h-32 bg-[#0d2242] rounded-xl animate-pulse" />}
-        >
+        <Suspense fallback={
+          <div className="w-full h-32 bg-[#0d2242] rounded-xl animate-pulse" />
+        }>
           {activeSection === 'About Me' && <AboutMeSection />}
           {activeSection === 'My Process' && <MyProcessSection />}
           {activeSection === 'My Projects' && <ProjectsSection />}

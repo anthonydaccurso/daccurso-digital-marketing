@@ -79,7 +79,7 @@ function SkillsSection() {
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://anthonydaccurso.com/my-skills/" />
-        <meta property="og:title" content="My Skills | SEO, Analytics & Web Development Expertise" />
+        <meta property="og:title" content="My Skills | Daccurso Digital Marketing" />
         <meta
           property="og:description"
           content="SEO, analytics, web design, and development skills by Anthony Daccurso — combining creativity and performance optimization."
@@ -91,7 +91,7 @@ function SkillsSection() {
         <meta property="og:site_name" content="Daccurso Digital Marketing" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="My Skills | SEO, Analytics & Web Development Expertise" />
+        <meta name="twitter:title" content="My Skills | Daccurso Digital Marketing" />
         <meta
           name="twitter:description"
           content="Explore my toolkit: React, Tailwind, WordPress, Semrush, GA4, and more — powering efficient digital solutions."

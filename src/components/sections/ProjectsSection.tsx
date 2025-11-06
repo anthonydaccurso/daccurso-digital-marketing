@@ -218,7 +218,7 @@ const ProjectsSection = () => (
 
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://anthonydaccurso.com/my-projects/" />
-      <meta property="og:title" content="My Projects | Web Design & Marketing Portfolio" />
+      <meta property="og:title" content="My Projects | Daccurso Digital Marketing" />
       <meta
         property="og:description"
         content="Portfolio of projects designed and developed by Anthony Daccurso — including websites, SEO strategies, and branding campaigns."
@@ -230,7 +230,7 @@ const ProjectsSection = () => (
       <meta property="og:site_name" content="Daccurso Digital Marketing" />
 
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="My Projects | Web Design & Marketing Portfolio" />
+      <meta name="twitter:title" content="My Projects | Daccurso Digital Marketing" />
       <meta
         name="twitter:description"
         content="Explore my web design, SEO, and marketing projects crafted for businesses, creators, and startups."

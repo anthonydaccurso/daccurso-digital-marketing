@@ -20,7 +20,7 @@ function BlogSection() {
         <link rel="canonical" href="https://anthonydaccurso.com/blog/" />
         <meta property="og:type" content="blog" />
         <meta property="og:url" content="https://anthonydaccurso.com/blog/" />
-        <meta property="og:title" content="Blog | Insights on Web Design, SEO & Marketing" />
+        <meta property="og:title" content="Blog | Daccurso Digital Marketing" />
         <meta
           property="og:description"
           content="Read guides, tutorials, and insights from Anthony Daccurso on SEO, marketing, and web development trends."
@@ -31,7 +31,7 @@ function BlogSection() {
         />
         <meta property="og:site_name" content="Daccurso Digital Marketing" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Blog | Insights on Web Design, SEO & Marketing" />
+        <meta name="twitter:title" content="Blog | Daccurso Digital Marketing" />
         <meta
           name="twitter:description"
           content="Web design and marketing tutorials by Anthony Daccurso — practical strategies for SEO and digital performance."

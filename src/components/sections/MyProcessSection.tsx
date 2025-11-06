@@ -164,7 +164,7 @@ const MyProcessSection: React.FC = () => {
             <motion.div
               key={i}
               {...fadeUp(i * 0.1)}
-              className="bg-[#1a2f5c] border border-slate-700 rounded-xl p-6 shadow-md text-center w-full"
+              className="bg-[#1a2f5c] border border-slate-700 rounded-xl p-2 shadow-md text-center w-full"
             >
               {step.icon}
               <h4 className="text-lg font-semibold mb-2">{step.title}</h4>

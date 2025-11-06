@@ -114,7 +114,7 @@ const MyProcessSection: React.FC = () => {
             {
               icon: <Layout className="w-6 h-6 text-blue-300 mb-2" />,
               title: "Design",
-              text: "Design directly within WordPress or Figma using Elementor and custom CSS for responsive layouts. Sections are structured for performance and SEO.",
+              text: "Design directly within WordPress using Elementor and custom CSS for responsive layouts. Sections are structured for performance and SEO.",
             },
             {
               icon: <Code className="w-6 h-6 text-blue-300 mb-2" />,

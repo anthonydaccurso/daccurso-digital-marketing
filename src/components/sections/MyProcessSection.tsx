@@ -62,7 +62,7 @@ const MyProcessSection: React.FC = () => {
         <Lightbulb className="w-8 h-8 text-blue-300 mx-auto mb-3" />
         <h3 className="text-3xl font-semibold mb-2">Discover</h3>
         <p className="text-gray-300 max-w-2xl mx-auto">
-          Discovery is about precision — identifying your audience, refining
+          Precisely identifying your audience, refining
           goals, and defining a clear creative direction. I dive into market
           research, UX trends, and competitor analysis before any design work
           begins.

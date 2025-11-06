@@ -37,7 +37,7 @@ const MyProcessSection: React.FC = () => {
       className="bg-[#1a2f5c]/50 rounded-2xl p-6 sm:p-8 md:p-12 w-full mx-auto text-white"
     >
       <Helmet>
-        <title>My Process | Daccurso Digital Marketing</title>
+        <title>My Process | Development and Design Decisions</title>
         <meta
           name="description"
           content="Explore my streamlined web design and development process — from discovery and strategy to deployment and optimization — blending creativity, SEO, and performance."

@@ -32,13 +32,13 @@ const ArrowDown = ({ long = false }: { long?: boolean }) => (
 );
 
 const ArrowSplit = () => (
-  <div
-    className="text-blue-300 text-3xl text-center my-3"
-    style={{ lineHeight: "1.2em", letterSpacing: "0.2em" }}
-  >
-    <span style={{ display: "inline-block", transform: "scaleY(1.6)" }}>↙</span>
-    &nbsp;&nbsp;
-    <span style={{ display: "inline-block", transform: "scaleY(1.6)" }}>↘</span>
+  <div className="relative flex justify-center my-2">
+    <div className="absolute text-blue-300 text-[1.6rem]" style={{ transform: "rotate(-35deg) translateX(-1.4rem)" }}>
+      ↙
+    </div>
+    <div className="absolute text-blue-300 text-[1.6rem]" style={{ transform: "rotate(35deg) translateX(1.4rem)" }}>
+      ↘
+    </div>
   </div>
 );
 

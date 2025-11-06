@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import {
   Lightbulb,
   Search,
@@ -35,6 +36,101 @@ const MyProcessSection: React.FC = () => {
       animate={{ opacity: 1, y: 0 }}
       className="bg-[#1a2f5c]/50 rounded-2xl p-6 sm:p-8 md:p-12 w-full mx-auto text-white"
     >
+      <Helmet>
+        <title>My Web Design & Development Process | Daccurso Digital Marketing</title>
+        <meta
+          name="description"
+          content="Explore my streamlined web design and development process — from discovery and strategy to deployment and optimization — blending creativity, SEO, and performance."
+        />
+        <link rel="canonical" href="https://anthonydaccurso.com/my-process" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://anthonydaccurso.com/my-process" />
+        <meta
+          property="og:title"
+          content="My Web Design & Development Process | Daccurso Digital Marketing"
+        />
+        <meta
+          property="og:description"
+          content="A refined design → develop → deploy framework focused on clarity, speed, and scalability. Learn how each project phase transforms strategy into results."
+        />
+        <meta
+          property="og:image"
+          content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp"
+        />
+        <meta property="og:site_name" content="Anthony Daccurso Portfolio" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="My Web Design & Development Process | Daccurso Digital Marketing"
+        />
+        <meta
+          name="twitter:description"
+          content="See how I plan, build, and optimize every project with modern design, SEO, and performance-driven workflows."
+        />
+        <meta
+          name="twitter:image"
+          content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp"
+        />
+        <script type="application/ld+json">
+{`
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "My Process",
+  "url": "https://anthonydaccurso.com/my-process",
+  "description": "Explore Anthony Daccurso’s professional workflow for web design, SEO, and development — combining structure, performance, and design clarity.",
+  "author": {
+    "@type": "Person",
+    "name": "Anthony Daccurso",
+    "url": "https://anthonydaccurso.com",
+    "image": "https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp",
+    "jobTitle": "Digital Marketing & Web Development Specialist",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Custom Pool Pros"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/anthony-daccurso/",
+      "https://github.com/anthonydaccurso",
+      "https://www.instagram.com/daccursodigitalmarketing",
+      "https://www.tiktok.com/@daccursodigitalmarketing"
+    ]
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "My Web Design & Development Process",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Discover Phase",
+        "description": "Research, strategy, and audience analysis to shape design direction."
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "WordPress Path",
+        "description": "SEO-friendly builds using Elementor, schema markup, and caching."
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Custom Path",
+        "description": "Modern React + Supabase builds with performance-first architecture."
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Optimization & Maintenance",
+        "description": "Post-launch analytics, refinements, and client support."
+      }
+    ]
+  }
+}
+`}
+        </script>
+      </Helmet>
+
       <motion.h2
         {...fadeUp()}
         className="text-3xl md:text-4xl font-bold text-white mb-6 text-center"
@@ -236,7 +332,7 @@ const MyProcessSection: React.FC = () => {
           {
             icon: <Gauge className="w-6 h-6 text-blue-300 mb-2 mx-auto" />,
             title: "Optimization Loop",
-            text: "Regular audits with Lighthouse, PageSpeed, and Search Console keep all builds performing above 95%.",
+            text: "Regular audits with PageSpeed and Search Console keep all builds performing above 90%.",
           },
           {
             icon: <Settings className="w-6 h-6 text-blue-300 mb-2 mx-auto" />,
@@ -256,7 +352,6 @@ const MyProcessSection: React.FC = () => {
         ))}
       </div>
 
-      {/* Added responsive margin control: less on mobile, more on desktop */}
       <p className="text-center text-gray-300 mt-0 md:mt-10 italic">
         'A designer knows he has achieved perfection not when there is nothing left to add, but when there is nothing left to take away' - Antonie De-Saint
       </p>

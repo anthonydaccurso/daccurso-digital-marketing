@@ -39,20 +39,24 @@ const MyProcessSection: React.FC = () => {
       {/* HEADER */}
       <motion.h2
         {...fadeUp()}
-        className="text-3xl md:text-4xl font-bold text-white mb-8 text-center"
+        className="text-3xl md:text-4xl font-bold text-white mb-6 text-center"
       >
         My Process
       </motion.h2>
 
-      <p className="text-center text-gray-300 max-w-3xl mx-auto mb-8">
+      <motion.p
+        {...fadeUp(0.1)} // small delay for a staggered, smoother feel
+        className="text-center text-gray-300 max-w-3xl mx-auto mb-8"
+      >
         Every collaboration begins with discovery — understanding your goals,
         market, and brand identity. From there, projects branch into two
         specialized paths:{" "}
         <span className="text-blue-300 font-semibold">WordPress</span> or{" "}
-        <span className="text-blue-300 font-semibold">Custom Development</span>.
-        Each follows a refined design → develop → deploy cycle focused on
-        clarity, performance, and longevity.
-      </p>
+        <span className="text-blue-300 font-semibold">Custom Development</span>. Each
+        follows a refined design → develop → deploy cycle focused on clarity,
+        performance, and longevity.
+      </motion.p>
+
 
       {/* DISCOVER */}
       <motion.div

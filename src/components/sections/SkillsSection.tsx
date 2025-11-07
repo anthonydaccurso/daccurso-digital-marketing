@@ -6,7 +6,7 @@ const skillCategories = [
   {
     name: "SEO & Analytics",
     color: "#86b5ec", 
-    skills: ["Google Analytics 4", "Google Search Console", "Semrush", "Ahrefs", "Google Admin"]
+    skills: ["Google Analytics 4", "Google Search Console", "Semrush", "Ahrefs", "Yoast SEO", "Google Admin"]
   },
   {
     name: "Design Tools", 

@@ -21,7 +21,7 @@ const skillCategories = [
   {
     name: "Development",
     color: "#3e66da",
-    skills: ["HTML", "CSS", "JavaScript", "React", "Node", "n8n", "Vite", "Firecrawl", "React.js", "Tailwind CSS", "WordPress", "cPanel"]
+    skills: ["HTML", "CSS", "JavaScript", "Tailwind CSS", "React.js", "Vite", "Node", "PostgreSQL", "n8n", "Firecrawl", "WordPress", "cPanel"]
   }
 ];
 

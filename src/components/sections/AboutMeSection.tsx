@@ -120,7 +120,6 @@ function AboutMeSection() {
               decoding="sync"
               class="w-full h-full object-cover brightness-40"
             />
-
           </motion.div>
 
           <motion.div 

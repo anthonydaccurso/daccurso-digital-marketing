@@ -1,6 +1,8 @@
-import type { Handler, HandlerEvent, HandlerContext } from '@netlify/functions';
 
-const handler: Handler = async (event: HandlerEvent, context: HandlerContext) => {
+// netlify/functions/openrouter-proxy.mjs
+// Note: .mjs extension for ES Module compatibility
+
+export const handler = async (event, context) => {
   console.log('=== OpenRouter Proxy Function Started ===');
   console.log('Method:', event.httpMethod);
   console.log('Time:', new Date().toISOString());
@@ -150,5 +152,3 @@ const handler: Handler = async (event: HandlerEvent, context: HandlerContext) =>
     };
   }
 };
-
-export { handler };

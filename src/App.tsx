@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback, Suspense, lazy } from 'react';
 import { Mail, Linkedin, FileText, Folders, ArrowUpRight } from 'lucide-react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import ParticleBackground from './components/ParticleBackground';
@@ -15,6 +16,10 @@ import ServicesSection from './components/sections/ServicesSection';
 import SkillsSection from './components/sections/SkillsSection';
 import BlogSection from './components/sections/BlogSection';
 import ContactSection from './components/sections/ContactSection';
+import NewsAnalyzerPage from './pages/NewsAnalyzerPage';
+import ETFHealthPredictorPage from './pages/ETFHealthPredictorPage';
+import ETFGainsPredictorPage from './pages/ETFGainsPredictorPage';
+import CurrencyArbitragePage from './pages/CurrencyArbitragePage';
 
 const sections = [
   'About Me',

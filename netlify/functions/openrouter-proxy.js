@@ -1,9 +1,6 @@
-
-// netlify/functions/openrouter-proxy.ts
 import { Handler, HandlerEvent, HandlerContext } from '@netlify/functions';
 
 const handler: Handler = async (event: HandlerEvent, context: HandlerContext) => {
-  // Only allow POST requests
   if (event.httpMethod !== 'POST') {
     return {
       statusCode: 405,
@@ -11,11 +8,11 @@ const handler: Handler = async (event: HandlerEvent, context: HandlerContext) =>
     };
   }
 
-  // Get the API key from environment variables
-  const apiKey = process.env.VITE_OPENROUTER_API_KEY;
+  // Server-side: Use OPENROUTER_API_KEY (no VITE_ prefix)
+  const apiKey = process.env.OPENROUTER_API_KEY || process.env.VITE_OPENROUTER_API_KEY;
 
   if (!apiKey) {
-    console.error('VITE_OPENROUTER_API_KEY is not set');
+    console.error('OPENROUTER_API_KEY is not set');
     return {
       statusCode: 500,
       body: JSON.stringify({ error: 'API key not configured' }),
@@ -23,12 +20,10 @@ const handler: Handler = async (event: HandlerEvent, context: HandlerContext) =>
   }
 
   try {
-    // Parse the request body
     const body = JSON.parse(event.body || '{}');
 
     console.log('Proxying request to OpenRouter API');
 
-    // Make request to OpenRouter
     const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
       method: 'POST',
       headers: {
@@ -52,7 +47,6 @@ const handler: Handler = async (event: HandlerEvent, context: HandlerContext) =>
       };
     }
 
-    // Return successful response
     return {
       statusCode: 200,
       headers: {

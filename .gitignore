@@ -51,6 +51,7 @@ Thumbs.db
 *.log.*
 coverage/
 *.lcov
+.npmrc
 DEPLOYMENT.md
 
 # Notes

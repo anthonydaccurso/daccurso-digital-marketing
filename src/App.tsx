@@ -51,6 +51,7 @@ function App() {
   const [messages, setMessages] = useState([{ role: 'assistant', content: 'How can I help you?' }]);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [activeTool, setActiveTool] = useState<string | null>(null);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -69,6 +70,29 @@ function App() {
 
   useEffect(() => {
     const path = window.location.pathname.substring(1);
+    
+    // Check for tool-specific routes first
+    const toolRoutes: { [key: string]: string } = {
+      'live-tools/news-analyzer': 'news-analyzer',
+      'live-tools/etf-health-predictor': 'etf-predictor',
+      'live-tools/etf-gains-predictor': 'etf-gains',
+      'live-tools/currency-arbitrage': 'currency-arbitrage'
+    };
+    
+    if (toolRoutes[path]) {
+      setActiveSection('Live Tools');
+      setActiveTool(toolRoutes[path]);
+      return;
+    }
+    
+    // Handle general live-tools route
+    if (path === 'live-tools') {
+      setActiveSection('Live Tools');
+      setActiveTool('news-analyzer'); // Default tool
+      return;
+    }
+    
+    // Handle other sections
     if (path === '' || path === 'about-me') {
       setActiveSection('About Me');
       if (path === 'about-me') {
@@ -82,6 +106,7 @@ function App() {
       );
       if (sectionFromUrl) setActiveSection(sectionFromUrl);
     }
+    
     if (window.matchMedia('(display-mode: standalone)').matches) setIsPWA(true);
   }, []);
 
@@ -96,14 +121,22 @@ function App() {
       setShowSocialPopup(true);
     } else {
       setActiveSection(section);
+      
       if (section === 'About Me') {
         window.history.pushState({}, '', '/');
+        setActiveTool(null);
       } else if (section === 'Blog') {
         window.history.pushState({}, '', '/blog');
+        setActiveTool(null);
+      } else if (section === 'Live Tools') {
+        // Default to news-analyzer when clicking Live Tools
+        setActiveTool('news-analyzer');
+        window.history.pushState({}, '', '/live-tools/news-analyzer');
       } else {
         const slug = section.toLowerCase().replace(/\s+/g, '-');
         const path = `/${slug}`;
         window.history.pushState({}, '', path);
+        setActiveTool(null);
       }
     }
   }, []);
@@ -128,7 +161,18 @@ function App() {
   const getCanonicalUrl = () => {
     const baseUrl = 'https://anthonydaccurso.com';
     if (activeSection === 'My Projects') return `${baseUrl}/my-projects`;
-    if (activeSection === 'Live Tools') return `${baseUrl}/live-tools`;
+    if (activeSection === 'Live Tools') {
+      if (activeTool) {
+        const toolPaths: { [key: string]: string } = {
+          'news-analyzer': '/live-tools/news-analyzer',
+          'etf-predictor': '/live-tools/etf-health-predictor',
+          'etf-gains': '/live-tools/etf-gains-predictor',
+          'currency-arbitrage': '/live-tools/currency-arbitrage'
+        };
+        return `${baseUrl}${toolPaths[activeTool]}`;
+      }
+      return `${baseUrl}/live-tools`;
+    }
     if (activeSection === 'My Services') return `${baseUrl}/my-services`;
     if (activeSection === 'My Skills') return `${baseUrl}/my-skills`;
     if (activeSection === 'Contact Me') return `${baseUrl}/contact-me`;
@@ -273,7 +317,7 @@ function App() {
           {activeSection === 'About Me' && <AboutMeSection />}
           {activeSection === 'My Process' && <MyProcessSection />}
           {activeSection === 'My Projects' && <ProjectsSection />}
-          {activeSection === 'Live Tools' && <LiveToolsSection />}
+          {activeSection === 'Live Tools' && <LiveToolsSection activeTool={activeTool} setActiveTool={setActiveTool} />}
           {activeSection === 'My Services' && <ServicesSection />}
           {activeSection === 'My Skills' && <SkillsSection />}
           {activeSection === 'Blog' && <BlogSection />}

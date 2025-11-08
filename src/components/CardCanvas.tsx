@@ -93,8 +93,7 @@ const Card = () => {
 &resize=cover"
               srcSet="
                 https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-64x64.webp?width=64&quality=70&format=webp&resize=cover 1x,
-                https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-128x128.webp?width=128&quality=70&format=webp
-&resize=cover 2x
+                https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-128x128.webp?width=128&quality=70&format=webp&resize=cover 2x
               "
               alt="Anthony Daccurso"
               width={40}

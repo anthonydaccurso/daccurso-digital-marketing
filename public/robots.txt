@@ -1,13 +1,5 @@
 User-agent: *
 Allow: /
-Allow: /my-process
-Allow: /my-projects
-Allow: /my-services
-Allow: /live-tools
-Allow: /my-skills
-Allow: /contact-me
-Allow: /blog
-Allow: /manifest.json
-Allow: /sitemap.xml
+Disallow: /.env
 
 Sitemap: https://anthonydaccurso.com/sitemap.xml

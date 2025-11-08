@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback, Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import { Mail, Linkedin, FileText, Folders, ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
@@ -38,7 +38,36 @@ const mobileSections = [...sections] as const;
 
 type Section = typeof sections[number];
 
+// Tool Layout Wrapper Component
+function ToolLayout({ children }: { children: React.ReactNode }) {
+  const navigate = useNavigate();
+  
+  return (
+    <div className="min-h-screen bg-[#0a1628] text-white">
+      <ParticleBackground />
+      
+      {/* Back to Home Button */}
+      <div className="container mx-auto px-4 md:px-16 pt-8 relative z-10">
+        <button
+          onClick={() => navigate('/')}
+          className="mb-6 px-4 py-2 bg-[#1c336f] hover:bg-blue-500/20 text-gray-300 rounded-lg transition-colors duration-300 flex items-center gap-2"
+        >
+          <span>←</span>
+          <span>Back to Home</span>
+        </button>
+      </div>
+      
+      {/* Tool Content */}
+      <div className="container mx-auto px-4 md:px-16 pb-12 relative z-10">
+        {children}
+      </div>
+    </div>
+  );
+}
+
 function MainApp() {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [activeSection, setActiveSection] = useState<Section>('About Me');
   const [isPWA, setIsPWA] = useState(false);
   const [showSocialPopup, setShowSocialPopup] = useState(false);
@@ -66,12 +95,9 @@ function MainApp() {
   }, []);
 
   useEffect(() => {
-    const path = window.location.pathname.substring(1);
+    const path = location.pathname.substring(1);
     if (path === '' || path === 'about-me') {
       setActiveSection('About Me');
-      if (path === 'about-me') {
-        window.history.replaceState({}, '', '/');
-      }
     } else if (path === 'blog') {
       setActiveSection('Blog');
     } else {
@@ -81,13 +107,16 @@ function MainApp() {
       if (sectionFromUrl) setActiveSection(sectionFromUrl);
     }
     if (window.matchMedia('(display-mode: standalone)').matches) setIsPWA(true);
-  }, []);
+  }, [location.pathname]);
 
   const handleNameClick = useCallback(() => {
     if (window.innerWidth <= 768 || window.matchMedia('(display-mode: standalone)').matches) {
       window.location.reload();
+    } else {
+      navigate('/');
+      setActiveSection('About Me');
     }
-  }, []);
+  }, [navigate]);
 
   const handleSectionChange = useCallback((section: Section) => {
     if (section === 'Social') {
@@ -95,16 +124,15 @@ function MainApp() {
     } else {
       setActiveSection(section);
       if (section === 'About Me') {
-        window.history.pushState({}, '', '/');
+        navigate('/');
       } else if (section === 'Blog') {
-        window.history.pushState({}, '', '/blog');
+        navigate('/blog');
       } else {
         const slug = section.toLowerCase().replace(/\s+/g, '-');
-        const path = `/${slug}`;
-        window.history.pushState({}, '', path);
+        navigate(`/${slug}`);
       }
     }
-  }, []);
+  }, [navigate]);
 
   const sendMessage = async (msg: string) => {
     setLoading(true);
@@ -121,18 +149,6 @@ function MainApp() {
     } finally {
       setLoading(false);
     }
-  };
-
-  const getCanonicalUrl = () => {
-    const baseUrl = 'https://anthonydaccurso.com';
-    if (activeSection === 'My Projects') return `${baseUrl}/my-projects`;
-    if (activeSection === 'Live Tools') return `${baseUrl}/live-tools`;
-    if (activeSection === 'My Services') return `${baseUrl}/my-services`;
-    if (activeSection === 'My Skills') return `${baseUrl}/my-skills`;
-    if (activeSection === 'Contact Me') return `${baseUrl}/contact-me`;
-    if (activeSection === 'Blog') return `${baseUrl}/blog`;
-    if (activeSection === 'My Process') return `${baseUrl}/my-process`;
-    return baseUrl;
   };
 
   return (
@@ -297,41 +313,70 @@ export default function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<MainApp />} />
-
-        {/* Wrap each tool in a consistent layout */}
+        {/* Live Tools Routes - Must come BEFORE the main app route */}
         <Route
           path="/live-tools/news-analyzer"
           element={
-            <div className="min-h-screen bg-[#0a1628] py-12 px-4 text-white">
+            <ToolLayout>
+              <Helmet>
+                <title>News & Sentiment Analyzer | Daccurso Digital Marketing</title>
+                <meta name="description" content="Real-time global market sentiment and financial news analysis tool" />
+                <link rel="canonical" href="https://anthonydaccurso.com/live-tools/news-analyzer" />
+              </Helmet>
               <NewsAnalyzerPage />
-            </div>
+            </ToolLayout>
           }
         />
         <Route
           path="/live-tools/etf-health"
           element={
-            <div className="min-h-screen bg-[#0a1628] py-12 px-4 text-white">
+            <ToolLayout>
+              <Helmet>
+                <title>ETF Health Predictor | Daccurso Digital Marketing</title>
+                <meta name="description" content="AI-powered ETF health predictions and market analysis" />
+                <link rel="canonical" href="https://anthonydaccurso.com/live-tools/etf-health" />
+              </Helmet>
               <ETFHealthPredictorPage />
-            </div>
+            </ToolLayout>
           }
         />
         <Route
           path="/live-tools/etf-gains"
           element={
-            <div className="min-h-screen bg-[#0a1628] py-12 px-4 text-white">
+            <ToolLayout>
+              <Helmet>
+                <title>ETF Gains Predictor | Daccurso Digital Marketing</title>
+                <meta name="description" content="Personalized ETF investment projections and retirement planning" />
+                <link rel="canonical" href="https://anthonydaccurso.com/live-tools/etf-gains" />
+              </Helmet>
               <ETFGainsPredictorPage />
-            </div>
+            </ToolLayout>
           }
         />
         <Route
           path="/live-tools/currency-arbitrage"
           element={
-            <div className="min-h-screen bg-[#0a1628] py-12 px-4 text-white">
+            <ToolLayout>
+              <Helmet>
+                <title>Currency Arbitrage Calculator | Daccurso Digital Marketing</title>
+                <meta name="description" content="Real-time currency arbitrage opportunities and profit calculations" />
+                <link rel="canonical" href="https://anthonydaccurso.com/live-tools/currency-arbitrage" />
+              </Helmet>
               <CurrencyArbitragePage />
-            </div>
+            </ToolLayout>
           }
         />
+
+        {/* Main App Routes */}
+        <Route path="/" element={<MainApp />} />
+        <Route path="/about-me" element={<MainApp />} />
+        <Route path="/my-process" element={<MainApp />} />
+        <Route path="/my-projects" element={<MainApp />} />
+        <Route path="/my-services" element={<MainApp />} />
+        <Route path="/live-tools" element={<MainApp />} />
+        <Route path="/my-skills" element={<MainApp />} />
+        <Route path="/contact-me" element={<MainApp />} />
+        <Route path="/blog" element={<MainApp />} />
 
         {/* Fallback route */}
         <Route path="*" element={<MainApp />} />

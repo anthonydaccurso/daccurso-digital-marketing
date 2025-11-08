@@ -35,11 +35,11 @@ function AboutMeSection() {
           content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp"
         />
 
-        {/* ✅ Preload the LCP image */}
+        {/* ✅ Correct preload for LCP image */}
         <link
           rel="preload"
           as="image"
-          href="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/render/image/public/media/anthony-daccurso-fcp.webp?quality=80&width=600&format=webp&resize=cover&cacheControl=31536000"
+          href="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp?width=600&quality=80&format=webp&resize=cover"
           imagesizes="(max-width: 768px) 100vw, 600px"
           fetchpriority="high"
         />
@@ -92,43 +92,35 @@ function AboutMeSection() {
 
       <div className="bg-[#1a2f5c]/50 rounded-2xl p-6 sm:p-8 md:p-12 w-full mx-auto">
         <div className="flex flex-col md:flex-row gap-5 md:gap-12 items-center">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
             className="w-full md:w-1/3 aspect-square rounded-xl overflow-hidden shadow-2xl"
           >
-            <link
-              rel="preload"
-              as="image"
-              href="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webpwidth=600&quality=80&format=webp&resize=cover&cacheControl=31536000"
-              imagesizes="(max-width: 768px) 100vw, 600px"
-              fetchpriority="high"
-            />
-
             <img
               src="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp?width=600&quality=80&format=webp&resize=cover"
-              srcset="
+              srcSet="
                 https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp?width=600&quality=80&format=webp&resize=cover 1x,
-                https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp?width=600&quality=80&format=webp&resize=cover 2x
+                https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp?width=800&quality=80&format=webp&resize=cover 2x
               "
               alt="Anthony Daccurso"
               width="400"
               height="400"
               loading="eager"
               fetchpriority="high"
-              decoding="sync"
-              class="w-full h-full object-cover brightness-40"
+              decoding="async"
+              className="w-full h-full object-cover brightness-40"
             />
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.28 }}
             className="w-full md:w-2/3 space-y-6"
           >
-            <motion.h1 
+            <motion.h1
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}

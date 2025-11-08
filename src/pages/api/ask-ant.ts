@@ -156,7 +156,7 @@ export const askAnt = async (userMessage: string) => {
       },
       body: JSON.stringify({
         model: 'openai/gpt-oss-20b:free',
-        max_tokens: 200,
+        max_tokens: 300,
         messages: [
           {
             role: 'system',
@@ -178,7 +178,7 @@ export const askAnt = async (userMessage: string) => {
       },
       body: JSON.stringify({
         model: 'openai/gpt-oss-20b:free',
-        max_tokens: 200,
+        max_tokens: 300,
         messages: [
           {
             role: 'system',

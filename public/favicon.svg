@@ -4,4 +4,4 @@
 <link rel="icon" type="image/png" sizes="96x96" href="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-favicon-96x96.png">
 <link rel="icon" type="image/png" sizes="192x192" href="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-web-app-manifest-192x192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-web-app-manifest-512x512.png">
-<link rel="manifest" href="/manifest.json">
+<link rel="manifest" href="/home/project/public/manifest.json">

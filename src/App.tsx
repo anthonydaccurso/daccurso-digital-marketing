@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useCallback, Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import { Mail, Linkedin, FileText, Folders, ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
@@ -17,12 +16,6 @@ import SkillsSection from './components/sections/SkillsSection';
 import BlogSection from './components/sections/BlogSection';
 import ContactSection from './components/sections/ContactSection';
 
-// Live Tool Pages
-import NewsAnalyzerPage from './components/NewsAnalyzer';
-import ETFHealthPredictorPage from './components/ETFHealthPredictor';
-import ETFGainsPredictorPage from './components/ETFGainsPredictor';
-import CurrencyArbitragePage from './components/CurrencyCalculator'; 
-
 const sections = [
   'About Me',
   'My Process',
@@ -34,40 +27,20 @@ const sections = [
   'Blog',
 ] as const;
 
-const mobileSections = [...sections] as const;
+const mobileSections = [
+  'About Me',
+  'My Process',
+  'My Projects',
+  'My Services',
+  'Live Tools',
+  'My Skills',
+  'Contact Me',
+  'Blog',
+] as const;
 
 type Section = typeof sections[number];
 
-// Tool Layout Wrapper Component
-function ToolLayout({ children }: { children: React.ReactNode }) {
-  const navigate = useNavigate();
-  
-  return (
-    <div className="min-h-screen bg-[#0a1628] text-white">
-      <ParticleBackground />
-      
-      {/* Back to Home Button */}
-      <div className="container mx-auto px-4 md:px-16 pt-8 relative z-10">
-        <button
-          onClick={() => navigate('/')}
-          className="mb-6 px-4 py-2 bg-[#1c336f] hover:bg-blue-500/20 text-gray-300 rounded-lg transition-colors duration-300 flex items-center gap-2"
-        >
-          <span>←</span>
-          <span>Back to Home</span>
-        </button>
-      </div>
-      
-      {/* Tool Content */}
-      <div className="container mx-auto px-4 md:px-16 pb-12 relative z-10">
-        {children}
-      </div>
-    </div>
-  );
-}
-
-function MainApp() {
-  const navigate = useNavigate();
-  const location = useLocation();
+function App() {
   const [activeSection, setActiveSection] = useState<Section>('About Me');
   const [isPWA, setIsPWA] = useState(false);
   const [showSocialPopup, setShowSocialPopup] = useState(false);
@@ -95,9 +68,12 @@ function MainApp() {
   }, []);
 
   useEffect(() => {
-    const path = location.pathname.substring(1);
+    const path = window.location.pathname.substring(1);
     if (path === '' || path === 'about-me') {
       setActiveSection('About Me');
+      if (path === 'about-me') {
+        window.history.replaceState({}, '', '/');
+      }
     } else if (path === 'blog') {
       setActiveSection('Blog');
     } else {
@@ -107,16 +83,13 @@ function MainApp() {
       if (sectionFromUrl) setActiveSection(sectionFromUrl);
     }
     if (window.matchMedia('(display-mode: standalone)').matches) setIsPWA(true);
-  }, [location.pathname]);
+  }, []);
 
   const handleNameClick = useCallback(() => {
     if (window.innerWidth <= 768 || window.matchMedia('(display-mode: standalone)').matches) {
       window.location.reload();
-    } else {
-      navigate('/');
-      setActiveSection('About Me');
     }
-  }, [navigate]);
+  }, []);
 
   const handleSectionChange = useCallback((section: Section) => {
     if (section === 'Social') {
@@ -124,15 +97,16 @@ function MainApp() {
     } else {
       setActiveSection(section);
       if (section === 'About Me') {
-        navigate('/');
+        window.history.pushState({}, '', '/');
       } else if (section === 'Blog') {
-        navigate('/blog');
+        window.history.pushState({}, '', '/blog');
       } else {
         const slug = section.toLowerCase().replace(/\s+/g, '-');
-        navigate(`/${slug}`);
+        const path = `/${slug}`;
+        window.history.pushState({}, '', path);
       }
     }
-  }, [navigate]);
+  }, []);
 
   const sendMessage = async (msg: string) => {
     setLoading(true);
@@ -151,12 +125,25 @@ function MainApp() {
     }
   };
 
+  const getCanonicalUrl = () => {
+    const baseUrl = 'https://anthonydaccurso.com';
+    if (activeSection === 'My Projects') return `${baseUrl}/my-projects`;
+    if (activeSection === 'Live Tools') return `${baseUrl}/live-tools`;
+    if (activeSection === 'My Services') return `${baseUrl}/my-services`;
+    if (activeSection === 'My Skills') return `${baseUrl}/my-skills`;
+    if (activeSection === 'Contact Me') return `${baseUrl}/contact-me`;
+    if (activeSection === 'Blog') return `${baseUrl}/blog`;
+    if (activeSection === 'My Process') return `${baseUrl}/my-process`;
+    return baseUrl;
+  };
+
   return (
     <div
       className={`min-h-screen bg-[#0d2242] text-white relative ${
         isPWA ? 'pt-[0px] pb-[0px]' : ''
       }`}
     >
+
       <ParticleBackground />
 
       {/* Card Container - Desktop Only */}
@@ -176,7 +163,6 @@ function MainApp() {
         </div>
       )}
 
-      {/* Main Container */}
       <div className="container mx-auto px-4 md:px-16 pt-[30px] md:pt-[60px] pb-[60px] md:pb-[80px] relative z-10">
         {/* Mobile Card */}
         {isMobile && (
@@ -193,7 +179,6 @@ function MainApp() {
           </div>
         )}
 
-        {/* HEADER */}
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -282,8 +267,9 @@ function MainApp() {
           )}
         </div>
 
-        {/* SECTION RENDERING */}
-        <Suspense fallback={<div className="w-full h-32 bg-[#0d2242] rounded-xl animate-pulse" />}>
+        <Suspense
+          fallback={<div className="w-full h-32 bg-[#0d2242] rounded-xl animate-pulse" />}
+        >
           {activeSection === 'About Me' && <AboutMeSection />}
           {activeSection === 'My Process' && <MyProcessSection />}
           {activeSection === 'My Projects' && <ProjectsSection />}
@@ -296,6 +282,7 @@ function MainApp() {
       </div>
 
       <SocialMediaPopup isOpen={showSocialPopup} onClose={() => setShowSocialPopup(false)} />
+
       <AskAntChat
         isOpen={isOpen}
         onOpen={() => setIsOpen(true)}
@@ -309,78 +296,4 @@ function MainApp() {
   );
 }
 
-export default function App() {
-  return (
-    <Router>
-      <Routes>
-        {/* Live Tools Routes - Must come BEFORE the main app route */}
-        <Route
-          path="/live-tools/news-analyzer"
-          element={
-            <ToolLayout>
-              <Helmet>
-                <title>News & Sentiment Analyzer | Daccurso Digital Marketing</title>
-                <meta name="description" content="Real-time global market sentiment and financial news analysis tool" />
-                <link rel="canonical" href="https://anthonydaccurso.com/live-tools/news-analyzer" />
-              </Helmet>
-              <NewsAnalyzerPage />
-            </ToolLayout>
-          }
-        />
-        <Route
-          path="/live-tools/etf-health"
-          element={
-            <ToolLayout>
-              <Helmet>
-                <title>ETF Health Predictor | Daccurso Digital Marketing</title>
-                <meta name="description" content="AI-powered ETF health predictions and market analysis" />
-                <link rel="canonical" href="https://anthonydaccurso.com/live-tools/etf-health" />
-              </Helmet>
-              <ETFHealthPredictorPage />
-            </ToolLayout>
-          }
-        />
-        <Route
-          path="/live-tools/etf-gains"
-          element={
-            <ToolLayout>
-              <Helmet>
-                <title>ETF Gains Predictor | Daccurso Digital Marketing</title>
-                <meta name="description" content="Personalized ETF investment projections and retirement planning" />
-                <link rel="canonical" href="https://anthonydaccurso.com/live-tools/etf-gains" />
-              </Helmet>
-              <ETFGainsPredictorPage />
-            </ToolLayout>
-          }
-        />
-        <Route
-          path="/live-tools/currency-arbitrage"
-          element={
-            <ToolLayout>
-              <Helmet>
-                <title>Currency Arbitrage Calculator | Daccurso Digital Marketing</title>
-                <meta name="description" content="Real-time currency arbitrage opportunities and profit calculations" />
-                <link rel="canonical" href="https://anthonydaccurso.com/live-tools/currency-arbitrage" />
-              </Helmet>
-              <CurrencyArbitragePage />
-            </ToolLayout>
-          }
-        />
-
-        {/* Main App Routes */}
-        <Route path="/" element={<MainApp />} />
-        <Route path="/about-me" element={<MainApp />} />
-        <Route path="/my-process" element={<MainApp />} />
-        <Route path="/my-projects" element={<MainApp />} />
-        <Route path="/my-services" element={<MainApp />} />
-        <Route path="/live-tools" element={<MainApp />} />
-        <Route path="/my-skills" element={<MainApp />} />
-        <Route path="/contact-me" element={<MainApp />} />
-        <Route path="/blog" element={<MainApp />} />
-
-        {/* Fallback route */}
-        <Route path="*" element={<MainApp />} />
-      </Routes>
-    </Router>
-  );
-}
+export default App;

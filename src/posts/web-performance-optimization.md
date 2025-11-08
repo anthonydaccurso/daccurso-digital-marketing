@@ -1,6 +1,6 @@
 ---
 title: "Web Performance Optimization: Essential Techniques"
-date: "2024-11-03"
+date: "2025-11-03"
 excerpt: "Learn proven strategies to optimize your website performance, reduce load times, and improve user experience with modern best practices."
 ---
 

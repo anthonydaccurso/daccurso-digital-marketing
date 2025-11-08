@@ -116,7 +116,7 @@ function AboutMeSection() {
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.10 }}
+            transition={{ delay: 0.20 }}
             className="w-full md:w-2/3 space-y-6"
           >
             <motion.h1

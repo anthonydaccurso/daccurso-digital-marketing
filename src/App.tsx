@@ -21,7 +21,7 @@ import ContactSection from './components/sections/ContactSection';
 import NewsAnalyzerPage from './components/NewsAnalyzer';
 import ETFHealthPredictorPage from './components/ETFHealthPredictor';
 import ETFGainsPredictorPage from './components/ETFGainsPredictor';
-import CurrencyArbitragePage from './components/CurrencyCalculator';
+import CurrencyArbitragePage from './components/CurrencyCalculator'; 
 
 const sections = [
   'About Me',

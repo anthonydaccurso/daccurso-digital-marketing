@@ -1,17 +1,12 @@
-import React, { useState, useEffect, useCallback, Suspense } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useState, useEffect, useCallback, Suspense, lazy } from 'react';
 import { Mail, Linkedin, FileText, Folders, ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-
-// Core Components
 import ParticleBackground from './components/ParticleBackground';
 import SocialMediaPopup from './components/SocialMediaPopup';
 import CardCanvas from './components/CardCanvas';
 import AskAntChat from './components/AskAntChat';
 import { askAnt } from './pages/api/ask-ant.ts';
-
-// Sections
 import AboutMeSection from './components/sections/AboutMeSection';
 import MyProcessSection from './components/sections/MyProcessSection';
 import ProjectsSection from './components/sections/ProjectsSection';
@@ -21,14 +16,18 @@ import SkillsSection from './components/sections/SkillsSection';
 import BlogSection from './components/sections/BlogSection';
 import ContactSection from './components/sections/ContactSection';
 
-// Live Tool Pages
-import NewsAnalyzerPage from './pages/NewsAnalyzerPage';
-import ETFHealthPredictorPage from './pages/ETFHealthPredictorPage';
-import ETFGainsPredictorPage from './pages/ETFGainsPredictorPage';
-import CurrencyArbitragePage from './pages/CurrencyArbitragePage';
-
-// Section Names
 const sections = [
+  'About Me',
+  'My Process',
+  'My Projects',
+  'My Services',
+  'Live Tools',
+  'My Skills',
+  'Contact Me',
+  'Blog',
+] as const;
+
+const mobileSections = [
   'About Me',
   'My Process',
   'My Projects',
@@ -41,12 +40,13 @@ const sections = [
 
 type Section = typeof sections[number];
 
-function MainApp() {
+function App() {
   const [activeSection, setActiveSection] = useState<Section>('About Me');
   const [isPWA, setIsPWA] = useState(false);
   const [showSocialPopup, setShowSocialPopup] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [showCard, setShowCard] = useState(false);
+  const [isCardMounted, setIsCardMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([{ role: 'assistant', content: 'How can I help you?' }]);
   const [error, setError] = useState(false);
@@ -55,6 +55,7 @@ function MainApp() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setShowCard(true);
+      setTimeout(() => setIsCardMounted(true), 0);
     }, 0);
     return () => clearTimeout(timeout);
   }, []);
@@ -124,15 +125,28 @@ function MainApp() {
     }
   };
 
+  const getCanonicalUrl = () => {
+    const baseUrl = 'https://anthonydaccurso.com';
+    if (activeSection === 'My Projects') return `${baseUrl}/my-projects`;
+    if (activeSection === 'Live Tools') return `${baseUrl}/live-tools`;
+    if (activeSection === 'My Services') return `${baseUrl}/my-services`;
+    if (activeSection === 'My Skills') return `${baseUrl}/my-skills`;
+    if (activeSection === 'Contact Me') return `${baseUrl}/contact-me`;
+    if (activeSection === 'Blog') return `${baseUrl}/blog`;
+    if (activeSection === 'My Process') return `${baseUrl}/my-process`;
+    return baseUrl;
+  };
+
   return (
     <div
       className={`min-h-screen bg-[#0d2242] text-white relative ${
         isPWA ? 'pt-[0px] pb-[0px]' : ''
       }`}
     >
+
       <ParticleBackground />
 
-      {/* Card - Desktop */}
+      {/* Card Container - Desktop Only */}
       {!isMobile && (
         <div className="absolute top-0 right-0 w-full h-full pointer-events-none z-20">
           <div className="sticky top-[120px] right-[calc((100vw-960px)/2-218px)] w-[400px] h-[120px] ml-auto mr-[calc((100vw-960px)/2-224px)] pointer-events-auto">
@@ -149,7 +163,6 @@ function MainApp() {
         </div>
       )}
 
-      {/* Main Container */}
       <div className="container mx-auto px-4 md:px-16 pt-[30px] md:pt-[60px] pb-[60px] md:pb-[80px] relative z-10">
         {/* Mobile Card */}
         {isMobile && (
@@ -166,11 +179,10 @@ function MainApp() {
           </div>
         )}
 
-        {/* Header */}
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-4xl md:text-6xl font-bold mb-[18px] text-left inline-block bg-gradient-to-r from-white via-blue-400 to-blue-700 bg-clip-text text-transparent cursor-pointer pb-1 pt-[0px] z-[50] relative"
+          className="text-4xl md:text-6xl font-bold mb-[18px] md:mb-[18px] text-left inline-block bg-gradient-to-r from-white via-blue-400 to-blue-700 bg-clip-text text-transparent cursor-pointer pb-1 pt-[0px] z-[50] relative"
           onClick={handleNameClick}
         >
           Daccurso Digital Marketing
@@ -188,7 +200,7 @@ function MainApp() {
           </span>
         </motion.p>
 
-        {/* Navigation */}
+        {/* NAVIGATION BUTTONS */}
         <div
           className={`${
             isMobile
@@ -198,6 +210,7 @@ function MainApp() {
         >
           {!isMobile ? (
             <div className="flex flex-col gap-4">
+              {/* Row 1 */}
               <div className="flex gap-4">
                 {['About Me', 'My Process', 'My Projects', 'My Services'].map((section) => (
                   <motion.button
@@ -215,6 +228,8 @@ function MainApp() {
                   </motion.button>
                 ))}
               </div>
+
+              {/* Row 2 */}
               <div className="flex gap-4">
                 {['Live Tools', 'My Skills', 'Contact Me', 'Blog'].map((section) => (
                   <motion.button
@@ -234,7 +249,7 @@ function MainApp() {
               </div>
             </div>
           ) : (
-            sections.map((section) => (
+            mobileSections.map((section) => (
               <motion.button
                 key={section}
                 whileHover={{ scale: 1.05 }}
@@ -252,8 +267,9 @@ function MainApp() {
           )}
         </div>
 
-        {/* Section Rendering */}
-        <Suspense fallback={<div className="w-full h-32 bg-[#0d2242] rounded-xl animate-pulse" />}>
+        <Suspense
+          fallback={<div className="w-full h-32 bg-[#0d2242] rounded-xl animate-pulse" />}
+        >
           {activeSection === 'About Me' && <AboutMeSection />}
           {activeSection === 'My Process' && <MyProcessSection />}
           {activeSection === 'My Projects' && <ProjectsSection />}
@@ -265,8 +281,8 @@ function MainApp() {
         </Suspense>
       </div>
 
-      {/* Popups */}
       <SocialMediaPopup isOpen={showSocialPopup} onClose={() => setShowSocialPopup(false)} />
+
       <AskAntChat
         isOpen={isOpen}
         onOpen={() => setIsOpen(true)}
@@ -280,16 +296,4 @@ function MainApp() {
   );
 }
 
-export default function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<MainApp />} />
-        <Route path="/live-tools/news-analyzer" element={<NewsAnalyzerPage />} />
-        <Route path="/live-tools/etf-health" element={<ETFHealthPredictorPage />} />
-        <Route path="/live-tools/etf-gains" element={<ETFGainsPredictorPage />} />
-        <Route path="/live-tools/currency-arbitrage" element={<CurrencyArbitragePage />} />
-      </Routes>
-    </Router>
-  );
-}
+export default App;

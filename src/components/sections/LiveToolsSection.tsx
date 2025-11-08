@@ -6,6 +6,10 @@ import ETFHealthPredictor from '../ETFHealthPredictor';
 import ETFGainsPredictor from '../ETFGainsPredictor';
 import NewsAnalyzer from '../NewsAnalyzer';
 import { Helmet } from 'react-helmet-async';
+import { useNavigate } from 'react-router-dom';
+
+const navigate = useNavigate();
+onClick={() => navigate(tool.path)}
 
 const tools = [
     {

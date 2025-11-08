@@ -154,7 +154,7 @@ export const askAnt = async (userMessage: string) => {
         'HTTP-Referer': 'https://anthonydaccurso.com',
       },
       body: JSON.stringify({
-        model: 'mistralai/mistral-7b-instruct:free',
+        model: 'openai/gpt-oss-20b:free',
         max_tokens: 200,
         messages: [
           {
@@ -176,7 +176,7 @@ export const askAnt = async (userMessage: string) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'mistralai/mistral-7b-instruct:free',
+        model: 'openai/gpt-oss-20b:free',
         max_tokens: 200,
         messages: [
           {

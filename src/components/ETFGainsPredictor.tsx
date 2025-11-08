@@ -65,8 +65,8 @@ const ETF_OPTIONS = [
   { symbol: 'VNQ', name: 'Vanguard Real Estate Index Fund ETF' },
   { symbol: 'GLD', name: 'SPDR Gold Shares' },
   { symbol: 'TLT', name: 'iShares 20+ Year Treasury Bond ETF' },
-  { symbol: 'XLK', name: 'Technology Select Sector SPDR Fund' },
-  { symbol: 'XLF', name: 'Financial Select Sector SPDR Fund' }
+  { symbol: 'XLK', name: 'Technology Sector SPDR Fund' },
+  { symbol: 'XLF', name: 'Financial Sector SPDR Fund' }
 ];
 
 const PAYMENT_FREQUENCIES = [
@@ -474,6 +474,7 @@ function ETFGainsPredictor() {
           <label className="block text-sm font-medium text-gray-300">Select ETFs (Multiple)</label>
           <div className="relative">
             <button
+              aria-label="Select ETFs"
               onClick={() => setDropdownOpen(!dropdownOpen)}
               className="w-full px-4 py-3 bg-[#0d2242] text-white rounded-lg border border-blue-500/30 focus:border-blue-400 focus:outline-none flex items-center justify-between"
             >
@@ -499,6 +500,7 @@ function ETFGainsPredictor() {
                 {ETF_OPTIONS.map((etf) => (
                   <button
                     key={etf.symbol}
+                    aria-label={selectedETFs.some(selected => selected.symbol === etf.symbol) ? `Deselect ${etf.symbol}` : `Select ${etf.symbol}`}
                     onClick={() => handleETFToggle(etf.symbol)}
                     className={`w-full px-4 py-3 text-left transition-colors flex items-center justify-between ${
                       selectedETFs.some(selected => selected.symbol === etf.symbol)
@@ -564,6 +566,7 @@ function ETFGainsPredictor() {
           </label>
           <div className="relative">
             <button
+              aria-label="Select Payment Frequency"
               onClick={() => setFrequencyDropdownOpen(!frequencyDropdownOpen)}
               className="w-full px-4 py-3 bg-[#0d2242] text-white rounded-lg border border-blue-500/30 focus:border-blue-400 focus:outline-none flex items-center justify-between"
             >
@@ -583,6 +586,7 @@ function ETFGainsPredictor() {
                 {PAYMENT_FREQUENCIES.map((freq) => (
                   <button
                     key={freq.value}
+                    aria-label={`Select ${freq.label}`}
                     onClick={() => {
                       setPaymentFrequency(freq.value as PaymentFrequency);
                       setFrequencyDropdownOpen(false);
@@ -668,6 +672,7 @@ function ETFGainsPredictor() {
                   />
                   <span className="text-gray-400 text-sm">%</span>
                   <button
+                    aria-label={`Remove ${symbol} from portfolio`}
                     onClick={() => handleETFToggle(symbol)}
                     className="p-1 text-red-400 hover:text-red-300"
                   >

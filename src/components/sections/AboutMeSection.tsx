@@ -98,19 +98,29 @@ function AboutMeSection() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="w-full md:w-1/3 aspect-square rounded-xl overflow-hidden shadow-2xl"
           >
-            <img
-              src="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp?quality=80&width=600"
-              srcSet="
-                https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp?quality=80&width=600 1x,
-                https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp?quality=80&width=800 2x
-              "
-              alt="Anthony Daccurso"
-              loading="eager"
+            <link
+              rel="preload"
+              as="image"
+              href="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp?width=600&quality=80&format=webp&resize=cover&cacheControl=31536000"
+              imagesizes="(max-width: 768px) 100vw, 600px"
               fetchpriority="high"
+            />
+
+            <img
+              src="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp?width=400&quality=80&format=webp&resize=cover&cacheControl=31536000"
+              srcset="
+                https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp?width=400&quality=80&format=webp&resize=cover&cacheControl=31536000 1x,
+                https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp?width=800&quality=80&format=webp&resize=cover&cacheControl=31536000 2x
+              "
               width="400"
               height="400"
-              className="w-full h-full object-cover brightness-40"
+              alt="Anthony Daccurso"
+              fetchpriority="high"
+              loading="eager"
+              decoding="sync"
+              class="w-full h-full object-cover brightness-40"
             />
+
 
           </motion.div>
 

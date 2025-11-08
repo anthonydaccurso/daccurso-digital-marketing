@@ -1,7 +1,5 @@
 User-agent: *
 Allow: /
 Disallow: /.env
-Disallow: /.env
-Disallow: /.env
 
 Sitemap: https://anthonydaccurso.com/sitemap.xml

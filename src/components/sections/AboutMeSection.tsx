@@ -101,16 +101,16 @@ function AboutMeSection() {
             <link
               rel="preload"
               as="image"
-              href="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp?width=600&quality=80&format=webp&resize=cover&cacheControl=31536000"
+              href="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webpwidth=600&quality=80&format=webp&resize=cover&cacheControl=31536000"
               imagesizes="(max-width: 768px) 100vw, 600px"
               fetchpriority="high"
             />
 
             <img
-              src="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp?width=400&quality=80&format=webp&resize=cover&cacheControl=31536000"
+              src="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webpwidth=400&quality=80&format=webp&resize=cover&cacheControl=31536000"
               srcset="
-                https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp?width=400&quality=80&format=webp&resize=cover&cacheControl=31536000 1x,
-                https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp?width=800&quality=80&format=webp&resize=cover&cacheControl=31536000 2x
+                https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webpwidth=400&quality=80&format=webp&resize=cover&cacheControl=31536000 1x,
+                https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webpwidth=800&quality=80&format=webp&resize=cover&cacheControl=31536000 2x
               "
               width="400"
               height="400"

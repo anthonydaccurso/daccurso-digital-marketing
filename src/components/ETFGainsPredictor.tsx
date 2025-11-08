@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Calculator, TrendingUp, Calendar, User, Target, DollarSign, ChevronDown, RefreshCw, X, Percent, Repeat } from 'lucide-react';
 
@@ -92,8 +92,33 @@ function ETFGainsPredictor() {
   const [predictions, setPredictions] = useState<PredictionResults | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [frequencyDropdownOpen, setFrequencyDropdownOpen] = useState(false);
+
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const frequencyRef = useRef<HTMLDivElement>(null);
+
+  // Handle outside click to close dropdowns
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current && !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setDropdownOpen(false);
+      }
+      if (
+        frequencyRef.current && !frequencyRef.current.contains(event.target as Node)
+      ) {
+        setFrequencyDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   // Convert string inputs to numbers for calculations
   const userAgeNum = Math.max(18, Math.min(80, parseInt(userAge) || 23));
@@ -415,7 +440,6 @@ function ETFGainsPredictor() {
         const excess = totalWeight - 100;
         const otherETFs = updated.filter(etf => etf.symbol !== symbol);
         const reduction = excess / otherETFs.length;
-        
         return updated.map(etf => 
           etf.symbol === symbol ? etf : { ...etf, weight: Math.max(0, etf.weight - reduction) }
         );
@@ -470,11 +494,14 @@ function ETFGainsPredictor() {
       {/* Input Controls */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
         {/* ETF Selection */}
-        <div className="space-y-2">
+        <div className="space-y-2" ref={dropdownRef}>
           <label className="block text-sm font-medium text-gray-300">Select ETFs (Multiple)</label>
           <div className="relative">
             <button
               aria-label="Select ETFs"
+              aria-haspopup="listbox"
+              aria-expanded={dropdownOpen}
+              aria-controls="etf-dropdown"
               onClick={() => setDropdownOpen(!dropdownOpen)}
               className="w-full px-4 py-3 bg-[#0d2242] text-white rounded-lg border border-blue-500/30 focus:border-blue-400 focus:outline-none flex items-center justify-between"
             >
@@ -494,9 +521,12 @@ function ETFGainsPredictor() {
               </div>
               <ChevronDown className={`w-4 h-4 transition-transform ${dropdownOpen ? 'rotate-180' : ''}`} />
             </button>
-            
             {dropdownOpen && (
-              <div className="absolute top-full left-0 right-0 mt-1 bg-[#0d2242] border border-blue-500/30 rounded-lg shadow-lg z-50 max-h-64 overflow-y-auto">
+              <div
+                id="etf-dropdown"
+                role="listbox"
+                className="absolute top-full left-0 right-0 mt-1 bg-[#0d2242] border border-blue-500/30 rounded-lg shadow-lg z-50 max-h-64 overflow-y-auto"
+              >
                 {ETF_OPTIONS.map((etf) => (
                   <button
                     key={etf.symbol}
@@ -559,7 +589,7 @@ function ETFGainsPredictor() {
         </div>
 
         {/* Payment Frequency Selection */}
-        <div className="space-y-2">
+        <div className="space-y-2" ref={frequencyRef}>
           <label className="block text-sm font-medium text-gray-300 flex items-center gap-2">
             <Repeat className="w-4 h-4" />
             Payment Frequency
@@ -567,6 +597,9 @@ function ETFGainsPredictor() {
           <div className="relative">
             <button
               aria-label="Select Payment Frequency"
+              aria-haspopup="listbox"
+              aria-expanded={frequencyDropdownOpen}
+              aria-controls="frequency-dropdown"
               onClick={() => setFrequencyDropdownOpen(!frequencyDropdownOpen)}
               className="w-full px-4 py-3 bg-[#0d2242] text-white rounded-lg border border-blue-500/30 focus:border-blue-400 focus:outline-none flex items-center justify-between"
             >
@@ -580,9 +613,12 @@ function ETFGainsPredictor() {
               </div>
               <ChevronDown className={`w-4 h-4 transition-transform ${frequencyDropdownOpen ? 'rotate-180' : ''}`} />
             </button>
-            
             {frequencyDropdownOpen && (
-              <div className="absolute top-full left-0 right-0 mt-1 bg-[#0d2242] border border-blue-500/30 rounded-lg shadow-lg z-50">
+              <div
+                id="frequency-dropdown"
+                role="listbox"
+                className="absolute top-full left-0 right-0 mt-1 bg-[#0d2242] border border-blue-500/30 rounded-lg shadow-lg z-50"
+              >
                 {PAYMENT_FREQUENCIES.map((freq) => (
                   <button
                     key={freq.value}

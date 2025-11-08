@@ -107,16 +107,16 @@ function AboutMeSection() {
             />
 
             <img
-              src="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webpwidth=400&quality=80&format=webp&resize=cover&cacheControl=31536000"
+              src="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp?width=400&quality=80&format=webp&resize=cover"
               srcset="
-                https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webpwidth=400&quality=80&format=webp&resize=cover&cacheControl=31536000 1x,
-                https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webpwidth=800&quality=80&format=webp&resize=cover&cacheControl=31536000 2x
+                https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp?width=400&quality=80&format=webp&resize=cover 1x,
+                https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp?width=800&quality=80&format=webp&resize=cover 2x
               "
+              alt="Anthony Daccurso"
               width="400"
               height="400"
-              alt="Anthony Daccurso"
-              fetchpriority="high"
               loading="eager"
+              fetchpriority="high"
               decoding="sync"
               class="w-full h-full object-cover brightness-40"
             />

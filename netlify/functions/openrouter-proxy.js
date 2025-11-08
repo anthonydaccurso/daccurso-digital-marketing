@@ -34,7 +34,6 @@ export const handler = async (event, context) => {
     const apiKey = process.env.OPENROUTER_API_KEY || process.env.VITE_OPENROUTER_API_KEY;
     
     console.log('API Key exists:', !!apiKey);
-    console.log('API Key prefix:', apiKey ? apiKey.substring(0, 10) + '...' : 'MISSING');
 
     if (!apiKey) {
       console.error('No API key found in environment variables');

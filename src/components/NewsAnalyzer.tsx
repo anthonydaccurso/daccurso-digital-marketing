@@ -621,9 +621,10 @@ function NewsAnalyzer() {
                             href={item.url} 
                             target="_blank" 
                             rel="noopener noreferrer"
+                            aria-label={`Read full article: ${item.title}`}
                             className="text-gray-400 hover:text-blue-400 transition-colors"
                           >
-                            <ExternalLink className="w-4 h-4" />
+                           <ExternalLink className="w-4 h-4" />
                           </a>
                         </div>
                       </div>

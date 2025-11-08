@@ -155,7 +155,7 @@ export const askAnt = async (userMessage: string) => {
       },
       body: JSON.stringify({
         model: 'mistralai/mistral-7b-instruct:free',
-        max_tokens: 150,
+        max_tokens: 300,
         messages: [
           {
             role: 'system',

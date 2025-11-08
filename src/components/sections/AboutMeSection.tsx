@@ -140,7 +140,7 @@ function AboutMeSection() {
             <motion.p
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, ease: 'easeOut', delay: 0.3 }}
+              transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
               className="text-lg md:text-xl leading-relaxed text-gray-300"
             >
               My journey in digital marketing and web development has driven me to complete both work and personal projects that enable me to enhance my skills. I aim to strengthen my expertise as I advance in my career and consistently create deliverables of the highest possible quality. 

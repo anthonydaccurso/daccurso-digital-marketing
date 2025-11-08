@@ -67,19 +67,41 @@ export const handler = async (event, context) => {
       };
     }
 
-    // Make request to OpenRouter
-    console.log('📡 Calling OpenRouter API...');
+    // Make request to OpenRouter with timeout
+    console.log('Calling OpenRouter API...');
     
-    const openRouterResponse = await fetch('https://openrouter.ai/api/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${apiKey}`,
-        'HTTP-Referer': 'https://anthonydaccurso.com',
-        'X-Title': 'Anthony Daccurso Portfolio',
-      },
-      body: JSON.stringify(requestBody),
-    });
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 25000); // 25 second timeout
+    
+    let openRouterResponse;
+    try {
+      openRouterResponse = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${apiKey}`,
+          'HTTP-Referer': 'https://anthonydaccurso.com',
+          'X-Title': 'Anthony Daccurso Portfolio',
+        },
+        body: JSON.stringify(requestBody),
+        signal: controller.signal,
+      });
+      clearTimeout(timeoutId);
+    } catch (fetchError) {
+      clearTimeout(timeoutId);
+      if (fetchError.name === 'AbortError') {
+        console.error('Request timed out after 25 seconds');
+        return {
+          statusCode: 504,
+          headers,
+          body: JSON.stringify({ 
+            error: 'Request timeout',
+            message: 'The AI service took too long to respond. Please try a simpler question.'
+          }),
+        };
+      }
+      throw fetchError;
+    }
 
     console.log('OpenRouter response status:', openRouterResponse.status);
 

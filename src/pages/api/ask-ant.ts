@@ -155,7 +155,7 @@ export const askAnt = async (userMessage: string) => {
       },
       body: JSON.stringify({
         model: 'nousresearch/nous-hermes-2-mistral:free',
-        max_tokens: 150,
+        max_tokens: 300,
         messages: [
           {
             role: 'system',
@@ -177,7 +177,7 @@ export const askAnt = async (userMessage: string) => {
       },
       body: JSON.stringify({
         model: 'nousresearch/nous-hermes-2-mistral:free',
-        max_tokens: 150,
+        max_tokens: 300,
         messages: [
           {
             role: 'system',

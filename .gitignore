@@ -19,14 +19,13 @@ tmp/
 functions-build/
 bolt-data/
 
-# Build Output
-dist/
-dist-ssr/
-build/
-.cache/
-tmp/
-functions-build/
-bolt-data/
+# Environment Variables
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+.env.*
 
 # Netlify / Deployment
 .netlify/

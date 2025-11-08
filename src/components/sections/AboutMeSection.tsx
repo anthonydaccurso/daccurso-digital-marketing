@@ -34,6 +34,16 @@ function AboutMeSection() {
           name="twitter:image"
           content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp"
         />
+
+        {/* ✅ Preload the LCP image */}
+        <link
+          rel="preload"
+          as="image"
+          href="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/render/image/public/media/anthony-daccurso-fcp.webp?quality=80&width=600&format=webp&resize=cover&cacheControl=31536000"
+          imagesizes="(max-width: 768px) 100vw, 600px"
+          fetchpriority="high"
+        />
+
         <script type="application/ld+json">
 {`
 {
@@ -89,10 +99,10 @@ function AboutMeSection() {
             className="w-full md:w-1/3 aspect-square rounded-xl overflow-hidden shadow-2xl"
           >
             <img
-              src="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media//anthony-daccurso-fcp.webp?quality=75&width=400"
+              src="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media//anthony-daccurso-fcp.webp?quality=80&width=600&format=webp&resize=cover&cacheControl=31536000"
               srcSet="
-                https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media//anthony-daccurso-fcp.webp?quality=75&width=400 1x,
-                https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media//anthony-daccurso-fcp.webp?quality=75&width=800 2x
+                https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media//anthony-daccurso-fcp.webp?quality=80&width=400 1x,
+                https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media//anthony-daccurso-fcp.webp?quality=80&width=800 2x
               "
               alt="Anthony Daccurso"
               loading="eager"

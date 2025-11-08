@@ -38,7 +38,7 @@ const createOptimizedQuery = (table: string) => {
 // Upload a file to the "media" bucket with performance optimizations
 export const uploadToMedia = async (file: File, path: string) => {
   const options = {
-    cacheControl: 'public, max-age=31536000', // Cache for 1 year
+    cacheControl: '31536000', // Cache for 1 year (Cloudflare + Supabase CDN)
     upsert: false,
     contentType: file.type,
   };
@@ -51,6 +51,11 @@ export const uploadToMedia = async (file: File, path: string) => {
     console.error('Upload error:', error.message);
     throw new Error(error.message);
   }
+
+  // Ensure CDN returns long-lived cache headers
+  await supabase.storage
+    .from('media')
+    .update(path, file, { cacheControl: '31536000' });
 
   return data;
 };

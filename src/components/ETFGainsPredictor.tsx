@@ -651,77 +651,45 @@ function ETFGainsPredictor() {
             Portfolio Weights
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {selectedETFs.length > 1 && (
-  <div className="bg-[#0d2242] rounded-lg p-4">
-    <h3 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
-      <Percent className="w-5 h-5 text-blue-400" aria-hidden="true" />
-      Portfolio Weights
-    </h3>
-
-    {/* === ACCESSIBILITY-FIXED SECTION STARTS HERE === */}
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      {selectedETFs.map(({ symbol, weight }) => {
-        const inputId = `weight-input-${symbol}`;
-        return (
-          <div key={symbol} className="space-y-2">
-            {/* Properly linked label */}
-            <label
-              htmlFor={inputId}
-              className="block text-sm text-gray-300"
-            >
-              {symbol} Weight
-            </label>
-
-            <div className="flex items-center gap-2">
-              {/* Input with id + aria-label */}
-              <input
-                id={inputId}
-                type="text"
-                inputMode="decimal"
-                aria-label={`${symbol} weight percentage`}
-                value={weight.toFixed(1)}
-                onChange={(e) => {
-                  const value = e.target.value.replace(/[^0-9.]/g, '');
-                  const num = parseFloat(value) || 0;
-                  handleWeightChange(symbol, num);
-                }}
-                className="flex-1 px-3 py-2 bg-[#1a2f5c] text-white rounded border border-blue-500/30 focus:border-blue-400 focus:outline-none"
-              />
-
-              <span className="text-gray-400 text-sm">%</span>
-
-              {/* Button with aria-label */}
-              <button
-                onClick={() => handleETFToggle(symbol)}
-                className="p-1 text-red-400 hover:text-red-300"
-                aria-label={`Remove ${symbol} ETF from portfolio`}
-              >
-                <X className="w-4 h-4" aria-hidden="true" />
-              </button>
-            </div>
+            {selectedETFs.map(({ symbol, weight }) => (
+              <div key={symbol} className="space-y-2">
+                <label className="block text-sm text-gray-300">{symbol}</label>
+                <div className="flex items-center gap-2">
+                  <input
+                    type="text"
+                    inputMode="decimal"
+                    value={weight.toFixed(1)}
+                    onChange={(e) => {
+                      const value = e.target.value.replace(/[^0-9.]/g, '');
+                      const num = parseFloat(value) || 0;
+                      handleWeightChange(symbol, num);
+                    }}
+                    className="flex-1 px-3 py-2 bg-[#1a2f5c] text-white rounded border border-blue-500/30 focus:border-blue-400 focus:outline-none"
+                  />
+                  <span className="text-gray-400 text-sm">%</span>
+                  <button
+                    onClick={() => handleETFToggle(symbol)}
+                    className="p-1 text-red-400 hover:text-red-300"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+            ))}
           </div>
-        );
-      })}
-    </div>
-    {/* === ACCESSIBILITY-FIXED SECTION ENDS HERE === */}
-
-    <div className="mt-3 text-sm">
-      <span className="text-gray-400">Total Weight: </span>
-      <span
-        className={`font-mono ${
-          getTotalWeight() === 100 ? 'text-green-400' : 'text-yellow-400'
-        }`}
-      >
-        {getTotalWeight().toFixed(1)}%
-      </span>
-      {getTotalWeight() !== 100 && (
-        <span className="text-yellow-400 ml-2">
-          (Should equal 100%)
-        </span>
+          <div className="mt-3 text-sm">
+            <span className="text-gray-400">Total Weight: </span>
+            <span className={`font-mono ${getTotalWeight() === 100 ? 'text-green-400' : 'text-yellow-400'}`}>
+              {getTotalWeight().toFixed(1)}%
+            </span>
+            {getTotalWeight() !== 100 && (
+              <span className="text-yellow-400 ml-2">
+                (Should equal 100%)
+              </span>
+            )}
+          </div>
+        </div>
       )}
-    </div>
-  </div>
-)}
 
       {error && (
         <div className="bg-red-900/20 border border-red-500/30 rounded-lg p-4">

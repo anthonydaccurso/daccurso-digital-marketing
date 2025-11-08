@@ -6,6 +6,12 @@
 [functions]
   node_bundler = "esbuild"
 
+[build.environment]
+  # Prevent secrets from being exposed in build
+  SECRETS_SCAN_ENABLED = "true"
+  # Only use OPENROUTER_API_KEY (without VITE_ prefix) for server-side
+  # Do NOT set VITE_OPENROUTER_API_KEY - it would expose the key in client code
+
 [[headers]]
   for = "/*"
     [headers.values]

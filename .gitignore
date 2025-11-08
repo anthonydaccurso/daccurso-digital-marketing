@@ -50,6 +50,7 @@ Thumbs.db
 *.log.*
 coverage/
 *.lcov
+DEPLOYMENT.md
 
 # Notes
 # - Keep `.env.example` committed with placeholders.

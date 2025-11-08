@@ -114,9 +114,9 @@ function AboutMeSection() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.28 }}
+            initial={{ x: 20 }} // removed fade and delay
+            animate={{ x: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
             className="w-full md:w-2/3 space-y-6"
           >
             <motion.h1
@@ -128,12 +128,23 @@ function AboutMeSection() {
               About Me
             </motion.h1>
 
-            <p className="text-lg md:text-xl leading-relaxed text-gray-300">
+            <motion.p
+              initial={{ x: 20 }}
+              animate={{ x: 0 }}
+              transition={{ duration: 0.5, ease: 'easeOut' }}
+              className="text-lg md:text-xl leading-relaxed text-gray-300"
+            >
               I'm Anthony Daccurso, a Digital Marketing & SEO Specialist at Custom Pool Pros, and a graduate from TCNJ with a B.S. in Marketing and a minor in Information Systems & Technology. I specialize in digital marketing and web development, where I have taken on many relevant and important tasks at Custom Pool Pros. 
-            </p>
-            <p className="text-lg md:text-xl leading-relaxed text-gray-300">
+            </motion.p>
+
+            <motion.p
+              initial={{ x: 20 }}
+              animate={{ x: 0 }}
+              transition={{ duration: 0.5, ease: 'easeOut' }}
+              className="text-lg md:text-xl leading-relaxed text-gray-300"
+            >
               My journey in digital marketing and web development has driven me to complete both work and personal projects that enable me to enhance my skills. I aim to strengthen my expertise as I advance in my career and consistently create deliverables of the highest possible quality. 
-            </p>
+            </motion.p>
           </motion.div>
         </div>
       </div>

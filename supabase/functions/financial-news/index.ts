@@ -146,8 +146,8 @@ function extractXMLContent(xml: string, tagName: string): string {
 
 // Clean text content
 function cleanText(text: string): string {
-  return text
-    .replace(/<[^>]*>/g, '') // Remove HTML tags
+  const sanitized = sanitizeHtml(text, { allowedTags: [], allowedAttributes: {} });
+    return sanitized
     .replace(/&[^;]+;/g, ' ') // Remove HTML entities
     .replace(/\s+/g, ' ') // Normalize whitespace
     .trim();

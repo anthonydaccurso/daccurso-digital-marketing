@@ -124,8 +124,20 @@ export const askAnt = async (userMessage: string) => {
 
   if (!response.ok) {
     const errorText = await response.text();
-    console.error(`Ask Ant Error: ${response.status} - ${errorText}`);
-    throw new Error(`Unable to reach Ask Ant. Please try again later.`);
+    console.error(`Ask Ant Error: ${response.status}`);
+    console.error('Error details:', errorText.substring(0, 500));
+    
+    // Try to parse error as JSON
+    try {
+      const errorData = JSON.parse(errorText);
+      if (errorData.error) {
+        throw new Error(`AI Error: ${errorData.error}`);
+      }
+    } catch (e) {
+      // Not JSON, continue with generic error
+    }
+    
+    throw new Error(`Unable to reach Ask Ant (Status ${response.status}). Please try again later.`);
   }
 
   const data = await response.json();

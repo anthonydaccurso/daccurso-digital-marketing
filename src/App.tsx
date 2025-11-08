@@ -18,10 +18,10 @@ import BlogSection from './components/sections/BlogSection';
 import ContactSection from './components/sections/ContactSection';
 
 // Live Tool Pages
-import NewsAnalyzerPage from './pages/NewsAnalyzerPage';
-import ETFHealthPredictorPage from './pages/ETFHealthPredictorPage';
-import ETFGainsPredictorPage from './pages/ETFGainsPredictorPage';
-import CurrencyArbitragePage from './pages/CurrencyArbitragePage';
+import NewsAnalyzerPage from './pages/NewsAnalyzer';
+import ETFHealthPredictorPage from './pages/ETFHealthPredictor';
+import ETFGainsPredictorPage from './pages/ETFGainsPredictor';
+import CurrencyArbitragePage from './pages/CurrencyArbitrage';
 
 const sections = [
   'About Me',

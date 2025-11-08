@@ -9,7 +9,7 @@ import './index.css';
 // Check for StackBlitz environment
 const isStackBlitz = 
   window.location.hostname === 'stackblitz.com' || 
-  window.location.hostname.includes('stackblitz.io') ||
+  window.location.hostname === 'stackblitz.io' ||
   window.location.hostname.includes('.webcontainer.io') ||
   typeof window !== 'undefined' && 'WebContainer' in window;
 

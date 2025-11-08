@@ -239,4 +239,4 @@ Prevent duplicate content issues:
 
 ## Additional Resources
 
-For more in-depth information on Core Web Vitals and their impact on SEO, check out Google's official Web Vitals documentation. To stay updated on the latest search algorithm changes and best practices, visit the Google Search Central Blog.
+For more in-depth information on Core Web Vitals and their impact on SEO, check out [Google's official Web Vitals documentation](https://web.dev/vitals/). To stay updated on the latest search algorithm changes and best practices, visit [Google Search Central Blog](https://developers.google.com/search/blog).

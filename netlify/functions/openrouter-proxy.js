@@ -1,7 +1,3 @@
-
-// netlify/functions/openrouter-proxy.mjs
-// Note: .mjs extension for ES Module compatibility
-
 export const handler = async (event, context) => {
   console.log('=== OpenRouter Proxy Function Started ===');
   console.log('Method:', event.httpMethod);

@@ -627,7 +627,7 @@ function ETFGainsPredictor() {
                       setPaymentFrequency(freq.value as PaymentFrequency);
                       setFrequencyDropdownOpen(false);
                     }}
-                    className={`w-full px-4 py-3 text-left transition-colors ${
+                    className={`w-full px-4 py-3 text-left transition-colors flex flex-col items-start ${
                       paymentFrequency === freq.value
                         ? 'bg-blue-500/20 text-white'
                         : 'text-white hover:bg-blue-500/10'

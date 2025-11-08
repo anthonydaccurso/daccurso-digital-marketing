@@ -10,7 +10,7 @@ import './index.css';
 const isStackBlitz = 
   window.location.hostname === 'stackblitz.com' || 
   window.location.hostname === 'stackblitz.io' ||
-  window.location.hostname.includes('.webcontainer.io') ||
+  window.location.hostname === 'webcontainer.io' ||
   typeof window !== 'undefined' && 'WebContainer' in window;
 
 // Only register service worker in production and non-StackBlitz environments

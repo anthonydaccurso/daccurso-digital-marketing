@@ -99,10 +99,10 @@ function AboutMeSection() {
             className="w-full md:w-1/3 aspect-square rounded-xl overflow-hidden shadow-2xl"
           >
             <img
-              src="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media//anthony-daccurso-fcp.webp?quality=80&width=600&format=webp&resize=cover&cacheControl=31536000"
+              src="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp?quality=80&width=600"
               srcSet="
-                https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media//anthony-daccurso-fcp.webp?quality=80&width=400 1x,
-                https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media//anthony-daccurso-fcp.webp?quality=80&width=800 2x
+                https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp?quality=80&width=600 1x,
+                https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp?quality=80&width=800 2x
               "
               alt="Anthony Daccurso"
               loading="eager"
@@ -111,6 +111,7 @@ function AboutMeSection() {
               height="400"
               className="w-full h-full object-cover brightness-40"
             />
+
           </motion.div>
 
           <motion.div 

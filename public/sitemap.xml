@@ -6,7 +6,7 @@
   <!-- About Me -->
   <url>
     <loc>https://anthonydaccurso.com/</loc>
-    <lastmod>2025-11-02</lastmod>
+    <lastmod>2025-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.00</priority>
   </url>
@@ -14,7 +14,7 @@
   <!-- My Process -->
   <url>
     <loc>https://anthonydaccurso.com/my-process/</loc>
-    <lastmod>2025-11-02</lastmod>
+    <lastmod>2025-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -22,15 +22,39 @@
   <!-- My Projects -->
   <url>
     <loc>https://anthonydaccurso.com/my-projects/</loc>
-    <lastmod>2025-11-02</lastmod>
+    <lastmod>2025-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
+  </url>
+
+  <!-- News Analyzer -->
+  <url>
+    <loc>https://anthonydaccurso.com/live-tools/news-analyzer/</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Live Tools -->
+  <url>
+    <loc>https://anthonydaccurso.com/live-tools/etf-health-predictor/</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
 
   <!-- Live Tools -->
   <url>
     <loc>https://anthonydaccurso.com/live-tools/</loc>
-    <lastmod>2025-11-02</lastmod>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Live Tools -->
+  <url>
+    <loc>https://anthonydaccurso.com/live-tools/</loc>
+    <lastmod>2025-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -38,7 +62,7 @@
   <!-- My Services -->
   <url>
     <loc>https://anthonydaccurso.com/my-services/</loc>
-    <lastmod>2025-11-02</lastmod>
+    <lastmod>2025-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -46,7 +70,7 @@
   <!-- My Skills -->
   <url>
     <loc>https://anthonydaccurso.com/my-skills/</loc>
-    <lastmod>2025-11-02</lastmod>
+    <lastmod>2025-11-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -54,7 +78,7 @@
   <!-- Contact Me -->
   <url>
     <loc>https://anthonydaccurso.com/contact-me/</loc>
-    <lastmod>2025-11-02</lastmod>
+    <lastmod>2025-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -62,7 +86,7 @@
   <!-- Blog Index -->
   <url>
     <loc>https://anthonydaccurso.com/blog/</loc>
-    <lastmod>2025-11-04</lastmod>
+    <lastmod>2025-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>

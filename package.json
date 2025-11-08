@@ -44,5 +44,9 @@
     "vite": "^5.4.21",
     "vite-plugin-compression": "^0.5.1"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "overrides": {
+    "vite": "^5.4.21",
+    "esbuild": "^0.25.12"
+  }
 }

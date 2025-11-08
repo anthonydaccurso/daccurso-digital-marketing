@@ -107,10 +107,10 @@ function AboutMeSection() {
             />
 
             <img
-              src="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp?width=400&quality=80&format=webp&resize=cover"
+              src="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp?width=600&quality=80&format=webp&resize=cover"
               srcset="
-                https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp?width=400&quality=80&format=webp&resize=cover 1x,
-                https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp?width=800&quality=80&format=webp&resize=cover 2x
+                https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp?width=600&quality=80&format=webp&resize=cover 1x,
+                https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp?width=600&quality=80&format=webp&resize=cover 2x
               "
               alt="Anthony Daccurso"
               width="400"

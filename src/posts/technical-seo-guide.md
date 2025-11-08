@@ -1,6 +1,6 @@
 ---
 title: "Technical SEO Guide: Boost Your Rankings in 2025"
-date: "2024-11-04"
+date: "2025-11-04"
 excerpt: "Master technical SEO fundamentals including site speed, Core Web Vitals, structured data, and crawlability to improve search rankings."
 ---
 

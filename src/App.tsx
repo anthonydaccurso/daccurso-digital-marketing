@@ -281,6 +281,15 @@ function App() {
         </Suspense>
       </div>
 
+      <Routes>
+      <Route path="/" element={<MainApp />} />
+      <Route path="/live-tools/news-analyzer" element={<NewsAnalyzerPage />} />
+      <Route path="/live-tools/etf-health" element={<ETFHealthPredictorPage />} />
+      <Route path="/live-tools/etf-gains" element={<ETFGainsPredictorPage />} />
+      <Route path="/live-tools/currency-arbitrage" element={<CurrencyArbitragePage />} />
+      </Routes>
+
+      
       <SocialMediaPopup isOpen={showSocialPopup} onClose={() => setShowSocialPopup(false)} />
 
       <AskAntChat

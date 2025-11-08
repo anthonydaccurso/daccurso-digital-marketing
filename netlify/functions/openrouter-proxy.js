@@ -41,7 +41,7 @@ export const handler = async (event, context) => {
     console.log('API Key prefix:', apiKey ? apiKey.substring(0, 10) + '...' : 'MISSING');
 
     if (!apiKey) {
-      console.error('❌ No API key found in environment variables');
+      console.error('No API key found in environment variables');
       return {
         statusCode: 500,
         headers,
@@ -60,7 +60,7 @@ export const handler = async (event, context) => {
       console.log('Model:', requestBody.model);
       console.log('Max tokens:', requestBody.max_tokens);
     } catch (parseError) {
-      console.error('❌ Failed to parse request body:', parseError);
+      console.error('Failed to parse request body:', parseError);
       return {
         statusCode: 400,
         headers,
@@ -96,7 +96,7 @@ export const handler = async (event, context) => {
     try {
       data = JSON.parse(responseText);
     } catch (jsonError) {
-      console.error('❌ Failed to parse OpenRouter response as JSON');
+      console.error('Failed to parse OpenRouter response as JSON');
       console.error('Response text:', responseText.substring(0, 500));
       return {
         statusCode: 502,
@@ -110,7 +110,7 @@ export const handler = async (event, context) => {
 
     // Check if request was successful
     if (!openRouterResponse.ok) {
-      console.error('❌ OpenRouter API error:', openRouterResponse.status);
+      console.error('OpenRouter API error:', openRouterResponse.status);
       console.error('Error data:', data);
       return {
         statusCode: openRouterResponse.status,
@@ -123,7 +123,7 @@ export const handler = async (event, context) => {
     }
 
     // Success!
-    console.log('✅ OpenRouter request successful');
+    console.log('OpenRouter request successful');
     console.log('Choices returned:', data.choices?.length || 0);
 
     return {
@@ -133,7 +133,7 @@ export const handler = async (event, context) => {
     };
 
   } catch (error) {
-    console.error('❌ Unexpected error in proxy function:');
+    console.error('Unexpected error in proxy function:');
     console.error('Error type:', error?.constructor?.name);
     console.error('Error message:', error instanceof Error ? error.message : String(error));
     console.error('Error stack:', error instanceof Error ? error.stack : 'No stack trace');

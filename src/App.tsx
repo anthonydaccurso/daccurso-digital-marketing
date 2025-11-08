@@ -143,10 +143,6 @@ function App() {
         isPWA ? 'pt-[0px] pb-[0px]' : ''
       }`}
     >
-      <Helmet>
-        <link rel="canonical" href={getCanonicalUrl()} />
-        <meta property="og:url" content={getCanonicalUrl()} />
-      </Helmet>
 
       <ParticleBackground />
 

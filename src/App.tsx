@@ -298,11 +298,43 @@ export default function App() {
     <Router>
       <Routes>
         <Route path="/" element={<MainApp />} />
-        <Route path="/live-tools/news-analyzer" element={<NewsAnalyzerPage />} />
-        <Route path="/live-tools/etf-health" element={<ETFHealthPredictorPage />} />
-        <Route path="/live-tools/etf-gains" element={<ETFGainsPredictorPage />} />
-        <Route path="/live-tools/currency-arbitrage" element={<CurrencyArbitragePage />} />
-        <Route path="*" element={<MainApp />} /> {/* fallback */}
+
+        {/* Wrap each tool in a consistent layout */}
+        <Route
+          path="/live-tools/news-analyzer"
+          element={
+            <div className="min-h-screen bg-[#0a1628] py-12 px-4 text-white">
+              <NewsAnalyzerPage />
+            </div>
+          }
+        />
+        <Route
+          path="/live-tools/etf-health"
+          element={
+            <div className="min-h-screen bg-[#0a1628] py-12 px-4 text-white">
+              <ETFHealthPredictorPage />
+            </div>
+          }
+        />
+        <Route
+          path="/live-tools/etf-gains"
+          element={
+            <div className="min-h-screen bg-[#0a1628] py-12 px-4 text-white">
+              <ETFGainsPredictorPage />
+            </div>
+          }
+        />
+        <Route
+          path="/live-tools/currency-arbitrage"
+          element={
+            <div className="min-h-screen bg-[#0a1628] py-12 px-4 text-white">
+              <CurrencyArbitragePage />
+            </div>
+          }
+        />
+
+        {/* Fallback route */}
+        <Route path="*" element={<MainApp />} />
       </Routes>
     </Router>
   );

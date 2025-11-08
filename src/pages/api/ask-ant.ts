@@ -110,7 +110,10 @@ const getDeviceInfo = () => {
 const getSessionId = () => {
   let sessionId = sessionStorage.getItem('chat_session_id');
   if (!sessionId) {
-    sessionId = `session_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+    const randomBytes = new Uint8Array(9);
+    window.crypto.getRandomValues(randomBytes);
+    const randomString = Array.from(randomBytes).map(b => b.toString(16).padStart(2, '0')).join('');
+    sessionId = `session_${Date.now()}_${randomString}`;
     sessionStorage.setItem('chat_session_id', sessionId);
   }
   return sessionId;

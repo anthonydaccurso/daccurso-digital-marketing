@@ -35,7 +35,6 @@ function AboutMeSection() {
           content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp"
         />
 
-        {/* ✅ Correct preload for LCP image */}
         <link
           rel="preload"
           as="image"

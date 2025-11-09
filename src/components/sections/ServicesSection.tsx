@@ -1,97 +1,177 @@
-import React, { memo, useEffect, useRef, useState } from 'react';
+import React, { memo, useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Linkedin, FileText, Folders, Award } from 'lucide-react';
+import { ShoppingCart } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 
-const contactItems = [
+const services = [
   {
-    href: "https://www.linkedin.com/in/anthony-daccurso/",
-    icon: Linkedin,
-    title: "LinkedIn",
-    className: "contact-item"
+    id: 'custom-website-development-package',
+    title: "Custom Website Development Package",
+    price: 1499.99,
+    description: "Custom website development from scratch including responsive design, SEO optimization, and content strategy.",
+    features: [
+      "Custom Design & Development",
+      "Mobile Responsive",
+      "SEO Optimization",
+      "Content Strategy",
+      "Contact for Add-ons",
+      "Pay per Website"
+    ],
+    gumroadUrl: "https://anthonydaccurso.gumroad.com/l/custom-website-development-package"
   },
   {
-    href: "https://drive.google.com/file/d/1AZAafbFGVqKAw0Vn2Jjwf27jYux-Fngh/view?usp=sharing",
-    icon: FileText,
-    title: "Resume",
-    className: "contact-item"
+    id: 'custom-website-redesign-package',
+    title: "Custom Website Redesign Package",
+    price: 999.99,
+    description: "Transform your existing website with a modern design, improved functionality, and better user experience.",
+    features: [
+      "Modern UI/UX Updates",
+      "Performance Optimization",
+      "Content Restructuring",
+      "SEO Enhancements",
+      "Contact for Add-ons",
+      "Pay per Website"
+    ],
+    gumroadUrl: "https://anthonydaccurso.gumroad.com/l/custom-website-redesign-package"
   },
   {
-    href: "https://drive.google.com/drive/folders/1zNDvHaLsJNsLUyehQu8ZxmiWXM4sA0E2?usp=sharing",
-    icon: Folders,
-    title: "Certifications",
-    className: "contact-item"
+    id: 'hosting-and-database-support',
+    title: "Hosting and Database Support",
+    price: 249.99,
+    description: "Professional hosting setup, database management, and security monitoring for optimal website performance.",
+    features: [
+      "Server Configuration",
+      "Database Management",
+      "Security Setup",
+      "Performance Monitoring",
+      "Contact for Add-ons",
+      "Pay per Month"
+    ],
+    gumroadUrl: "https://anthonydaccurso.gumroad.com/l/hosting-and-database-support"
   },
   {
-    href: "https://drive.google.com/drive/folders/1B0ONHc3X5C6KA4RYtRZl72SnqrJMupuu?usp=sharing",
-    icon: Award,
-    title: "Awards",
-    className: "contact-item"
+    id: 'wordpress-development-package',
+    title: "WordPress Development Package",
+    price: 999.99,
+    description: "Complete WordPress website development including responsive design, SEO enhancements, and performance optimization.",
+    features: [
+      "WordPress Design",
+      "Mobile Responsive",
+      "SEO enhancements",
+      "Performance Optimization",
+      "Contact for Add-ons",
+      "Pay per Website"
+    ],
+    gumroadUrl: "https://anthonydaccurso.gumroad.com/l/wordpress-development-package"
+  },
+  {
+    id: 'wordpress-redesign-package',
+    title: "WordPress Redesign Package",
+    price: 749.99,
+    description: "Revive your existing WordPress website with a modern design, improved functionality, and better user experience.",
+    features: [
+      "Modern UI/UX Updates",
+      "Performance Optimization",
+      "Content Restructuring",
+      "SEO Enhancements",
+      "Contact for Add-ons",
+      "Pay per Website"
+    ],
+    gumroadUrl: "https://anthonydaccurso.gumroad.com/l/wordpress-redesign-package"
+  },
+  {
+    id: 'social-media-branding-and-content',
+    title: "Social Media Branding and Content",
+    price: 249.99,
+    description: "Personalized Branding and Content Creation for engaging social media content tailored to your brand.",
+    features: [
+      "Custom Graphics",
+      "Hashtag Research",
+      "Performance Tracking",
+      "2 Posts per Week",
+      "Contact for Add-ons",
+      "Pay per Month"
+    ],
+    gumroadUrl: "https://anthonydaccurso.gumroad.com/l/social-media-branding-and-content"
   }
-];
+] as const;
 
-const ContactItem = memo(({ item, index }) => {
-  const Icon = item.icon;
-  const contactRef = useRef(null);
-  const isInView = useInView(contactRef, { once: true, amount: 0.2 });
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+const ServiceCard = memo(({ service, index }: { service: typeof services[number]; index: number }) => {
+  const [isLoading, setIsLoading] = useState(false);
+  const cardRef = useRef(null);
+  const isInView = index === 0 ? true : useInView(cardRef, { once: true, amount: 0.2 });
 
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 768);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  const handlePurchase = () => {
+    window.open(service.gumroadUrl, '_blank', 'noopener,noreferrer');
+  };
 
   return (
-    <div ref={contactRef}>
-      <motion.a
-        href={item.href}
-        target="_blank"
-        rel="noopener noreferrer"
-        initial={{ opacity: 0, y: 30 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-        transition={{
-          duration: 0.5,
-          delay: index * 0.15,
-          ease: "easeOut"
-        }}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.97 }}
-        style={{ borderRadius: '0px' }}
-        className="w-full aspect-[2/1] sm:aspect-[3.8/1] bg-[#1a2f5c] hover:bg-[#60a5fa] p-6 text-center transition-all duration-300 group flex flex-col items-center justify-center hover:shadow-xl"
+    <motion.div
+      ref={cardRef}
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      transition={{ duration: 0.7 }}
+      className="bg-[#1a2f5c] rounded-xl p-6 flex flex-col h-full shadow-lg hover:shadow-xl transition-shadow duration-300"
+    >
+      <h3 className="text-2xl font-bold mb-2">{service.title}</h3>
+      <div className="text-3xl font-bold text-blue-400 mb-4">
+        ${service.price}
+      </div>
+      <p className="text-gray-300 mb-6">{service.description}</p>
+      <div className="flex-grow">
+        <ul className="space-y-2 mb-6">
+          {service.features.map((feature, index) => (
+            <li key={index} className="flex items-center text-gray-300">
+              <span className="mr-2 text-blue-400">•</span>
+              {feature}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <button
+        onClick={handlePurchase}
+        disabled={isLoading}
+        className={`w-full py-3 bg-blue-700/20 text-blue-300 rounded-lg font-semibold hover:bg-blue-500/40 transition-colors duration-300 flex items-center justify-center gap-2 ${
+          isLoading ? 'opacity-75 cursor-not-allowed' : ''
+        }`}
       >
-        <Icon className="h-12 w-12 mb-4 text-blue-400 group-hover:scale-110 transition-transform duration-300" />
-        <h3 className="text-xl font-semibold text-white">{item.title}</h3>
-      </motion.a>
-    </div>
+        {isLoading ? (
+          <>
+            <div className="w-5 h-5 border-2 border-blue-300 border-t-transparent rounded-full animate-spin" />
+            Processing...
+          </>
+        ) : (
+          <>
+            <ShoppingCart className="w-5 h-5 text-blue-300" />
+            Purchase Now
+          </>
+        )}
+      </button>
+    </motion.div>
   );
 });
 
-function ContactSection() {
+function ServicesSection() {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{
-        duration: window.innerWidth <= 768 ? 0.7 : 0.5,
-        ease: window.innerWidth <= 768 ? "easeInOut" : "easeOut"
-      }}
-      className="bg-[#1a2f5c]/50 rounded-3xl p-6 sm:p-8 md:p-12 w-full mx-auto"
+      className="bg-[#1a2f5c]/50 rounded-2xl p-6 sm:p-8 md:p-12 w-full mx-auto"
     >
       <Helmet>
-        <title>Contact Me | Daccurso Digital Marketing</title>
+        <title>My Services | Daccurso Digital Marketing</title>
         <meta
           name="description"
-          content="Get in touch with Anthony Daccurso — Digital Marketing Specialist & Web Developer. Connect via LinkedIn, view my resume, or explore certifications and awards."
+          content="Explore my professional digital services including web design, SEO optimization, WordPress development, hosting, and social media branding."
         />
-        <link rel="canonical" href="https://anthonydaccurso.com/contact-me/" />
+        <link rel="canonical" href="https://anthonydaccurso.com/my-services/" />
 
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://anthonydaccurso.com/contact-me/" />
-        <meta property="og:title" content="Contact Me | Daccurso Digital Marketing" />
+        <meta property="og:url" content="https://anthonydaccurso.com/my-services/" />
+        <meta property="og:title" content="My Services | Daccurso Digital Marketing" />
         <meta
           property="og:description"
-          content="Contact Anthony Daccurso for digital marketing, SEO, or web development projects. Explore professional credentials and certifications."
+          content="Custom website design, SEO optimization, and social media branding services by Anthony Daccurso."
         />
         <meta
           property="og:image"
@@ -100,66 +180,127 @@ function ContactSection() {
         <meta property="og:site_name" content="Daccurso Digital Marketing" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Contact Me | Daccurso Digital Marketing" />
+        <meta name="twitter:title" content="My Services | Daccurso Digital Marketing" />
         <meta
           name="twitter:description"
-          content="Connect with me via LinkedIn, view my resume, and collaborate on web design or SEO projects."
+          content="Explore professional web design, SEO, and hosting services to elevate your online presence."
         />
         <meta
           name="twitter:image"
           content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-apple-touch-icon.png"
         />
-
         <script type="application/ld+json">
-          {`
-          {
-            "@context": "https://schema.org",
-            "@type": "ContactPage",
-            "url": "https://anthonydaccurso.com/contact-me",
-            "mainEntity": {
-              "@type": "Person",
-              "name": "Anthony Daccurso",
-              "email": "mailto:marketing@custompoolpros.com",
-              "url": "https://anthonydaccurso.com",
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "contactType": "Professional Inquiry",
-                "areaServed": "US"
-              },
-              "sameAs": [
-                "https://www.linkedin.com/in/anthony-daccurso/",
-                "https://github.com/anthonydaccurso"
-              ]
-            }
-          }
-          `}
-        </script>
+{`
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Daccurso Digital Marketing",
+  "url": "https://anthonydaccurso.com",
+  "logo": "https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-apple-touch-icon.png",
+  "description": "Professional web design, SEO, and digital marketing services tailored for small businesses, startups, and creators.",
+  "founder": {
+    "@type": "Person",
+    "name": "Anthony Daccurso",
+    "jobTitle": "Digital Marketing & Web Development Specialist"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Customer Support",
+    "areaServed": "US"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/anthony-daccurso/",
+    "https://github.com/anthonydaccurso",
+    "https://www.instagram.com/daccursodigitalmarketing",
+    "https://www.tiktok.com/@daccursodigitalmarketing"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Digital Marketing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Custom Website Development Package",
+          "description": "Full website development from scratch including responsive design, SEO optimization, and content strategy.",
+          "offers": { "@type": "Offer", "price": "1499.99", "priceCurrency": "USD" }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Custom Website Redesign Package",
+          "description": "Transform your existing website with a modern redesign, improved performance, and enhanced SEO.",
+          "offers": { "@type": "Offer", "price": "999.99", "priceCurrency": "USD" }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Hosting and Database Support",
+          "description": "Professional hosting setup, database management, and performance monitoring for optimal uptime and security.",
+          "offers": { "@type": "Offer", "price": "249.99", "priceCurrency": "USD" }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "WordPress Development Package",
+          "description": "Complete WordPress website development with responsive design, SEO enhancements, and performance optimization.",
+          "offers": { "@type": "Offer", "price": "999.99", "priceCurrency": "USD" }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "WordPress Redesign Package",
+          "description": "Modernize your WordPress website with UI/UX updates, performance improvements, and SEO restructuring.",
+          "offers": { "@type": "Offer", "price": "749.99", "priceCurrency": "USD" }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Social Media Branding and Content",
+          "description": "Personalized social media branding, custom graphics, and content creation for consistent online presence.",
+          "offers": { "@type": "Offer", "price": "249.99", "priceCurrency": "USD" }
+        }
+      }
+    ]
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Freehold",
+    "addressRegion": "NJ",
+    "postalCode": "07728",
+    "addressCountry": "US"
+  }
+}
+`}
+</script>
       </Helmet>
 
       <motion.h2
-        initial={{ opacity: 0, y: window.innerWidth <= 768 ? 0 : -30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: window.innerWidth <= 768 ? 0.6 : 0.5,
-          ease: window.innerWidth <= 768 ? "easeInOut" : "easeOut"
-        }}
+        initial={{ opacity: 0, x: -30 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
         className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white via-blue-200 to-blue-400 bg-clip-text text-transparent mb-8"
       >
-        Let's Connect
+        My Services
       </motion.h2>
-
-      <div
-        className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-6 w-full md:max-w-full mx-auto md:px-4"
-        style={window.innerWidth <= 768 ? { minHeight: '700px' } : {}}
-      >
-        {contactItems.map((item, index) => (
-          <div key={item.title} className="w-full">
-            <ContactItem item={item} index={index} />
-          </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {services.map((service, index) => (
+          <ServiceCard key={service.id} service={service} index={index} />
         ))}
       </div>
     </motion.div>
   );
 }
 
-export default ContactSection;
+export default ServicesSection;

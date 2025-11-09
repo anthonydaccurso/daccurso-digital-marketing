@@ -48,16 +48,23 @@ const ContactItem = memo(({ item, index }) => {
         href={item.href}
         target="_blank"
         rel="noopener noreferrer"
+        initial={{ opacity: 0, y: 30 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+        transition={{
+          duration: 0.5,
+          delay: index * 0.15,
+          ease: "easeOut"
+        }}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.97 }}
-        className="w-full aspect-[2/1] sm:aspect-[3.8/1] bg-[#1a2f5c] hover:bg-[#60a5fa] rounded-2xl p-6 text-center transition-all duration-300 group flex flex-col items-center justify-center hover:shadow-xl"
+        className="w-full aspect-[2/1] sm:aspect-[3.8/1] bg-[#1a2f5c] hover:bg-[#60a5fa] rounded-3xl p-6 text-center transition-all duration-300 group flex flex-col items-center justify-center hover:shadow-xl"
       >
         <Icon className="h-12 w-12 mb-4 text-blue-400 group-hover:scale-110 transition-transform duration-300" />
         <h3 className="text-xl font-semibold text-white">{item.title}</h3>
       </motion.a>
-        </div>
-        );
-      });
+    </div>
+  );
+});
 
 function ContactSection() {
   return (

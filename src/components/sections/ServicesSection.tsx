@@ -1,6 +1,3 @@
-Contactsection · JSX
-Copy
-
 import React, { memo, useEffect, useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Linkedin, FileText, Folders, Award } from 'lucide-react';

@@ -57,7 +57,7 @@ const ContactItem = memo(({ item, index }) => {
         }}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.97 }}
-        style={{ borderRadius: '0px' }}
+        style={{ borderRadius: '8px' }}
         className="w-full aspect-[2/1] sm:aspect-[3.8/1] bg-[#1a2f5c] hover:bg-[#60a5fa] p-6 text-center transition-all duration-300 group flex flex-col items-center justify-center hover:shadow-xl"
       >
         <Icon className="h-12 w-12 mb-4 text-blue-400 group-hover:scale-110 transition-transform duration-300" />

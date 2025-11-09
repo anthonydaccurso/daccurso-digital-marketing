@@ -1,75 +1,3 @@
-import React, { memo, useEffect, useRef, useState } from 'react'; import { motion, useInView } from 'framer-motion'; import { Linkedin, FileText, Folders, Award } from 'lucide-react'; import { Helmet } from 'react-helmet-async'; const contactItems = [ { href: "https://www.linkedin.com/in/anth
-
-pasted
-
-Can you make the edges of the 4 contact boxes a little more rounded and modern, and then stagger their fade up effects for the top left to appear first
-
-I'll help you make those changes! Let me modify the code to add more rounded corners and create a staggered fade-up animation.
-
-
-1 step
-
-Copy the file to working directory for editing
-
-
-
-Check what files are available in uploads directory
-
-I'll create the updated component with more rounded corners and staggered animations:
-
-
-Create updated ContactSection component with more rounded edges and staggered fade-up animations
-ContactSection.jsx
-
-Copy updated component to outputs directory
-
-
-Perfect! I've updated your ContactSection component with two key improvements:
-
-Changes Made:
-More Rounded Corners: Changed rounded-2xl to rounded-3xl on the contact boxes for a more modern, softer appearance
-Staggered Fade-Up Animation: Added individual animations to each contact item with:
-Initial state: opacity: 0, y: 30 (invisible and shifted down)
-Animated state: opacity: 1, y: 0 (fully visible and in position)
-Staggered delay: index * 0.15 seconds - so LinkedIn appears first (0s delay), Resume second (0.15s delay), Certifications third (0.3s delay), and Awards last (0.45s delay)
-The animations are triggered when the items come into view, creating a smooth cascade effect from top-left to bottom-right!
-
-View your updated component
-
-Contactsection
-Code · JSX 
-1762664579466_image.png
-The movement effects are perfect and no longer require changes, but the edges look blocky
-
-I see the issue! The rounded-3xl class might not be providing enough rounding for the modern look you want. Let me increase it even more with a custom border radius value:
-
-
-Increase border radius to a more modern, heavily rounded appearance
-+2
--1
-ContactSection.jsx
-
-Copy updated component with increased border radius to outputs
-
-
-I've increased the border radius to 32px (which is larger than rounded-3xl's default 24px). This should give you much smoother, more modern-looking rounded corners. If you'd like them even more rounded, let me know and I can increase it further (like 40px or 48px for a pill-like appearance)!
-
-View your updated component
-
-Contactsection
-Code · JSX 
-
-
-
-
-
-
-
-
-
-Contactsection · JSX
-Copy
-
 import React, { memo, useEffect, useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Linkedin, FileText, Folders, Award } from 'lucide-react';
@@ -130,7 +58,7 @@ const ContactItem = memo(({ item, index }) => {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.97 }}
         className="w-full aspect-[2/1] sm:aspect-[3.8/1] bg-[#1a2f5c] hover:bg-[#60a5fa] p-6 text-center transition-all duration-300 group flex flex-col items-center justify-center hover:shadow-xl"
-        style={{ borderRadius: '32px' }}
+        style={{ borderRadius: '40px' }}
       >
         <Icon className="h-12 w-12 mb-4 text-blue-400 group-hover:scale-110 transition-transform duration-300" />
         <h3 className="text-xl font-semibold text-white">{item.title}</h3>

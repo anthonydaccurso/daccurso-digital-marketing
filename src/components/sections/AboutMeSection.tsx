@@ -90,7 +90,7 @@ function AboutMeSection() {
       </Helmet>
 
       <div className="bg-[#1a2f5c]/50 rounded-2xl p-6 sm:p-8 md:p-12 w-full mx-auto">
-        <div className="flex flex-col md:flex-row gap-5 md:gap-12 items-center">
+        <div className="flex flex-col md:flex-row gap-6 md:gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}

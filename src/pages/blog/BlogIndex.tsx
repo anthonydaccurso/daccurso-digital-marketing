@@ -8,7 +8,7 @@ export default function BlogIndex() {
   return (
     <div className="min-h-screen bg-[#0d2242] text-white relative">
       <Helmet>
-        <title>Career Tips & Insights | Daccurso Digital Marketing</title>
+        <title>Career Tips & Insights | Anthony Daccurso</title>
         <meta name="description" content="Expert career advice, tips, and insights for professionals and graduates." />
         <link rel="canonical" href="https://anthonydaccurso.com/blog" />
       </Helmet>

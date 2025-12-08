@@ -6,7 +6,7 @@ function AboutMeSection() {
   return (
     <div className="w-full">
       <Helmet>
-        <title>Anthony Daccurso | Daccurso Digital Marketing</title>
+        <title>Anthony Daccurso | Digital Marketing Services</title>
         <meta
           name="description"
           content="I'm Anthony Daccurso, a Digital Marketing & SEO Specialist passionate about web design, performance optimization, and helping businesses grow their digital presence."
@@ -14,7 +14,7 @@ function AboutMeSection() {
         <link rel="canonical" href="https://anthonydaccurso.com/" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://anthonydaccurso.com/" />
-        <meta property="og:title" content="Anthony Daccurso | Daccurso Digital Marketing" />
+        <meta property="og:title" content="Anthony Daccurso | Digital Marketing Services" />
         <meta
           property="og:description"
           content="Portfolio of Anthony Daccurso — Digital Marketing & Web Development Specialist helping brands improve SEO, performance, and design impact."
@@ -25,7 +25,7 @@ function AboutMeSection() {
         />
         <meta property="og:site_name" content="Anthony Daccurso Portfolio" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Anthony Daccurso | Daccurso Digital Marketing" />
+        <meta name="twitter:title" content="Anthony Daccurso | Digital Marketing Services" />
         <meta
           name="twitter:description"
           content="Explore my work in web design, SEO, and marketing strategy — building digital experiences that perform."

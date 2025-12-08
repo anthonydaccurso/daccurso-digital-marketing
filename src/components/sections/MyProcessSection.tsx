@@ -37,7 +37,7 @@ const MyProcessSection: React.FC = () => {
       className="bg-[#1a2f5c]/50 rounded-2xl p-6 sm:p-8 md:p-12 w-full mx-auto text-white"
     >
       <Helmet>
-        <title>My Process | Daccurso Digital Marketing</title>
+        <title>My Process | Anthony Daccurso</title>
         <meta
           name="description"
           content="Explore my streamlined web design and development process — from discovery and strategy to deployment and optimization — blending creativity, SEO, and performance."
@@ -47,7 +47,7 @@ const MyProcessSection: React.FC = () => {
         <meta property="og:url" content="https://anthonydaccurso.com/my-process" />
         <meta
           property="og:title"
-          content="My Process | Daccurso Digital Marketing"
+          content="My Process | Anthony Daccurso"
         />
         <meta
           property="og:description"
@@ -61,7 +61,7 @@ const MyProcessSection: React.FC = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="My Process | Daccurso Digital Marketing"
+          content="My Process | Anthony Daccurso"
         />
         <meta
           name="twitter:description"

@@ -12,7 +12,7 @@ function BlogSection() {
       className="bg-[#1a2f5c]/50 rounded-2xl p-6 sm:p-8 md:p-12 w-full mx-auto"
     >
       <Helmet>
-        <title>Blog | Daccurso Digital Marketing</title>
+        <title>Blog | Anthony Daccurso</title>
         <meta
           name="description"
           content="Articles and tutorials by Anthony Daccurso on web design, SEO, digital marketing, and tech. Learn strategies and insights for modern digital growth."
@@ -20,7 +20,7 @@ function BlogSection() {
         <link rel="canonical" href="https://anthonydaccurso.com/blog/" />
         <meta property="og:type" content="blog" />
         <meta property="og:url" content="https://anthonydaccurso.com/blog/" />
-        <meta property="og:title" content="Blog | Daccurso Digital Marketing" />
+        <meta property="og:title" content="Blog | Anthony Daccurso" />
         <meta
           property="og:description"
           content="Read guides, tutorials, and insights from Anthony Daccurso on SEO, marketing, and web development trends."
@@ -29,9 +29,9 @@ function BlogSection() {
           property="og:image"
           content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-apple-touch-icon.png"
         />
-        <meta property="og:site_name" content="Daccurso Digital Marketing" />
+        <meta property="og:site_name" content="Anthony Daccurso" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Blog | Daccurso Digital Marketing" />
+        <meta name="twitter:title" content="Blog | Anthony Daccurso" />
         <meta
           name="twitter:description"
           content="Web design and marketing tutorials by Anthony Daccurso — practical strategies for SEO and digital performance."
@@ -45,7 +45,7 @@ function BlogSection() {
   {
     "@context": "https://schema.org",
     "@type": "Blog",
-    "name": "Daccurso Digital Marketing Blog",
+    "name": "Anthony Daccurso Blog",
     "url": "https://anthonydaccurso.com/blog",
     "author": {
       "@type": "Person",
@@ -54,7 +54,7 @@ function BlogSection() {
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Daccurso Digital Marketing",
+      "name": "Anthony Daccurso",
       "logo": {
         "@type": "ImageObject",
         "url": "https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-apple-touch-icon.png"

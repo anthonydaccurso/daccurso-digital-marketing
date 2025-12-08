@@ -46,7 +46,7 @@ self.addEventListener('push', (event) => {
   };
 
   event.waitUntil(
-    self.registration.showNotification('Daccurso Digital Marketing', options)
+    self.registration.showNotification('Anthony Daccurso', options)
   );
 });
 

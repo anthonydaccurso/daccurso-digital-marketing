@@ -26,7 +26,7 @@ export default function BlogPost() {
   return (
     <div className="min-h-screen bg-[#0d2242] text-white relative">
       <Helmet>
-        <title>{post.title} | Daccurso Digital Marketing</title>
+        <title>{post.title} | Anthony Daccurso</title>
         <meta name="description" content={post.excerpt} />
         <link rel="canonical" href={`https://anthonydaccurso.com/blog/${post.slug}`} />
 
@@ -58,7 +58,7 @@ export default function BlogPost() {
             },
             publisher: {
               "@type": "Organization",
-              name: "Daccurso Digital Marketing",
+              name: "Anthony Daccurso",
               logo: {
                 "@type": "ImageObject",
                 url: "https://anthonydaccurso.com/favicon.svg"

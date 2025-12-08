@@ -229,7 +229,7 @@ function App() {
           className="text-4xl md:text-6xl font-bold mb-[18px] md:mb-[18px] text-left inline-block bg-gradient-to-r from-white via-blue-400 to-blue-700 bg-clip-text text-transparent cursor-pointer pb-1 pt-[0px] z-[50] relative"
           onClick={handleNameClick}
         >
-          Daccurso Digital Marketing
+          Anthony Daccurso
         </motion.h1>
 
         <motion.p

@@ -209,7 +209,7 @@ const ProjectCard = memo(({ project, index }) => {
 const ProjectsSection = () => (
   <div className="w-full">
     <Helmet>
-      <title>My Projects | Daccurso Digital Marketing</title>
+      <title>My Projects | Anthony Daccurso</title>
       <meta
         name="description"
         content="Explore my portfolio of web design, SEO, and digital marketing projects — from Custom Pool Pros to Daccurso Career Studio, Silverback Mobile, and more."
@@ -218,7 +218,7 @@ const ProjectsSection = () => (
 
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://anthonydaccurso.com/my-projects/" />
-      <meta property="og:title" content="My Projects | Daccurso Digital Marketing" />
+      <meta property="og:title" content="My Projects | Anthony Daccurso" />
       <meta
         property="og:description"
         content="Portfolio of projects designed and developed by Anthony Daccurso — including websites, SEO strategies, and branding campaigns."
@@ -227,10 +227,10 @@ const ProjectsSection = () => (
         property="og:image"
         content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/dcs-ddm-project-box.webp"
       />
-      <meta property="og:site_name" content="Daccurso Digital Marketing" />
+      <meta property="og:site_name" content="Anthony Daccurso" />
 
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="My Projects | Daccurso Digital Marketing" />
+      <meta name="twitter:title" content="My Projects | Anthony Daccurso" />
       <meta
         name="twitter:description"
         content="Explore my web design, SEO, and marketing projects crafted for businesses, creators, and startups."

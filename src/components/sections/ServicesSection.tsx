@@ -159,7 +159,7 @@ function ServicesSection() {
       className="bg-[#1a2f5c]/50 rounded-2xl p-6 sm:p-8 md:p-12 w-full mx-auto"
     >
       <Helmet>
-        <title>My Services | Daccurso Digital Marketing</title>
+        <title>My Services | Anthony Daccurso</title>
         <meta
           name="description"
           content="Explore my professional digital services including web design, SEO optimization, WordPress development, hosting, and social media branding."
@@ -168,7 +168,7 @@ function ServicesSection() {
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://anthonydaccurso.com/my-services/" />
-        <meta property="og:title" content="My Services | Daccurso Digital Marketing" />
+        <meta property="og:title" content="My Services | Anthony Daccurso" />
         <meta
           property="og:description"
           content="Custom website design, SEO optimization, and social media branding services by Anthony Daccurso."
@@ -177,10 +177,10 @@ function ServicesSection() {
           property="og:image"
           content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-apple-touch-icon.png"
         />
-        <meta property="og:site_name" content="Daccurso Digital Marketing" />
+        <meta property="og:site_name" content="Anthony Daccurso" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="My Services | Daccurso Digital Marketing" />
+        <meta name="twitter:title" content="My Services | Anthony Daccurso" />
         <meta
           name="twitter:description"
           content="Explore professional web design, SEO, and hosting services to elevate your online presence."
@@ -194,7 +194,7 @@ function ServicesSection() {
 {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Daccurso Digital Marketing",
+  "name": "Anthony Daccurso",
   "url": "https://anthonydaccurso.com",
   "logo": "https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-apple-touch-icon.png",
   "description": "Professional web design, SEO, and digital marketing services tailored for small businesses, startups, and creators.",

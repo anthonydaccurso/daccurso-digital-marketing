@@ -90,7 +90,7 @@ function LiveToolsSection({ activeTool: propActiveTool, setActiveTool: propSetAc
       className="bg-[#1a2f5c]/50 rounded-2xl p-6 sm:p-8 md:p-12 w-full mx-auto"
     >
       <Helmet>
-        <title>{activeToolData?.title || 'Live Tools'} | Daccurso Digital Marketing</title>
+        <title>{activeToolData?.title || 'Live Tools'} | Anthony Daccurso</title>
         <meta
           name="description"
           content={activeToolData?.metaDescription || 'Real-time tools for investment and financial analysis — including ETF predictions, currency arbitrage, and news sentiment tracking by Anthony Daccurso.'}
@@ -99,7 +99,7 @@ function LiveToolsSection({ activeTool: propActiveTool, setActiveTool: propSetAc
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`https://anthonydaccurso.com/live-tools/${activeToolData?.slug || ''}`} />
-        <meta property="og:title" content={`${activeToolData?.title || 'Live Tools'} | Daccurso Digital Marketing`} />
+        <meta property="og:title" content={`${activeToolData?.title || 'Live Tools'} | Anthony Daccurso`} />
         <meta
           property="og:description"
           content={activeToolData?.metaDescription || 'Interactive investment and market tools built with React and Supabase — ETF predictors, news analyzers, and arbitrage calculators.'}
@@ -108,10 +108,10 @@ function LiveToolsSection({ activeTool: propActiveTool, setActiveTool: propSetAc
           property="og:image"
           content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-apple-touch-icon.png"
         />
-        <meta property="og:site_name" content="Daccurso Digital Marketing" />
+        <meta property="og:site_name" content="Anthony Daccurso" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`${activeToolData?.title || 'Live Tools'} | Daccurso Digital Marketing`} />
+        <meta name="twitter:title" content={`${activeToolData?.title || 'Live Tools'} | Anthony Daccurso`} />
         <meta
           name="twitter:description"
           content={activeToolData?.metaDescription || 'Try AI-powered ETF predictors, currency arbitrage calculators, and sentiment analyzers — built by Anthony Daccurso.'}

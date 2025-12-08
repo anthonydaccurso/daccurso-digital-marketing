@@ -100,7 +100,7 @@ function AboutMeSection() {
           About Me
         </motion.h1>
 
-        <div className="flex flex-col md:flex-row gap-7 md:gap-12 items-center">
+        <div className="flex flex-col md:flex-row gap-4 md:gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}

@@ -210,7 +210,7 @@ function App() {
       <div className="container mx-auto px-4 md:px-16 pt-[30px] md:pt-[60px] pb-[60px] md:pb-[80px] relative z-10">
         {/* Mobile Card */}
         {isMobile && (
-          <div className="absolute left-1/2 transform -translate-x-1/2 top-[444px] w-[352px] h-[120px] z-20">
+          <div className="absolute left-1/2 transform -translate-x-1/2 top-[442px] w-[352px] h-[120px] z-20">
             <Suspense
               fallback={
                 <div className="w-full h-full flex items-center justify-center">

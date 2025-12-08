@@ -1,6 +1,6 @@
-const validator = require('validator');
+import validator from 'validator';
 
-exports.handler = async (event) => {
+export const handler = async (event) => {
   // Only allow POST
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'Method Not Allowed' };
@@ -15,7 +15,7 @@ exports.handler = async (event) => {
 
   try {
     const data = JSON.parse(event.body);
-    
+
     // Sanitize inputs
     const name = validator.trim(data.name || '');
     const email = validator.trim(data.email || '');
@@ -26,7 +26,7 @@ exports.handler = async (event) => {
       return {
         statusCode: 400,
         headers,
-        body: JSON.stringify({ 
+        body: JSON.stringify({
           success: false,
           message: 'Please enter a valid name (letters, spaces, hyphens, and apostrophes only).'
         })
@@ -66,7 +66,7 @@ exports.handler = async (event) => {
 
     // Here you would typically send an email or save to a database
     // For now, we'll just return success
-    
+
     return {
       statusCode: 200,
       headers,
@@ -78,7 +78,7 @@ exports.handler = async (event) => {
 
   } catch (error) {
     console.error('Contact form error:', error);
-    
+
     return {
       statusCode: 500,
       headers,

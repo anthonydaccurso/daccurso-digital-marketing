@@ -138,7 +138,7 @@ export const askAnt = async (userMessage: string) => {
   if (isDev && (!apiKey || apiKey === 'sk-your-secret-key')) {
     throw new Error(
       'Ask Ant requires an OpenRouter API key. ' +
-      'Add VITE_OPENROUTER_API_KEY to your .env file or run "netlify dev" to use the proxy. ' +
+      'Add VITE_OPENROUTER_API_KEY to your .env file for development. ' +
       'Get your API key from https://openrouter.ai/'
     );
   }
@@ -170,11 +170,15 @@ export const askAnt = async (userMessage: string) => {
       }),
     });
   } else {
-    console.log('Using Netlify proxy function');
-    response = await fetch('/.netlify/functions/openrouter-proxy', {
+    console.log('Using Supabase Edge Function proxy');
+    const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+    const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+    response = await fetch(`${supabaseUrl}/functions/v1/openrouter-proxy`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'Authorization': `Bearer ${supabaseAnonKey}`,
       },
       body: JSON.stringify({
         model: 'openai/gpt-oss-20b:free',
@@ -268,11 +272,15 @@ async function logConversation(userMessage: string, botResponse: string, respons
       console.warn('Could not fetch location data:', locError);
     }
 
-    // Log to Netlify function which will save to Supabase
-    await fetch('/.netlify/functions/log-chat', {
+    // Log to Supabase Edge Function
+    const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+    const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+    await fetch(`${supabaseUrl}/functions/v1/log-chat`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'Authorization': `Bearer ${supabaseAnonKey}`,
       },
       body: JSON.stringify({
         user_message: userMessage,

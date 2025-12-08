@@ -27,7 +27,7 @@ function BlogSection() {
         />
         <meta
           property="og:image"
-          content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-apple-touch-icon.png"
+          content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/apple-touch-icon.png"
         />
         <meta property="og:site_name" content="Anthony Daccurso" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -38,7 +38,7 @@ function BlogSection() {
         />
         <meta
           name="twitter:image"
-          content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-apple-touch-icon.png"
+          content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/apple-touch-icon.png"
         />
         <script type="application/ld+json">
   {`
@@ -57,7 +57,7 @@ function BlogSection() {
       "name": "Anthony Daccurso",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-apple-touch-icon.png"
+        "url": "https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/apple-touch-icon.png"
       }
     },
     "description": "Web design, SEO, and marketing insights by Anthony Daccurso.",

@@ -90,7 +90,17 @@ function AboutMeSection() {
       </Helmet>
 
       <div className="bg-[#1a2f5c]/50 rounded-2xl p-6 sm:p-8 md:p-12 w-full mx-auto">
-        <div className="flex flex-col md:flex-row gap-6 md:gap-12 items-center">
+        {/* Mobile: Title first */}
+        <motion.h1
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-3xl font-bold text-white mb-7 md:hidden"
+        >
+          About Me
+        </motion.h1>
+
+        <div className="flex flex-col md:flex-row gap-7 md:gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -119,11 +129,12 @@ function AboutMeSection() {
             transition={{ duration: 0.6, ease: 'easeOut' }}
             className="w-full md:w-2/3 space-y-6"
           >
+            {/* Desktop: Title in content area */}
             <motion.h1
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-3xl md:text-4xl font-bold text-white mb-6"
+              className="hidden md:block text-4xl font-bold text-white mb-6"
             >
               About Me
             </motion.h1>

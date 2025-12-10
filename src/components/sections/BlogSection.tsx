@@ -66,9 +66,14 @@ function BlogSection() {
   `}
         </script>
       </Helmet>
-      <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white via-blue-200 to-blue-400 bg-clip-text text-transparent mb-8">
+      <motion.h2
+        initial={{ opacity: 0, x: -30 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+        className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white via-blue-200 to-blue-400 bg-clip-text text-transparent mb-8"
+      >
         Blog
-      </h2>
+      </motion.h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {posts.map((post, index) => (

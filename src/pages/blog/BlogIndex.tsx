@@ -27,7 +27,8 @@ export default function BlogIndex() {
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-4xl md:text-6xl font-bold mb-[18px] md:mb-[18px] text-left bg-gradient-to-r from-white via-blue-400 to-blue-700 bg-clip-text text-transparent pb-1"
+          transition={{ duration: 0.5 }}
+          className="text-4xl md:text-6xl font-bold mb-[18px] md:mb-[18px] text-left bg-gradient-to-r from-white via-blue-200 to-blue-400 bg-clip-text text-transparent pb-1"
         >
           Career Tips & Insights
         </motion.h1>

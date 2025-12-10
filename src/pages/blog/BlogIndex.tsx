@@ -25,8 +25,8 @@ export default function BlogIndex() {
         </motion.div>
 
         <motion.h1
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
           className="text-4xl md:text-6xl font-bold mb-[18px] md:mb-[18px] text-left bg-gradient-to-r from-white via-blue-200 to-blue-400 bg-clip-text text-transparent pb-1"
         >

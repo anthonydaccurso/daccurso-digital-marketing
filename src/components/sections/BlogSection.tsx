@@ -70,7 +70,13 @@ function BlogSection() {
         initial={{ opacity: 0, x: -30 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white via-blue-200 to-blue-400 bg-clip-text text-transparent mb-8"
+        className="text-3xl md:text-4xl font-bold mb-8"
+        style={{
+          background: 'linear-gradient(to right, white, rgb(191, 219, 254), rgb(96, 165, 250))',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          backgroundClip: 'text',
+        }}
       >
         Blog
       </motion.h2>

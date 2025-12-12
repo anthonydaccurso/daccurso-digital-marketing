@@ -9,7 +9,7 @@ const projects = [
     title: "BoxNJ",
     image: "https://boxnj.com/wp-content/uploads/boxnj-dumpster-rental-junk-removal.webp",
     description: "A service-focused website for a New Jersey–based company offering dumpster rentals, junk removal, and commercial property maintenance.",
-    skills: ["WordPress", "SEO Optimization", "Schema Markup", "Performance Optimization"],
+    skills: ["WordPress", "SEO", "Schema Markup", "Performance Optimization"],
     link: "https://boxnj.com/",
     instagram: "https://",
     caseStudy: {

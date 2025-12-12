@@ -16,7 +16,7 @@ const projects = [
       overview:
         "Designed and launched the BoxNJ website to establish a strong digital presence for a growing waste management and property services company serving residential and commercial clients across New Jersey.",
       challenge:
-        "The challenge was to clearly differentiate multiple service offerings—dumpster rentals, junk removal, and commercial property maintenance—while building trust in a competitive local market and driving qualified leads.",
+        "The challenge was to clearly differentiate multiple service offerings, dumpster rentals, junk removal, and commercial property maintenance, while building trust in a competitive local market and driving qualified leads.",
       approach:
         "Focused on a clean, utility-driven layout with strong service hierarchy, location-based SEO, and conversion-focused calls to action. Emphasized clarity, speed, and mobile usability to support customers searching for fast, reliable service.",
       implementation:

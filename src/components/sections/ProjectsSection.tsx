@@ -7,7 +7,7 @@ import { Helmet } from 'react-helmet-async';
 const projects = [
   {
     title: "BoxNJ",
-    image: "https://boxnj.com/wp-content/uploads/boxnj-dumpster-rental-junk-removal.webp",
+    image: "https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/boxnj-dumpster-driveway.jpeg",
     description: "A service-focused website for a New Jersey–based company offering dumpster rentals, junk removal, and commercial property maintenance.",
     skills: ["WordPress", "SEO & Performance Optimization", "Schema Markup"],
     link: "https://boxnj.com/",

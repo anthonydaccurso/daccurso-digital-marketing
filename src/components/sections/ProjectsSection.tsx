@@ -28,6 +28,28 @@ const projects = [
     }
   },
   {
+    title: "Daccurso Career Studio",
+    image: "https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/dcs-ddm-project-box.webp",
+    description: "A full stack website providing resume, interviewing, and career services to young professionals.",
+    skills: ["React.js", "Tailwind CSS", "Vite", "Database Management"],
+    link: "https://daccursocareerstudio.com/",
+    linkedin: "https://www.linkedin.com/company/109550616/admin/dashboard/",
+    caseStudy: {
+      overview:
+        "Developed and launched Daccurso Career Studio, a personal career guidance platform offering resume writing, interview coaching, and career strategy services tailored for students and young professionals.",
+      challenge:
+        "Many early-career professionals struggle to effectively communicate their value to employers. The challenge was to create a digital platform that builds trust, clearly presents services, and simplifies the process of getting personalized career support.",
+      approach:
+        "Designed a clean, approachable brand identity that balances professionalism with accessibility. Focused on intuitive navigation, clear service explanations, and high readability across all devices. Integrated educational and service-driven SEO strategies to improve discoverability.",
+      implementation:
+        "Built a modern, performance-optimized website using React, Tailwind CSS, and Vite. Implemented structured data (schema.org) for rich search results, integrated Google Analytics 4 for insights, and ensured WCAG accessibility compliance. Deployed through Netlify for fast, secure delivery.",
+      results:
+        "Launched a professional, user-friendly website that attracts clients through strong SEO foundations and engaging service pages. Early performance tests show significant improvements in user engagement, conversion intent, and search engine visibility within the career services niche.",
+      conclusion:
+        "Daccurso Career Studio effectively communicates expertise in resume writing and career coaching while establishing a trusted personal brand. The site now serves as both a client acquisition tool and a growing educational resource for job seekers."
+    }
+  },
+  {
     title: "Custom Pool Pros",
     image: "https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/custom-pool-pros.webp",
     description: "A comprehensive digital redesign focused on improving user experience and brand consistency across various platforms.",

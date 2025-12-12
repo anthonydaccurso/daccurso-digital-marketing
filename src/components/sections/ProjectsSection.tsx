@@ -8,7 +8,7 @@ const projects = [
   {
     title: "BoxNJ",
     image: "https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/boxnj-dumpster-driveway.jpeg",
-    description: "A service-focused website for a company offering dumpster rentals, junk removal, and property maintenance.",
+    description: "A service-focused website for a local company offering dumpster rentals, junk removal, and commercial property maintenance.",
     skills: ["WordPress", "Schema Markup", "SEO & Performance Optimization"],
     link: "https://boxnj.com/",
     instagram: "https://",

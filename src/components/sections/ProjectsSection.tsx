@@ -6,25 +6,25 @@ import { Helmet } from 'react-helmet-async';
 
 const projects = [
   {
-    title: "Daccurso Career Studio",
-    image: "https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/dcs-ddm-project-box.webp",
-    description: "A full stack website providing resume, interviewing, and career services to young professionals.",
-    skills: ["React.js", "Tailwind CSS", "Vite", "Database Management"],
-    link: "https://daccursocareerstudio.com/",
-    linkedin: "https://www.linkedin.com/company/109550616/admin/dashboard/",
+    title: "BoxNJ",
+    image: "https://boxnj.com/wp-content/uploads/boxnj-dumpster-rental-junk-removal.webp",
+    description: "A service-focused website for a New Jersey–based company offering dumpster rentals, junk removal, and commercial property maintenance.",
+    skills: ["WordPress", "SEO Optimization", "Schema Markup", "Performance Optimization"],
+    link: "https://boxnj.com/",
+    linkedin: "https://www.linkedin.com/company/boxnj/",
     caseStudy: {
       overview:
-        "Developed and launched Daccurso Career Studio, a personal career guidance platform offering resume writing, interview coaching, and career strategy services tailored for students and young professionals.",
+        "Designed and launched the BoxNJ website to establish a strong digital presence for a growing waste management and property services company serving residential and commercial clients across New Jersey.",
       challenge:
-        "Many early-career professionals struggle to effectively communicate their value to employers. The challenge was to create a digital platform that builds trust, clearly presents services, and simplifies the process of getting personalized career support.",
+        "The challenge was to clearly differentiate multiple service offerings—dumpster rentals, junk removal, and commercial property maintenance—while building trust in a competitive local market and driving qualified leads.",
       approach:
-        "Designed a clean, approachable brand identity that balances professionalism with accessibility. Focused on intuitive navigation, clear service explanations, and high readability across all devices. Integrated educational and service-driven SEO strategies to improve discoverability.",
+        "Focused on a clean, utility-driven layout with strong service hierarchy, location-based SEO, and conversion-focused calls to action. Emphasized clarity, speed, and mobile usability to support customers searching for fast, reliable service.",
       implementation:
-        "Built a modern, performance-optimized website using React, Tailwind CSS, and Vite. Implemented structured data (schema.org) for rich search results, integrated Google Analytics 4 for insights, and ensured WCAG accessibility compliance. Deployed through Netlify for fast, secure delivery.",
+        "Built a lightweight, SEO-optimized WordPress site with structured data for services, FAQs, articles, and local business markup. Implemented performance optimizations, accessibility best practices, and scalable content architecture to support long-term growth.",
       results:
-        "Launched a professional, user-friendly website that attracts clients through strong SEO foundations and engaging service pages. Early performance tests show significant improvements in user engagement, conversion intent, and search engine visibility within the career services niche.",
+        "The new website positions BoxNJ as a professional, trustworthy service provider with improved visibility in local search results. The streamlined service pages and SEO foundation support consistent lead generation and future content expansion.",
       conclusion:
-        "Daccurso Career Studio effectively communicates expertise in resume writing and career coaching while establishing a trusted personal brand. The site now serves as both a client acquisition tool and a growing educational resource for job seekers."
+        "BoxNJ’s website now serves as a strong operational and marketing asset, clearly communicating services, reinforcing brand credibility, and supporting ongoing growth in dumpster rental, junk removal, and commercial property maintenance markets."
     }
   },
   {

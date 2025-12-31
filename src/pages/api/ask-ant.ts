@@ -153,6 +153,7 @@ export const askAnt = async (userMessage: string) => {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${apiKey}`,
         'HTTP-Referer': 'https://anthonydaccurso.com',
+        'X-Title': 'AnthonyAI',
       },
       body: JSON.stringify({
         model: 'deepseek/deepseek-chat-v3-0324:free',

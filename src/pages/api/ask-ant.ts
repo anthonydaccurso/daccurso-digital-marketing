@@ -155,7 +155,7 @@ export const askAnt = async (userMessage: string) => {
         'HTTP-Referer': 'https://anthonydaccurso.com',
       },
       body: JSON.stringify({
-        model: 'openai/gpt-oss-20b:free',
+        model: 'deepseek/deepseek-chat-v3-0324:free',
         max_tokens: 300,
         messages: [
           {

@@ -135,17 +135,9 @@ export const askAnt = async (userMessage: string) => {
   const apiKey = import.meta.env.VITE_OPENROUTER_API_KEY;
   const startTime = Date.now();
 
-  if (isDev && (!apiKey || apiKey === 'sk-your-secret-key')) {
-    throw new Error(
-      'Ask Ant requires an OpenRouter API key. ' +
-      'Add VITE_OPENROUTER_API_KEY to your .env file for development. ' +
-      'Get your API key from https://openrouter.ai/'
-    );
-  }
-
   let response: Response;
 
-  if (isDev && apiKey) {
+  if (isDev && apiKey && apiKey !== 'sk-your-secret-key') {
     console.log('Using direct OpenRouter API in development');
     response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
       method: 'POST',

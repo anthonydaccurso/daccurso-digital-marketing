@@ -112,21 +112,6 @@ const projects = [
     }
   },
   {
-    title: "Flextech",
-    image: "https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media//dumbbell-rack.webp",
-    description: "Providing fitness guidance through web design, keyword research, SEO, database management, and performance optimization.",
-    skills: ["WordPress", "HTML", "CSS", "JavaScript", "PHP", "SEO"],
-    link: "https://flextech.fit",
-    caseStudy: {
-      overview: "Developed a comprehensive fitness platform offering workout plans, nutrition guidance, and progress tracking capabilities.",
-      challenge: "Needed to create an accessible fitness resource that caters to both beginners and advanced users while maintaining engagement and providing actionable information.",
-      approach: "Focused on clean, user-friendly design with clear navigation and concise fitness content. Prioritized accessibility and easy-to-understand layouts to keep users engaged.",
-      implementation: "Used WordPress with a customized theme tailored for fitness content. Optimized the site for SEO and mobile devices, and organized content into intuitive sections like workouts, nutrition, and blog tips.",
-      results: "Increased traffic through targeted keywords and strong on-page SEO. Users praised the site's simplicity and usefulness, helping to build trust and boost return visits.",
-      conclusion: "Successfully created a sustainable fitness platform that effectively serves users across all experience levels while maintaining high engagement rates."
-    }
-  },
-  {
     title: "Mercer Gems",
     image: "https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media//mercer-county.webp",
     description: "A recreation of my first project, promoting Mercer County restaurants through web design, keyword research, SEO, and performance optimization.",

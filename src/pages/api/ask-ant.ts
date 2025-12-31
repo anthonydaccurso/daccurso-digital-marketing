@@ -148,7 +148,7 @@ export const askAnt = async (userMessage: string) => {
         'X-Title': 'AnthonyAI',
       },
       body: JSON.stringify({
-        model: 'google/gemini-flash-1.5:free',
+        model: 'openai/gpt-oss-20b:free',
         max_tokens: 300,
         messages: [
           {
@@ -174,7 +174,7 @@ export const askAnt = async (userMessage: string) => {
         'Authorization': `Bearer ${supabaseAnonKey}`,
       },
       body: JSON.stringify({
-        model: 'google/gemini-flash-1.5:free',
+        model: 'openai/gpt-oss-20b:free',
         max_tokens: 300,
         messages: [
           {

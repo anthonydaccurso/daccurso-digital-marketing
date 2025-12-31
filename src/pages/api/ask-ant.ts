@@ -148,7 +148,7 @@ export const askAnt = async (userMessage: string) => {
         'X-Title': 'AnthonyAI',
       },
       body: JSON.stringify({
-        model: 'openai/gpt-oss-20b:free',
+        model: 'meta-llama/llama-3.2-3b-instruct:free',
         max_tokens: 300,
         messages: [
           {
@@ -174,7 +174,7 @@ export const askAnt = async (userMessage: string) => {
         'Authorization': `Bearer ${supabaseAnonKey}`,
       },
       body: JSON.stringify({
-        model: 'openai/gpt-oss-20b:free',
+        model: 'meta-llama/llama-3.2-3b-instruct:free',
         max_tokens: 300,
         messages: [
           {

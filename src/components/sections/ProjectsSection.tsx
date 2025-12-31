@@ -11,7 +11,6 @@ const projects = [
     description: "A service-focused website for a local company offering dumpster rentals, junk removal, and property maintenance.",
     skills: ["WordPress", "Schema Markup", "SEO & Performance Optimization"],
     link: "https://boxnj.com/",
-    instagram: "https://",
     caseStudy: {
       overview:
         "Designed and launched the BoxNJ website to establish a strong digital presence for a growing waste management and property services company serving residential and commercial clients across New Jersey.",

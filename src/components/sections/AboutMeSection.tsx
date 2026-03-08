@@ -145,7 +145,7 @@ function AboutMeSection() {
               transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
               className="text-lg md:text-xl leading-relaxed text-gray-300"
             >
-              I'm Anthony Daccurso, a Digital Marketing & SEO Specialist at Custom Pool Pros, and a graduate from TCNJ with a B.S. in Business Administration (Marketing) and a minor in Information Systems & Technology. I specialize in digital marketing, web development and IT, where I have taken on many relevant and important tasks at Custom Pool Pros. 
+              I'm Anthony Daccurso, a Digital Marketing & SEO Specialist at Custom Pool Pros, and a graduate from TCNJ with a B.S. in Business Administration (Marketing) and a minor in Information Systems & Technology. I specialize in digital marketing, web development, and IT, where I have taken on many relevant and important tasks at Custom Pool Pros. 
             </motion.p>
 
             <motion.p

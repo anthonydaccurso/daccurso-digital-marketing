@@ -6,7 +6,7 @@ function AboutMeSection() {
   return (
     <div className="w-full">
       <Helmet>
-        <title>Anthony Daccurso | Portfolio</title>
+        <title>Daccurso Digital Marketing | Digitial Marketing Services</title>
         <meta
           name="description"
           content="I'm Anthony Daccurso, a Digital Marketing & SEO Specialist passionate about web design, performance optimization, and helping businesses grow their digital presence."

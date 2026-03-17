@@ -70,35 +70,35 @@ function SkillsSection() {
       className="bg-[#1a2f5c]/50 rounded-2xl p-6 sm:p-8 md:p-12 w-full mx-auto"
     >
       <Helmet>
-        <title>My Skills | Anthony Daccurso</title>
+        <title>My Skills | Daccurso Digital Marketing</title>
         <meta
           name="description"
-          content="Explore Anthony Daccurso's technical and marketing expertise across SEO, analytics, design, and development — from React and Tailwind to Semrush and GA4."
+          content="Explore Daccurso Digital Marketing's technical and marketing expertise across SEO, analytics, design, and development — from React and Tailwind to Semrush and GA4."
         />
         <link rel="canonical" href="https://anthonydaccurso.com/my-skills/" />
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://anthonydaccurso.com/my-skills/" />
-        <meta property="og:title" content="My Skills | Anthony Daccurso" />
+        <meta property="og:title" content="My Skills | Daccurso Digital Marketing" />
         <meta
           property="og:description"
-          content="SEO, analytics, web design, and development skills by Anthony Daccurso — combining creativity and performance optimization."
+          content="SEO, analytics, web design, and development skills by Daccurso Digital Marketing — combining creativity and performance optimization."
         />
         <meta
           property="og:image"
-          content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/apple-touch-icon.png"
+          content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-apple-touch-icon.png"
         />
-        <meta property="og:site_name" content="Anthony Daccurso" />
+        <meta property="og:site_name" content="Daccurso Digital Marketing" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="My Skills | Anthony Daccurso" />
+        <meta name="twitter:title" content="My Skills | Daccurso Digital Marketing" />
         <meta
           name="twitter:description"
           content="Explore my toolkit: React, Tailwind, WordPress, Semrush, GA4, and more — powering efficient digital solutions."
         />
         <meta
           name="twitter:image"
-          content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/apple-touch-icon.png"
+          content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-apple-touch-icon.png"
         />
 
         <script type="application/ld+json">
@@ -107,7 +107,7 @@ function SkillsSection() {
             "@context": "https://schema.org",
             "@type": "DefinedTermSet",
             "name": "Skills and Expertise",
-            "description": "SEO, analytics, and web development skills mastered by Anthony Daccurso.",
+            "description": "SEO, analytics, and web development skills mastered by Daccurso Digital Marketing.",
             "hasDefinedTerm": [
               { "@type": "DefinedTerm", "name": "SEO & Analytics", "termCode": ["Google Analytics 4", "Google Search Console", "Semrush", "Ahrefs", "Google Admin"] },
               { "@type": "DefinedTerm", "name": "Marketing Tools", "termCode": ["HubSpot", "Brandwatch", "Power BI", "CapCut", "Google Suite", "Microsoft Office", "Social Media"] },

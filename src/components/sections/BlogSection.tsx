@@ -12,40 +12,40 @@ function BlogSection() {
       className="bg-[#1a2f5c]/50 rounded-2xl p-6 sm:p-8 md:p-12 w-full mx-auto"
     >
       <Helmet>
-        <title>Blog | Anthony Daccurso</title>
+        <title>Blog | Daccurso Digital Marketing</title>
         <meta
           name="description"
-          content="Articles and tutorials by Anthony Daccurso on web design, SEO, digital marketing, and tech. Learn strategies and insights for modern digital growth."
+          content="Articles and tutorials by Daccurso Digital Marketing on web design, SEO, digital marketing, and tech. Learn strategies and insights for modern digital growth."
         />
         <link rel="canonical" href="https://anthonydaccurso.com/blog/" />
         <meta property="og:type" content="blog" />
         <meta property="og:url" content="https://anthonydaccurso.com/blog/" />
-        <meta property="og:title" content="Blog | Anthony Daccurso" />
+        <meta property="og:title" content="Blog | Daccurso Digital Marketing" />
         <meta
           property="og:description"
-          content="Read guides, tutorials, and insights from Anthony Daccurso on SEO, marketing, and web development trends."
+          content="Read guides, tutorials, and insights from Daccurso Digital Marketing on SEO, marketing, and web development trends."
         />
         <meta
           property="og:image"
-          content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/apple-touch-icon.png"
+          content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-apple-touch-icon.png"
         />
-        <meta property="og:site_name" content="Anthony Daccurso" />
+        <meta property="og:site_name" content="Daccurso Digital Marketing" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Blog | Anthony Daccurso" />
+        <meta name="twitter:title" content="Blog | Daccurso Digital Marketing" />
         <meta
           name="twitter:description"
-          content="Web design and marketing tutorials by Anthony Daccurso — practical strategies for SEO and digital performance."
+          content="Web design and marketing tutorials by Daccurso Digital Marketing — practical strategies for SEO and digital performance."
         />
         <meta
           name="twitter:image"
-          content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/apple-touch-icon.png"
+          content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-apple-touch-icon.png"
         />
         <script type="application/ld+json">
   {`
   {
     "@context": "https://schema.org",
     "@type": "Blog",
-    "name": "Anthony Daccurso Blog",
+    "name": "Daccurso Digital Marketing Blog",
     "url": "https://anthonydaccurso.com/blog",
     "author": {
       "@type": "Person",
@@ -54,13 +54,13 @@ function BlogSection() {
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Anthony Daccurso",
+      "name": "Daccurso Digital Marketing",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/apple-touch-icon.png"
+        "url": "https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-apple-touch-icon.png"
       }
     },
-    "description": "Web design, SEO, and marketing insights by Anthony Daccurso.",
+    "description": "Web design, SEO, and marketing insights by Daccurso Digital Marketing.",
     "inLanguage": "en-US"
   }
   `}

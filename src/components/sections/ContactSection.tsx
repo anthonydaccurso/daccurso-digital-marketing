@@ -79,35 +79,35 @@ function ContactSection() {
       className="bg-[#1a2f5c]/50 rounded-3xl p-6 sm:p-8 md:p-12 w-full mx-auto"
     >
       <Helmet>
-        <title>Contact Me | Anthony Daccurso</title>
+        <title>Contact Me | Daccurso Digital Marketing</title>
         <meta
           name="description"
-          content="Get in touch with Anthony Daccurso — Digital Marketing Specialist & Web Developer. Connect via LinkedIn, view my resume, or explore certifications and awards."
+          content="Get in touch with Daccurso Digital Marketing — Digital Marketing Specialist & Web Developer. Connect via LinkedIn, view my resume, or explore certifications and awards."
         />
         <link rel="canonical" href="https://anthonydaccurso.com/contact-me/" />
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://anthonydaccurso.com/contact-me/" />
-        <meta property="og:title" content="Contact Me | Anthony Daccurso" />
+        <meta property="og:title" content="Contact Me | Daccurso Digital Marketing" />
         <meta
           property="og:description"
-          content="Contact Anthony Daccurso for digital marketing, SEO, or web development projects. Explore professional credentials and certifications."
+          content="Contact Daccurso Digital Marketing for digital marketing, SEO, or web development projects. Explore professional credentials and certifications."
         />
         <meta
           property="og:image"
-          content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/apple-touch-icon.png"
+          content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-apple-touch-icon.png"
         />
-        <meta property="og:site_name" content="Anthony Daccurso" />
+        <meta property="og:site_name" content="Daccurso Digital Marketing" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Contact Me | Anthony Daccurso" />
+        <meta name="twitter:title" content="Contact Me | Daccurso Digital Marketing" />
         <meta
           name="twitter:description"
           content="Connect with me via LinkedIn, view my resume, and collaborate on web design or SEO projects."
         />
         <meta
           name="twitter:image"
-          content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/apple-touch-icon.png"
+          content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/ddm-apple-touch-icon.png"
         />
 
         <script type="application/ld+json">

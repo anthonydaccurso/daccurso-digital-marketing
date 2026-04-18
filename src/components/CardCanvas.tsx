@@ -101,7 +101,6 @@ const Card = () => {
               />
               <div className="absolute inset-0 bg-black/10" />
             </div>
-
             <div>
               <h2 className="font-semibold text-lg select-none">Anthony Daccurso</h2>
               <p className="text-[13px] text-gray-300 select-none whitespace-nowrap">
@@ -157,7 +156,6 @@ const Card = () => {
                 <Award className="w-[22px] h-[22px]" />
               </a>
             </div>
-
             <span className="flex items-center gap-1 text-xs text-blue-100 group">
               <Move3d className="w-4 h-4 group-hover:scale-110 transition-transform" />
               <span className="group-hover:text-blue-300 transition-colors">

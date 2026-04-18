@@ -103,7 +103,7 @@ function AboutMeSection() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
-            className="w-full md:w-1/3 aspect-square rounded-xl overflow-hidden shadow-2xl"
+            className="relative w-full md:w-1/3 aspect-square rounded-xl overflow-hidden shadow-2xl"
           >
             <img
               src="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp"
@@ -115,6 +115,7 @@ function AboutMeSection() {
               decoding="async"
               className="w-full h-full object-cover"
             />
+            <div className="absolute inset-0 bg-black/60" />
           </motion.div>
 
           <motion.div

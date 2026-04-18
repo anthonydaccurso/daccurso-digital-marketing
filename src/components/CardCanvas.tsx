@@ -112,7 +112,7 @@ const Card = () => {
           </div>
           <div className="flex justify-between items-center mt-2">
             <div className="flex gap-0">
-              
+              <a
                 href="https://www.linkedin.com/in/anthony-daccurso/"
                 target="_blank"
                 rel="noreferrer"
@@ -121,7 +121,7 @@ const Card = () => {
               >
                 <Linkedin className="w-[22px] h-[22px]" />
               </a>
-              
+              <a
                 href="https://drive.google.com/file/d/1AZAafbFGVqKAw0Vn2Jjwf27jYux-Fngh/view?usp=sharing"
                 target="_blank"
                 rel="noreferrer"
@@ -130,7 +130,7 @@ const Card = () => {
               >
                 <FileText className="w-[22px] h-[22px]" />
               </a>
-              
+              <a
                 href="https://github.com/anthonydaccurso"
                 target="_blank"
                 rel="noreferrer"
@@ -139,7 +139,7 @@ const Card = () => {
               >
                 <Github className="w-[22px] h-[22px]" />
               </a>
-              
+              <a
                 href="https://drive.google.com/drive/folders/1zNDvHaLsJNsLUyehQu8ZxmiWXM4sA0E2?usp=sharing"
                 target="_blank"
                 rel="noreferrer"
@@ -148,7 +148,7 @@ const Card = () => {
               >
                 <Folders className="w-[22px] h-[22px]" />
               </a>
-              
+              <a
                 href="https://drive.google.com/drive/folders/1B0ONHc3X5C6KA4RYtRZl72SnqrJMupuu?usp=sharing"
                 target="_blank"
                 rel="noreferrer"

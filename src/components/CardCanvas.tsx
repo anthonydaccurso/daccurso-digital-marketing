@@ -88,20 +88,19 @@ const Card = () => {
       <div className={`bg-[#1a2f5c] rounded-xl p-4 shadow-lg border border-blue-500/40 ${isMobile ? '' : 'py-3'}`}>
         <div className={`text-white ${isMobile ? 'w-[336px]' : 'w-[310px]'} text-sm select-none`}>
           <div className="flex items-center gap-4 mb-2">
-            <img
-              src="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-128x128.webp?width=128&quality=70&format=webp&resize=cover"
-              srcSet="
-                https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-64x64.webp?width=64&quality=70&format=webp&resize=cover 1x,
-                https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-128x128.webp?width=128&quality=70&format=webp&resize=cover 2x
-              "
-              alt="Anthony Daccurso"
-              width={40}
-              height={40}
-              loading="lazy"
-              decoding="async"
-              className="w-10 h-10 rounded-full object-cover"
-              draggable={false}
-            />
+            <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
+              <img
+                src="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-128x128.webp"
+                alt="Anthony Daccurso"
+                width={40}
+                height={40}
+                loading="lazy"
+                decoding="async"
+                className="w-full h-full object-cover"
+                draggable={false}
+              />
+              <div className="absolute inset-0 bg-black/10" />
+            </div>
 
             <div>
               <h2 className="font-semibold text-lg select-none">Anthony Daccurso</h2>
@@ -112,7 +111,7 @@ const Card = () => {
           </div>
           <div className="flex justify-between items-center mt-2">
             <div className="flex gap-0">
-              <a
+              
                 href="https://www.linkedin.com/in/anthony-daccurso/"
                 target="_blank"
                 rel="noreferrer"
@@ -121,7 +120,7 @@ const Card = () => {
               >
                 <Linkedin className="w-[22px] h-[22px]" />
               </a>
-              <a
+              
                 href="https://drive.google.com/file/d/1AZAafbFGVqKAw0Vn2Jjwf27jYux-Fngh/view?usp=sharing"
                 target="_blank"
                 rel="noreferrer"
@@ -130,7 +129,7 @@ const Card = () => {
               >
                 <FileText className="w-[22px] h-[22px]" />
               </a>
-              <a
+              
                 href="https://github.com/anthonydaccurso"
                 target="_blank"
                 rel="noreferrer"
@@ -139,7 +138,7 @@ const Card = () => {
               >
                 <Github className="w-[22px] h-[22px]" />
               </a>
-              <a
+              
                 href="https://drive.google.com/drive/folders/1zNDvHaLsJNsLUyehQu8ZxmiWXM4sA0E2?usp=sharing"
                 target="_blank"
                 rel="noreferrer"
@@ -148,7 +147,7 @@ const Card = () => {
               >
                 <Folders className="w-[22px] h-[22px]" />
               </a>
-              <a
+              
                 href="https://drive.google.com/drive/folders/1B0ONHc3X5C6KA4RYtRZl72SnqrJMupuu?usp=sharing"
                 target="_blank"
                 rel="noreferrer"

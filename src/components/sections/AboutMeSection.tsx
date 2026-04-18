@@ -119,7 +119,7 @@ function AboutMeSection() {
               loading="eager"
               fetchpriority="high"
               decoding="async"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover brightness-40"
             />
           </motion.div>
 

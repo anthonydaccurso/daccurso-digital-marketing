@@ -171,4 +171,4 @@ const Card = () => {
   );
 };
 
-export default CardCanvas;
+export default Card;

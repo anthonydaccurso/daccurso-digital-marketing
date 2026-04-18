@@ -38,8 +38,7 @@ function AboutMeSection() {
         <link
           rel="preload"
           as="image"
-          href="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp?width=600&quality=80&format=webp&resize=cover"
-          imagesizes="(max-width: 768px) 100vw, 600px"
+          href="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp"
           fetchpriority="high"
         />
 
@@ -90,7 +89,6 @@ function AboutMeSection() {
       </Helmet>
 
       <div className="bg-[#1a2f5c]/50 rounded-2xl p-6 sm:p-8 md:p-12 w-full mx-auto">
-        {/* Mobile: Title first */}
         <motion.h1
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
@@ -108,18 +106,14 @@ function AboutMeSection() {
             className="w-full md:w-1/3 aspect-square rounded-xl overflow-hidden shadow-2xl"
           >
             <img
-              src="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp?width=600&quality=80&format=webp&resize=cover"
-              srcSet="
-                https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp?width=600&quality=80&format=webp&resize=cover 1x,
-                https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp?width=800&quality=80&format=webp&resize=cover 2x
-              "
+              src="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp"
               alt="Anthony Daccurso"
               width="400"
               height="400"
               loading="eager"
               fetchpriority="high"
               decoding="async"
-              className="w-full h-full object-cover brightness-40"
+              className="w-full h-full object-cover"
             />
           </motion.div>
 
@@ -129,7 +123,6 @@ function AboutMeSection() {
             transition={{ duration: 0.6, ease: 'easeOut' }}
             className="w-full md:w-2/3 space-y-6"
           >
-            {/* Desktop: Title in content area */}
             <motion.h1
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}

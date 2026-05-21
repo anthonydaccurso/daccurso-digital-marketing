@@ -210,7 +210,7 @@ function App() {
       <div className="container mx-auto px-4 md:px-16 pt-[30px] md:pt-[60px] pb-[60px] md:pb-[80px] relative z-10">
         {/* Mobile Card */}
         {isMobile && (
-          <div className="absolute left-1/2 transform -translate-x-1/2 top-[442px] w-[352px] h-[120px] z-20">
+          <div className="absolute left-1/2 transform -translate-x-1/2 top-[480px] w-[352px] h-[120px] z-20">
             <Suspense
               fallback={
                 <div className="w-full h-full flex items-center justify-center">
@@ -229,7 +229,7 @@ function App() {
           className="text-4xl md:text-6xl font-bold mb-[18px] md:mb-[18px] text-left inline-block bg-gradient-to-r from-white via-blue-400 to-blue-700 bg-clip-text text-transparent cursor-pointer pb-1 pt-[0px] z-[50] relative"
           onClick={handleNameClick}
         >
-          Anthony Daccurso
+          Daccurso Digital Marketing
         </motion.h1>
 
         <motion.p

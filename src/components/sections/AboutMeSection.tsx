@@ -23,7 +23,7 @@ function AboutMeSection() {
           property="og:image"
           content="https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/anthony-daccurso-fcp.webp"
         />
-        <meta property="og:site_name" content="Anthony Daccurso Portfolio" />
+        <meta property="og:site_name" content="Daccurso Digital Marketing" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Daccurso Digital Marketing | Digitial Marketing Services" />
         <meta
@@ -53,7 +53,7 @@ function AboutMeSection() {
   "jobTitle": "Digital Marketing & Web Development Specialist",
   "worksFor": {
     "@type": "Organization",
-    "name": "Custom Pool Pros"
+    "name": "Daccurso Digital Marketing"
   },
   "sameAs": [
     "https://www.linkedin.com/in/anthony-daccurso/",
@@ -61,7 +61,7 @@ function AboutMeSection() {
     "https://www.instagram.com/daccursodigitalmarketing",
     "https://www.tiktok.com/@daccursodigitalmarketing"
   ],
-  "description": "I'm Anthony Daccurso, a Digital Marketing & SEO Specialist passionate about web design, performance optimization, and helping businesses grow their digital presence.",
+  "description": "I'm Anthony Daccurso, a Digital Marketing & SEO Specialist passionate about web development, performance optimization, and helping businesses grow their digital presence.",
   "knowsAbout": [
     "Search Engine Optimization (SEO)",
     "Web Development",
@@ -139,7 +139,7 @@ function AboutMeSection() {
               transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
               className="text-lg md:text-xl leading-relaxed text-gray-300"
             >
-              I'm Anthony Daccurso, a Digital Marketing & SEO Specialist at Custom Pool Pros, and a graduate from TCNJ with a B.S. in Business Administration (Marketing) and a minor in Information Systems & Technology. I specialize in digital marketing, web development, and IT, where I have taken on many relevant and important tasks. 
+              I'm Anthony Daccurso, a Freelance Digital Marketer & Web Developer at Daccurso Digital Marketing, and a graduate from TCNJ with a B.S. in Business Administration (Marketing) and a minor in Information Systems & Technology. I specialize in digital marketing, web development, and IT, where I have taken on many relevant and important tasks. 
             </motion.p>
 
             <motion.p
@@ -148,7 +148,7 @@ function AboutMeSection() {
               transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
               className="text-lg md:text-xl leading-relaxed text-gray-300"
             >
-              My journey in digital marketing, web development, and IT has driven me to complete both work and personal projects that enable me to enhance my skills. I aim to strengthen my expertise as I advance in my career and consistently create deliverables of the highest possible quality. 
+              My journey in digital marketing, web development, and SEO has driven me to complete both work and personal projects that enable me to enhance my skills. I aim to strengthen my expertise as I advance in my career and consistently create deliverables of the highest possible quality. 
             </motion.p>
           </motion.div>
         </div>

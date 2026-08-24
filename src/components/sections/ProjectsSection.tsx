@@ -62,7 +62,7 @@ const projects = [
   {
     title: "Personal Touch Engravings",
     image: "https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media//engraving-map.webp",
-    description: "Designing an engraving collection through website design, keyword research, catalog organization, and SEO.",
+    description: "Designing an engraving collection through web design, keyword research, catalog organization, and SEO.",
     skills: ["Adobe Portfolio", "CSS", "SEO", "Google Analytics 4", "HTML"],
     link: "https://personaltouchengravingsandphotos.com",
     caseStudy: {

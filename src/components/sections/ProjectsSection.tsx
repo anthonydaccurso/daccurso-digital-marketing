@@ -77,7 +77,7 @@ const projects = [
   {
     title: "Images by Carmen",
     image: "https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media//waterfowls-photography.webp",
-    description: "Designing a nature photography portfolio through website design, keyword research, catalog organization, SEO, and performance optimization.",
+    description: "Designing a nature photography portfolio through web design, keyword research, catalog organization, SEO, and performance optimization.",
     skills: ["Adobe Portfolio", "CSS", "SEO", "Google Analytics 4", "HTML"],
     link: "https://imagesbycarmen.com",
     caseStudy: {

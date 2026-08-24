@@ -6,24 +6,19 @@ import { Helmet } from 'react-helmet-async';
 
 const projects = [
   {
-    title: "BoxNJ",
-    image: "https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/boxnj-dumpster-driveway.jpeg",
-    description: "A service-focused website for a local company offering dumpster rentals, junk removal, and property maintenance.",
-    skills: ["WordPress", "Schema Markup", "SEO & Performance Optimization"],
-    link: "https://boxnj.com/",
+    title: "Custom Pool Pros",
+    image: "https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/custom-pool-pros.webp",
+    description: "A comprehensive digital redesign focused on improving user experience and brand consistency across various platforms.",
+    skills: ["keyword research", "Web design", "Google Analytics 4", "SEO"],
+    link: "https://custompoolprosnj.com/",
+    instagram: "https://www.instagram.com/custompoolprosnj/?hl=en",
     caseStudy: {
-      overview:
-        "Designed and launched the BoxNJ website to establish a strong digital presence for a growing waste management and property services company serving residential and commercial clients across New Jersey.",
-      challenge:
-        "The challenge was to clearly differentiate multiple service offerings, dumpster rentals, junk removal, and commercial property maintenance, while building trust in a competitive local market and driving qualified leads.",
-      approach:
-        "Focused on a clean, utility-driven layout with strong service hierarchy, location-based SEO, and conversion-focused calls to action. Emphasized clarity, speed, and mobile usability to support customers searching for fast, reliable service.",
-      implementation:
-        "Built a lightweight, SEO-optimized WordPress site with structured data for services, FAQs, articles, and local business markup. Implemented performance optimizations, accessibility best practices, and scalable content architecture to support long-term growth.",
-      results:
-        "The new website positions BoxNJ as a professional, trustworthy service provider with improved visibility in local search results. The streamlined service pages and SEO foundation support consistent lead generation and future content expansion.",
-      conclusion:
-        "BoxNJ’s website now serves as a strong operational and marketing asset, clearly communicating services, reinforcing brand credibility, and supporting ongoing growth in dumpster rental, junk removal, and commercial property maintenance markets."
+      overview: "Contributed to the comprehensive redesign of the Custom Pool Pros' digital presence, focusing on improving user experience and brand consistency across their digital platforms.",
+      challenge: "The existing website lacked cohesive design elements and clear user pathways, resulting in lower engagement and conversion rates. The platform needed to better communicate its value proposition while maintaining trust and quality.",
+      approach: "Implemented a user-centered design strategy, conducting thorough research on financial service websites and user behavior. Created prototypes focusing on clear navigation and trust-building elements.",
+      implementation: "Developed a modern, responsive design using the latest web technologies. Integrated SEO best practices and optimized for performance. Created a consistent visual language across all platforms.",
+      results: "Achieved an increase in user engagement, improvement in conversion rates, and significantly enhanced brand perception through cohesive design implementation.",
+      conclusion: "The redesign successfully modernized Custom Pool Pros' digital presence while maintaining its professional image in the financial sector. The new design system provides a foundation for future growth and client acquisition."
     }
   },
   {
@@ -46,22 +41,6 @@ const projects = [
         "Launched a professional, user-friendly website that attracts clients through strong SEO foundations and engaging service pages. Early performance tests show significant improvements in user engagement, conversion intent, and search engine visibility within the career services niche.",
       conclusion:
         "Daccurso Career Studio effectively communicates expertise in resume writing and career coaching while establishing a trusted personal brand. The site now serves as both a client acquisition tool and a growing educational resource for job seekers."
-    }
-  },
-  {
-    title: "Custom Pool Pros",
-    image: "https://bvevrurqtidadhfsuoee.supabase.co/storage/v1/object/public/media/custom-pool-pros.webp",
-    description: "A comprehensive digital redesign focused on improving user experience and brand consistency across various platforms.",
-    skills: ["keyword research", "Web design", "Google Analytics 4", "SEO"],
-    link: "https://custompoolpros.com/",
-    instagram: "https://www.instagram.com/custompoolprosnj/?hl=en",
-    caseStudy: {
-      overview: "Contributed to the comprehensive redesign of the Custom Pool Pros' digital presence, focusing on improving user experience and brand consistency across their digital platforms.",
-      challenge: "The existing website lacked cohesive design elements and clear user pathways, resulting in lower engagement and conversion rates. The platform needed to better communicate its value proposition while maintaining trust and quality.",
-      approach: "Implemented a user-centered design strategy, conducting thorough research on financial service websites and user behavior. Created prototypes focusing on clear navigation and trust-building elements.",
-      implementation: "Developed a modern, responsive design using the latest web technologies. Integrated SEO best practices and optimized for performance. Created a consistent visual language across all platforms.",
-      results: "Achieved an increase in user engagement, improvement in conversion rates, and significantly enhanced brand perception through cohesive design implementation.",
-      conclusion: "The redesign successfully modernized Custom Pool Pros' digital presence while maintaining its professional image in the financial sector. The new design system provides a foundation for future growth and client acquisition."
     }
   },
   {
